@@ -11,6 +11,21 @@ export default {
   preloader: {
     tagline: 'Initializing data system',
   },
+  dash: {
+    title: 'Jey ERP — Dashboard',
+    nav: ['Overview', 'Finance', 'Inventory', 'Sales', 'Reports'],
+    revenue: 'Revenue',
+    expenses: 'Expenses',
+    profit: 'Profit',
+    chartTitle: 'Monthly turnover',
+    recent: 'Recent activity',
+    live: 'Live',
+    rows: [
+      ['Sale #INV-2048', '+ 4,250 ₼'],
+      ['Stock intake', '— 1,120 ₼'],
+      ['Customer payment', '+ 8,600 ₼'],
+    ],
+  },
   hero: {
     badge: 'Official Jey Soft distributor',
     titleA: 'The digital',

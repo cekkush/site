@@ -28,15 +28,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Display typeface for big headings & opt-in accents — Unbounded gives the
-   bold, characterful editorial voice. Sub-headings (h3) stay on Inter so the
-   layout reads clean and not over-shouted. */
-h1, h2, .font-display {
-  font-family: 'Unbounded', 'Inter', system-ui, sans-serif;
-  letter-spacing: -0.02em;
-}
-h3 {
+/* Clean, premium typography — Linear/Vercel school. Inter everywhere, with
+   tight tracking on large headings. */
+h1, h2, h3, .font-display {
   font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
 
 ::selection {
@@ -73,57 +70,53 @@ h3 {
     @apply mx-auto w-full max-w-[1240px] px-6 sm:px-8;
   }
 
+  /* Linear-style eyebrow label */
   .kicker {
-    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.28em] text-neon-300;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03]
+           px-3 py-1 text-xs font-medium tracking-tight text-white/55;
   }
   .kicker::before {
     content: '';
-    @apply inline-block h-px w-8 bg-neon-400/60;
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-neon-400;
   }
 
+  /* hairline surface card */
   .glass {
-    @apply rounded-2xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl;
+    @apply rounded-xl border border-white/[0.08] bg-white/[0.02];
   }
-
   .glass-hover {
-    @apply transition-all duration-500;
+    @apply transition-colors duration-300;
   }
   .glass-hover:hover {
-    @apply border-neon-400/40 bg-white/[0.045] shadow-glow;
+    @apply border-white/20 bg-white/[0.04];
   }
 
+  /* primary CTA — refined, subtle, Linear-grade */
   .btn-neon {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full
-           bg-neon-500 px-7 py-3 text-sm font-semibold text-white shadow-glow
-           transition-transform duration-300 will-change-transform;
-  }
-  .btn-neon::after {
-    content: '';
-    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent;
-    transition: transform 0.7s ease;
-  }
-  .btn-neon:hover::after {
-    @apply translate-x-full;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           bg-neon-500 px-5 py-2.5 text-sm font-semibold text-white
+           ring-1 ring-inset ring-white/15 transition-all duration-200
+           hover:bg-neon-400 hover:-translate-y-px will-change-transform;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15
-           px-7 py-3 text-sm font-semibold text-white/80 transition-colors duration-300
-           hover:border-neon-400/50 hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/10
+           bg-white/[0.02] px-5 py-2.5 text-sm font-semibold text-white/80
+           transition-colors duration-200 hover:border-white/25 hover:text-white;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-neon-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-b from-white to-white/55 bg-clip-text text-transparent;
   }
   .text-neon-gradient {
-    @apply bg-gradient-to-r from-neon-300 via-neon-400 to-cyan-glow bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-neon-300 to-cyan-glow bg-clip-text text-transparent;
   }
 }
 
 /* hairline grid texture used by sections */
 .bg-dotgrid {
-  background-image: radial-gradient(rgba(124, 92, 255, 0.16) 1px, transparent 1px);
-  background-size: 26px 26px;
+  background-image: radial-gradient(rgba(124, 92, 255, 0.10) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 /* GSAP reveal initial state to avoid FOUC before JS runs */

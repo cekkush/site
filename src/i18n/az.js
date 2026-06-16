@@ -11,6 +11,21 @@ export default {
   preloader: {
     tagline: 'Məlumat sistemi qurulur',
   },
+  dash: {
+    title: 'Jey ERP — İdarə paneli',
+    nav: ['İcmal', 'Maliyyə', 'Anbar', 'Satış', 'Hesabatlar'],
+    revenue: 'Gəlir',
+    expenses: 'Xərclər',
+    profit: 'Mənfəət',
+    chartTitle: 'Aylıq dövriyyə',
+    recent: 'Son əməliyyatlar',
+    live: 'Canlı',
+    rows: [
+      ['Satış #INV-2048', '+ 4 250 ₼'],
+      ['Anbar mədaxili', '— 1 120 ₼'],
+      ['Müştəri ödənişi', '+ 8 600 ₼'],
+    ],
+  },
   hero: {
     badge: 'Jey Soft rəsmi distribütoru',
     titleA: 'Biznesinizin',
