@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --neon: #7c5cff;
+  --neon-2: #22d3ee;
+  --ink: #05060d;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: auto; /* GSAP handles smooth scroll cues */
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: #e7e9f3;
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  font-feature-settings: 'ss01', 'cv01';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+  color: #fff;
+}
+
+/* ---- Custom scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #06070f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#3a2f7a, #221a52);
+  border-radius: 999px;
+  border: 2px solid #06070f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--neon), #4f3ad6);
+}
+
+/* ---- Custom cursor: hide native on fine pointers ---- */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-6 sm:px-8;
+  }
+
+  .kicker {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.28em] text-neon-300;
+  }
+  .kicker::before {
+    content: '';
+    @apply inline-block h-px w-8 bg-neon-400/60;
+  }
+
+  .glass {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl;
+  }
+
+  .glass-hover {
+    @apply transition-all duration-500;
+  }
+  .glass-hover:hover {
+    @apply border-neon-400/40 bg-white/[0.045] shadow-glow;
+  }
+
+  .btn-neon {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full
+           bg-neon-500 px-7 py-3 text-sm font-semibold text-white shadow-glow
+           transition-transform duration-300 will-change-transform;
+  }
+  .btn-neon::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent;
+    transition: transform 0.7s ease;
+  }
+  .btn-neon:hover::after {
+    @apply translate-x-full;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15
+           px-7 py-3 text-sm font-semibold text-white/80 transition-colors duration-300
+           hover:border-neon-400/50 hover:text-white;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white to-neon-300 bg-clip-text text-transparent;
+  }
+  .text-neon-gradient {
+    @apply bg-gradient-to-r from-neon-300 via-neon-400 to-cyan-glow bg-clip-text text-transparent;
+  }
+}
+
+/* hairline grid texture used by sections */
+.bg-dotgrid {
+  background-image: radial-gradient(rgba(124, 92, 255, 0.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* GSAP reveal initial state to avoid FOUC before JS runs */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}

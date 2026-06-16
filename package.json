@@ -1,0 +1,27 @@
+{
+  "name": "sherq-soft",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Şərq Soft — official distributor of Jey Soft. Jey ERP implementation. Awards-grade Living Data landing.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build"
+  },
+  "dependencies": {
+    "frappe-ui": "^0.1.140",
+    "gsap": "^3.12.5",
+    "three": "^0.171.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^10.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  }
+}
