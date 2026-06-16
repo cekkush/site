@@ -16,7 +16,7 @@ function submit() {
 // Placeholder contact details — to be replaced with real ones.
 const contacts = [
   { key: 'phoneLabel', value: '+994 (00) 000-00-00', href: 'tel:+994000000000' },
-  { key: 'emailLabel', value: 'info@sherqsoft.az', href: 'mailto:info@sherqsoft.az' },
+  { key: 'emailLabel', value: 'sales@sarqsoft.az', href: 'mailto:sales@sarqsoft.az' },
   { key: 'addressLabel', value: 'Bakı, Azərbaycan', href: null },
 ]
 </script>

@@ -71,7 +71,11 @@ function go(id) {
             {{ t('footer.contactCol') }}
           </div>
           <ul class="space-y-2.5 text-sm text-white/55">
-            <li>info@sherqsoft.az</li>
+            <li>
+              <a href="mailto:sales@sarqsoft.az" class="transition-colors hover:text-neon-300">
+                sales@sarqsoft.az
+              </a>
+            </li>
             <li>+994 (00) 000-00-00</li>
             <li>Bakı, Azərbaycan</li>
           </ul>
