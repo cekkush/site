@@ -35,14 +35,19 @@ onBeforeUnmount(() => {
 <template>
   <section id="process" ref="root" class="relative py-28 md:py-36">
     <div class="container-x">
-      <div class="mx-auto max-w-2xl text-center" v-reveal>
-        <span class="kicker justify-center">{{ t('process.kicker') }}</span>
-        <h2
-          class="mt-5 text-[clamp(2rem,4.5vw,3.4rem)] font-bold tracking-tight text-gradient"
-        >
-          {{ t('process.title') }}
-        </h2>
-        <p class="mt-5 text-lg text-white/55">{{ t('process.lead') }}</p>
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" v-reveal>
+        <div class="max-w-xl">
+          <span class="kicker">{{ t('process.kicker') }}</span>
+          <h2
+            class="mt-5 text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-gradient"
+          >
+            {{ t('process.title') }}
+          </h2>
+          <p class="mt-5 max-w-md text-lg text-white/55">{{ t('process.lead') }}</p>
+        </div>
+        <div class="font-display text-[clamp(4rem,12vw,9rem)] font-black leading-none text-white/[0.05]">
+          03
+        </div>
       </div>
 
       <div class="relative mx-auto mt-16 max-w-3xl">

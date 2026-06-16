@@ -9,13 +9,18 @@ const clients = ['NOVA', 'ATLAS', 'MERIDIAN', 'CASPIAN', 'VERTEX', 'ORBITA']
 <template>
   <section id="clients" class="relative py-28 md:py-36">
     <div class="container-x">
-      <div class="mx-auto max-w-2xl text-center" v-reveal>
-        <span class="kicker justify-center">{{ t('clients.kicker') }}</span>
-        <h2
-          class="mt-5 text-[clamp(2rem,4.5vw,3.4rem)] font-bold tracking-tight text-gradient"
-        >
-          {{ t('clients.title') }}
-        </h2>
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" v-reveal>
+        <div class="max-w-xl">
+          <span class="kicker">{{ t('clients.kicker') }}</span>
+          <h2
+            class="mt-5 text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-gradient"
+          >
+            {{ t('clients.title') }}
+          </h2>
+        </div>
+        <div class="font-display text-[clamp(4rem,12vw,9rem)] font-black leading-none text-white/[0.05]">
+          04
+        </div>
       </div>
 
       <div

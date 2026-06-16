@@ -21,14 +21,19 @@ function spotlight(e) {
 <template>
   <section id="services" class="relative py-28 md:py-36">
     <div class="container-x">
-      <div class="mx-auto max-w-2xl text-center" v-reveal>
-        <span class="kicker justify-center">{{ t('services.kicker') }}</span>
-        <h2
-          class="mt-5 text-[clamp(2rem,4.5vw,3.4rem)] font-bold tracking-tight text-gradient"
-        >
-          {{ t('services.title') }}
-        </h2>
-        <p class="mt-5 text-lg text-white/55">{{ t('services.lead') }}</p>
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" v-reveal>
+        <div class="max-w-xl">
+          <span class="kicker">{{ t('services.kicker') }}</span>
+          <h2
+            class="mt-5 text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[0.95] tracking-tight text-gradient"
+          >
+            {{ t('services.title') }}
+          </h2>
+          <p class="mt-5 max-w-md text-lg text-white/55">{{ t('services.lead') }}</p>
+        </div>
+        <div class="font-display text-[clamp(4rem,12vw,9rem)] font-black leading-none text-white/[0.05]">
+          02
+        </div>
       </div>
 
       <div
@@ -40,6 +45,7 @@ function spotlight(e) {
           v-for="(s, i) in tm('services.items')"
           :key="i"
           class="svc group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8 transition-colors duration-500 hover:border-neon-400/40"
+          :class="i % 2 === 1 ? 'md:mt-20' : ''"
           @pointermove="spotlight"
         >
           <!-- spotlight glow -->

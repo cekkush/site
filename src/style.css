@@ -22,11 +22,21 @@ body {
   margin: 0;
   background: var(--ink);
   color: #e7e9f3;
-  font-family: 'Geist', 'Inter', system-ui, sans-serif;
-  font-feature-settings: 'ss01', 'cv01';
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* Display typeface for big headings & opt-in accents — Unbounded gives the
+   bold, characterful editorial voice. Sub-headings (h3) stay on Inter so the
+   layout reads clean and not over-shouted. */
+h1, h2, .font-display {
+  font-family: 'Unbounded', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+h3 {
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 ::selection {
