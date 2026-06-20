@@ -23,6 +23,14 @@ branch limit once: repo **Settings → Environments → `github-pages` →
 Deployment branches and tags → "No restriction"** (or delete the environment so
 it recreates unrestricted), then push.
 
+### Current temporary publish (branch builder)
+
+Pages **Source = "Deploy from a branch"** (this branch, root). The built static
+export is committed to the repo **root** and served by GitHub's branch builder.
+Next's `_next/` dir is renamed to **`assets/`** (and refs rewritten) so Jekyll
+doesn't strip it. Cleanest long-term: switch Source to **GitHub Actions** (the
+`deploy.yml` workflow already builds `sarqsoft/` and now deploys successfully).
+
 ## Archived: repository root (Vue/Vite)
 
 The files at the repo root (`src/`, `index.html`, `vite.config.js`,
