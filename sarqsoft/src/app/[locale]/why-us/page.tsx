@@ -7,6 +7,7 @@ import {Card} from '@/components/ui/Card';
 import {Reveal} from '@/components/motion/Reveal';
 import {RayMark} from '@/components/brand/RayMark';
 import {FinalCTA} from '@/components/sections/FinalCTA';
+import {site} from '@/lib/site';
 
 export async function generateMetadata({
   params,
@@ -14,19 +15,16 @@ export async function generateMetadata({
   params: {locale: string};
 }): Promise<Metadata> {
   const t = await getTranslations({locale: params.locale, namespace: 'meta'});
-  return {
-    title: t('partnershipTitle'),
-    description: t('partnershipDescription'),
-  };
+  return {title: t('whyTitle'), description: t('whyDescription')};
 }
 
-export default async function PartnershipPage({
+export default async function WhyUsPage({
   params,
 }: {
   params: {locale: string};
 }) {
   setRequestLocale(params.locale);
-  const t = await getTranslations('partnershipPage');
+  const t = await getTranslations('whyPage');
   const benefits = t.raw('benefits') as Array<{title: string; desc: string}>;
 
   return (
@@ -52,11 +50,11 @@ export default async function PartnershipPage({
               <div className="relative overflow-hidden rounded-3xl border border-gold/20 bg-gradient-to-br from-gold/[0.08] to-transparent p-10 text-center">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-east-glow opacity-50" />
                 <RayMark className="mx-auto h-16 w-16" />
-                <p className="relative mt-6 text-xs uppercase tracking-[0.3em] text-gold">
-                  {t('badge')}
+                <p className="relative mt-6 font-display text-2xl text-ink">
+                  {site.name}
                 </p>
-                <p className="relative mt-3 font-display text-2xl text-ink">
-                  Şərq Soft × Jey Soft
+                <p className="relative mt-2 text-xs uppercase tracking-[0.28em] text-gold">
+                  {site.product}
                 </p>
               </div>
             </Reveal>
