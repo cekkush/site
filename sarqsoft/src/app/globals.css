@@ -5,7 +5,7 @@
 :root {
   --font-sans: 'Manrope Variable', system-ui, -apple-system, BlinkMacSystemFont,
     sans-serif;
-  --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-display: 'Sora Variable', 'Manrope Variable', system-ui, sans-serif;
 
   --void: #04060d;
   --night: #070b18;

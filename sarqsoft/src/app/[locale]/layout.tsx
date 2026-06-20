@@ -15,7 +15,7 @@ import {Header} from '@/components/layout/Header';
 import {Footer} from '@/components/layout/Footer';
 // Self-hosted variable fonts (bundled, latin-ext covers Azerbaijani glyphs).
 import '@fontsource-variable/manrope/wght.css';
-import '@fontsource-variable/fraunces/standard.css';
+import '@fontsource-variable/sora/wght.css';
 import '../globals.css';
 
 export function generateStaticParams() {

@@ -5,9 +5,14 @@ name: Deploy Şərq Soft (sarqsoft) to GitHub Pages
 # "/site"); set NEXT_PUBLIC_BASE_PATH to "" when moving to the sarqsoft.az
 # custom domain.
 
+# NOTE: while GitHub Pages "Source" is set to "Deploy from a branch", the built
+# site is served from this branch's root by GitHub's branch builder. We DON'T
+# auto-run this workflow on pushes to the dev branch, because an Actions run
+# suppresses the branch builder. Switch Source to "GitHub Actions" and restore
+# the branch trigger below for a clean, single-step deploy.
 on:
   push:
-    branches: [main, claude/gallant-lamport-kf4f7e]
+    branches: [main]
     paths:
       - 'sarqsoft/**'
       - '.github/workflows/deploy.yml'
