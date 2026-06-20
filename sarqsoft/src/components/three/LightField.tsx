@@ -5,8 +5,9 @@ import {Canvas, useFrame} from '@react-three/fiber';
 import * as THREE from 'three';
 
 /* ------------------------------------------------------------------ *
- *  Cosmic embers — golden particles drifting up from the horizon,
- *  reacting to the pointer. Custom GLSL, additive blending.
+ *  Cosmic embers — sparse, small golden sparks drifting up from the
+ *  horizon, reacting to the pointer. Subtle additive glow (tuned so it
+ *  never blows out to white).
  * ------------------------------------------------------------------ */
 
 const particleVertex = /* glsl */ `
@@ -19,19 +20,19 @@ const particleVertex = /* glsl */ `
   void main() {
     vec3 p = position;
     float h = 10.0;
-    float speed = 0.6 + aSeed * 1.4;
+    float speed = 0.35 + aSeed * 0.9;
     p.y = mod(p.y + uTime * speed, h * 2.0) - h;
-    p.x += sin(uTime * 0.3 + aSeed * 6.2831) * 0.35;
-    p.z += cos(uTime * 0.24 + aSeed * 6.2831) * 0.35;
-    // pointer parallax — nearer particles move more
-    p.xy += uMouse * (0.5 + aSeed * 1.2);
+    p.x += sin(uTime * 0.25 + aSeed * 6.2831) * 0.4;
+    p.z += cos(uTime * 0.2 + aSeed * 6.2831) * 0.4;
+    p.xy += uMouse * (0.4 + aSeed * 1.0);
 
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     gl_Position = projectionMatrix * mv;
-    gl_PointSize = uSize * (0.4 + aSeed) * (320.0 / -mv.z);
+    // small points; size attenuates with distance
+    gl_PointSize = uSize * (0.5 + aSeed) * (130.0 / -mv.z);
 
     float edge = smoothstep(-h, -h + 3.0, p.y) * (1.0 - smoothstep(h - 4.0, h, p.y));
-    vAlpha = edge * (0.45 + 0.55 * sin(uTime * 2.0 + aSeed * 24.0));
+    vAlpha = edge * (0.25 + 0.35 * (0.5 + 0.5 * sin(uTime * 1.6 + aSeed * 24.0)));
   }
 `;
 
@@ -44,13 +45,16 @@ const particleFragment = /* glsl */ `
   void main() {
     vec2 uv = gl_PointCoord - 0.5;
     float d = length(uv);
+    // soft round spark with a brighter core
     float a = smoothstep(0.5, 0.0, d);
-    vec3 col = mix(uColorA, uColorB, clamp(vAlpha, 0.0, 1.0));
-    gl_FragColor = vec4(col, a * vAlpha);
+    float core = smoothstep(0.18, 0.0, d);
+    vec3 col = mix(uColorA, uColorB, clamp(vAlpha * 1.6, 0.0, 1.0));
+    col += core * 0.4;
+    gl_FragColor = vec4(col, a * vAlpha * 0.5);
   }
 `;
 
-function Embers({count = 1100}: {count?: number}) {
+function Embers({count = 420}: {count?: number}) {
   const matRef = useRef<THREE.ShaderMaterial>(null);
   const target = useRef(new THREE.Vector2(0, 0));
 
@@ -58,9 +62,9 @@ function Embers({count = 1100}: {count?: number}) {
     const positions = new Float32Array(count * 3);
     const seeds = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 26;
+      positions[i * 3] = (Math.random() - 0.5) * 24;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 14 - 2;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 12 - 3;
       seeds[i] = Math.random();
     }
     return {positions, seeds};
@@ -70,9 +74,9 @@ function Embers({count = 1100}: {count?: number}) {
     () => ({
       uTime: {value: 0},
       uMouse: {value: new THREE.Vector2(0, 0)},
-      uSize: {value: 26},
-      uColorA: {value: new THREE.Color('#ecb24c')},
-      uColorB: {value: new THREE.Color('#ff7d55')},
+      uSize: {value: 1.0},
+      uColorA: {value: new THREE.Color('#e9a23f')},
+      uColorB: {value: new THREE.Color('#ffd9a0')},
     }),
     [],
   );
@@ -80,9 +84,8 @@ function Embers({count = 1100}: {count?: number}) {
   useFrame((state) => {
     if (!matRef.current) return;
     uniforms.uTime.value = state.clock.elapsedTime;
-    // smooth pointer follow
     target.current.lerp(
-      {x: state.pointer.x * 1.6, y: state.pointer.y * 1.0} as THREE.Vector2,
+      {x: state.pointer.x * 1.4, y: state.pointer.y * 0.9} as THREE.Vector2,
       0.04,
     );
     uniforms.uMouse.value.copy(target.current);
@@ -91,10 +94,7 @@ function Embers({count = 1100}: {count?: number}) {
   return (
     <points>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[positions, 3]}
-        />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         <bufferAttribute attach="attributes-aSeed" args={[seeds, 1]} />
       </bufferGeometry>
       <shaderMaterial
@@ -111,7 +111,8 @@ function Embers({count = 1100}: {count?: number}) {
 }
 
 /* ------------------------------------------------------------------ *
- *  God-rays + rising sun — a full-bleed plane behind the embers.
+ *  Sunrise — a focused warm glow + soft god-rays at the bottom-centre.
+ *  Tuned to stay dark across most of the frame.
  * ------------------------------------------------------------------ */
 
 const glowVertex = /* glsl */ `
@@ -129,27 +130,25 @@ const glowFragment = /* glsl */ `
 
   void main() {
     vec2 uv = vUv;
-    vec2 origin = vec2(0.5, -0.08);
+    vec2 origin = vec2(0.5, -0.04);
     vec2 d = uv - origin;
     float dist = length(d);
     float ang = atan(d.x, d.y);
 
-    // soft volumetric rays
-    float rays = 0.5 + 0.5 * sin(ang * 18.0 + uTime * 0.25);
-    rays *= 0.5 + 0.5 * sin(ang * 9.0 - uTime * 0.18);
-    rays = pow(rays, 1.6);
+    float rays = 0.5 + 0.5 * sin(ang * 16.0 + uTime * 0.22);
+    rays *= 0.5 + 0.5 * sin(ang * 8.0 - uTime * 0.16);
+    rays = pow(rays, 2.2);
 
-    float fall = smoothstep(1.15, 0.05, dist);
-    float core = smoothstep(0.42, 0.0, dist);     // the sun
-    float intensity = rays * fall * 0.5 + core * 0.9;
+    float fall = smoothstep(0.85, 0.0, dist);   // focused, dark elsewhere
+    float core = smoothstep(0.27, 0.0, dist);    // the sun
+    float band = smoothstep(0.34, 0.0, uv.y);    // warm dawn along the bottom
+    float intensity = rays * fall * 0.16 + core * 0.52 + band * 0.2;
 
-    vec3 cool = vec3(0.015, 0.02, 0.05);
-    vec3 warm = vec3(0.98, 0.64, 0.30);
-    vec3 hot = vec3(1.0, 0.86, 0.55);
+    vec3 warm = vec3(0.98, 0.6, 0.26);
+    vec3 hot = vec3(1.0, 0.82, 0.52);
     vec3 col = mix(warm, hot, core);
-    col = mix(cool, col, clamp(intensity, 0.0, 1.0));
 
-    gl_FragColor = vec4(col, clamp(intensity, 0.0, 1.0));
+    gl_FragColor = vec4(col, clamp(intensity, 0.0, 0.92));
   }
 `;
 
@@ -160,7 +159,7 @@ function Sunrise() {
     uniforms.uTime.value = state.clock.elapsedTime;
   });
   return (
-    <mesh position={[0, 0, -6]} scale={[44, 30, 1]}>
+    <mesh position={[0, -1, -6]} scale={[40, 26, 1]}>
       <planeGeometry args={[1, 1]} />
       <shaderMaterial
         ref={matRef}

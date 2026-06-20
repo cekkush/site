@@ -1,0 +1,361 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Şərq Soft" [ref=e5] [cursor=pointer]:
+        - /url: /az/
+        - generic [ref=e6]:
+          - img [ref=e7]
+          - generic [ref=e12]: Şərq Soft
+      - navigation [ref=e13]:
+        - link "Ana səhifə" [ref=e14] [cursor=pointer]:
+          - /url: /az/
+        - link "Jey ERP" [ref=e15] [cursor=pointer]:
+          - /url: /az/jey-erp/
+        - link "Haqqımızda" [ref=e16] [cursor=pointer]:
+          - /url: /az/about/
+        - link "Tərəfdaşlıq" [ref=e17] [cursor=pointer]:
+          - /url: /az/partnership/
+        - link "Əlaqə" [ref=e18] [cursor=pointer]:
+          - /url: /az/contact/
+      - generic [ref=e19]:
+        - group "Language" [ref=e20]:
+          - button "az" [ref=e22] [cursor=pointer]
+          - generic [ref=e23]:
+            - generic [ref=e24]: /
+            - button "en" [ref=e25] [cursor=pointer]
+        - link "Demo sifariş et" [ref=e27] [cursor=pointer]:
+          - /url: /az/contact/
+          - text: Demo sifariş et
+          - img [ref=e28]
+  - main [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e35]: Jey Soft-un rəsmi tərəfdaşı
+        - heading "Biznesinizə Şərq işığı" [level=1] [ref=e37]:
+          - generic "Biznesinizə" [ref=e39]:
+            - generic [ref=e41]: Biznesinizə
+          - generic "Şərq işığı" [ref=e43]:
+            - generic [ref=e45]: Şərq
+            - generic [ref=e47]: işığı
+        - paragraph [ref=e48]: Uçot və ERP sistemlərinin tətbiqi. Məlumat xaosundan nizama — Jey ERP ilə biznesinizin yeni günü doğur.
+        - generic [ref=e49]:
+          - link "Jey ERP demosu" [ref=e51] [cursor=pointer]:
+            - /url: /az/contact/
+            - text: Jey ERP demosu
+            - img [ref=e52]
+          - link "Həlləri kəşf et" [ref=e55] [cursor=pointer]:
+            - /url: /az/jey-erp/
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - term [ref=e58]: 8+
+            - definition [ref=e59]: il bazarda
+          - generic [ref=e60]:
+            - term [ref=e61]: 120+
+            - definition [ref=e62]: uğurlu tətbiq
+          - generic [ref=e63]:
+            - term [ref=e64]: 24/7
+            - definition [ref=e65]: texniki dəstək
+      - generic [ref=e67]: Aşağı
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e74]: Niyə ERP?
+        - heading "Xaosdan nizama" [level=2] [ref=e76]:
+          - generic "Xaosdan nizama" [ref=e77]:
+            - generic [ref=e79]: Xaosdan
+            - generic [ref=e81]: nizama
+        - paragraph [ref=e83]: Cədvəllər, kağızlar, ayrı-ayrı proqramlar… Məlumat parçalananda biznes ləngiyir. Jey ERP hər şeyi vahid sistemdə birləşdirir.
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - paragraph [ref=e86]: ERP-siz
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - img [ref=e90]
+              - generic [ref=e92]: Onlarla Excel cədvəli və əl ilə hesablama
+            - listitem [ref=e93]:
+              - img [ref=e95]
+              - generic [ref=e97]: Anbar, satış və mühasibatlıq bir-birindən xəbərsiz
+            - listitem [ref=e98]:
+              - img [ref=e100]
+              - generic [ref=e102]: Səhvlər, itən sənədlər, gecikmiş hesabatlar
+            - listitem [ref=e103]:
+              - img [ref=e105]
+              - generic [ref=e107]: Qərarlar təxminə əsaslanır
+        - generic:
+          - generic:
+            - img
+        - generic [ref=e108]:
+          - paragraph [ref=e109]: Jey ERP ilə
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - img [ref=e113]
+              - generic [ref=e115]: Vahid baza — bütün məlumat bir yerdə
+            - listitem [ref=e116]:
+              - img [ref=e118]
+              - generic [ref=e120]: Modullar real vaxtda sinxron işləyir
+            - listitem [ref=e121]:
+              - img [ref=e123]
+              - generic [ref=e125]: Avtomatlaşdırma səhvləri minimuma endirir
+            - listitem [ref=e126]:
+              - img [ref=e128]
+              - generic [ref=e130]: Qərarlar dəqiq rəqəmlərə əsaslanır
+      - paragraph [ref=e131]: Tətbiqdən sonra hesabatlara sərf olunan vaxt qat-qat azalır.
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e137]: Xidmətlər
+        - heading "Tətbiqdən dəstəyə qədər" [level=2] [ref=e139]:
+          - generic "Tətbiqdən dəstəyə qədər" [ref=e140]:
+            - generic [ref=e142]: Tətbiqdən
+            - generic [ref=e144]: dəstəyə
+            - generic [ref=e146]: qədər
+        - paragraph [ref=e148]: Sizi təkcə proqramla təmin etmirik — biznesinizi öyrənir, sistemi sizə uyğunlaşdırır və sonadək yanınızda oluruq.
+      - generic [ref=e149]:
+        - generic [ref=e152]:
+          - generic [ref=e153]: "01"
+          - heading "Tətbiq və quraşdırma" [level=3] [ref=e154]
+          - paragraph [ref=e155]: Biznes proseslərinizi təhlil edir, Jey ERP-ni sıfırdan işə salırıq.
+        - generic [ref=e158]:
+          - generic [ref=e159]: "02"
+          - heading "İnteqrasiya və köçürmə" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Mövcud proqram və məlumatları itkisiz yeni sistemə köçürürük.
+        - generic [ref=e164]:
+          - generic [ref=e165]: "03"
+          - heading "Təlim və adaptasiya" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Komandanız sistemi rahat istifadə etsin deyə praktiki təlimlər keçiririk.
+        - generic [ref=e170]:
+          - generic [ref=e171]: "04"
+          - heading "Texniki dəstək" [level=3] [ref=e172]
+          - paragraph [ref=e173]: Tətbiqdən sonra da daimi dəstək, yeniləmə və məsləhət.
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - generic [ref=e178]: Jey ERP
+        - heading "Bir sistem — bütün biznes" [level=2] [ref=e180]:
+          - generic "Bir sistem — bütün biznes" [ref=e181]:
+            - generic [ref=e183]: Bir
+            - generic [ref=e185]: sistem
+            - generic [ref=e187]: —
+            - generic [ref=e189]: bütün
+            - generic [ref=e191]: biznes
+        - paragraph [ref=e193]: "Jey ERP biznesinizin hər sahəsini vahid platformada birləşdirir: maliyyədən istehsalata, satışdan anbara."
+      - generic [ref=e194]:
+        - generic [ref=e196]:
+          - img [ref=e198]
+          - heading "Maliyyə və uçot" [level=3] [ref=e202]
+          - paragraph [ref=e203]: Mühasibatlıq, hesabatlar, vergi və balans — tam nəzarət.
+        - generic [ref=e205]:
+          - img [ref=e207]
+          - heading "Anbar idarəetməsi" [level=3] [ref=e210]
+          - paragraph [ref=e211]: Qalıqlar, hərəkət və inventarlaşdırma real vaxtda.
+        - generic [ref=e213]:
+          - img [ref=e215]
+          - heading "Satış və CRM" [level=3] [ref=e219]
+          - paragraph [ref=e220]: Müştərilər, sifarişlər və satış boru xətti bir yerdə.
+        - generic [ref=e222]:
+          - img [ref=e224]
+          - heading "POS — kassa" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Pərakəndə satış nöqtələri mərkəzi baza ilə sinxron.
+        - generic [ref=e231]:
+          - img [ref=e233]
+          - heading "Maaş və HR" [level=3] [ref=e237]
+          - paragraph [ref=e238]: Əməkhaqqı, kadrlar, tabel və hesablamalar.
+        - generic [ref=e240]:
+          - img [ref=e242]
+          - heading "İstehsalat" [level=3] [ref=e245]
+          - paragraph [ref=e246]: Resept, kalkulyasiya və istehsal prosesinə nəzarət.
+        - generic [ref=e248]:
+          - img [ref=e250]
+          - heading "Alış və təchizat" [level=3] [ref=e255]
+          - paragraph [ref=e256]: Təchizatçılar, alışlar və ödəniş qrafikləri.
+        - generic [ref=e258]:
+          - img [ref=e260]
+          - heading "Hesabat və analitika" [level=3] [ref=e263]
+          - paragraph [ref=e264]: İdarəetmə paneli və canlı göstəricilər.
+      - generic [ref=e266]:
+        - paragraph [ref=e267]: Hər modul biznesinizə uyğunlaşdırılır.
+        - link "Jey ERP haqqında ətraflı" [ref=e269] [cursor=pointer]:
+          - /url: /az/jey-erp/
+          - text: Jey ERP haqqında ətraflı
+          - img [ref=e270]
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - generic [ref=e276]: Sahələr
+        - heading "Hər biznes üçün həll" [level=2] [ref=e278]:
+          - generic "Hər biznes üçün həll" [ref=e279]:
+            - generic [ref=e281]: Hər
+            - generic [ref=e283]: biznes
+            - generic [ref=e285]: üçün
+            - generic [ref=e287]: həll
+        - paragraph [ref=e289]: Jey ERP müxtəlif sahələrin xüsusiyyətlərinə uyğunlaşır. Sahənizi seçin.
+      - tablist "Hər biznes üçün həll" [ref=e290]:
+        - tab "Pərakəndə" [selected] [ref=e291] [cursor=pointer]
+        - tab "HoReCa" [ref=e292] [cursor=pointer]
+        - tab "Topdan və distribusiya" [ref=e293] [cursor=pointer]
+        - tab "İstehsalat və xidmət" [ref=e294] [cursor=pointer]
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - heading "Mağazalar üçün tam nəzarət" [level=3] [ref=e298]
+          - paragraph [ref=e299]: Kassa, anbar və satış bir sistemdə. Hər filialın göstəricisi əlinizin altında.
+          - list [ref=e300]:
+            - listitem [ref=e301]:
+              - img [ref=e302]
+              - generic [ref=e304]: Çoxfilial POS və anbar
+            - listitem [ref=e305]:
+              - img [ref=e306]
+              - generic [ref=e308]: Loyallıq və endirim sistemləri
+            - listitem [ref=e309]:
+              - img [ref=e310]
+              - generic [ref=e312]: Real vaxtda satış hesabatı
+        - generic [ref=e313]:
+          - generic [ref=e314]: P
+          - generic [ref=e316]: 01 / 04
+          - paragraph [ref=e318]: Pərakəndə
+    - generic [ref=e320]:
+      - generic [ref=e321]:
+        - generic [ref=e323]: Necə işləyirik
+        - heading "Tətbiqin 5 addımı" [level=2] [ref=e325]:
+          - generic "Tətbiqin 5 addımı" [ref=e326]:
+            - generic [ref=e328]: Tətbiqin
+            - generic [ref=e330]: "5"
+            - generic [ref=e332]: addımı
+        - paragraph [ref=e334]: Şəffaf, mərhələli proses — gözlənilməz sürprizlər olmadan.
+      - list [ref=e336]:
+        - listitem [ref=e337]:
+          - generic [ref=e338]: "01"
+          - heading "Təhlil" [level=3] [ref=e339]
+          - paragraph [ref=e340]: Biznes proseslərinizi öyrənir, tələbləri müəyyən edirik.
+        - listitem [ref=e341]:
+          - generic [ref=e342]: "02"
+          - heading "Planlaşdırma" [level=3] [ref=e343]
+          - paragraph [ref=e344]: Tətbiq planı, modullar və qrafik razılaşdırılır.
+        - listitem [ref=e345]:
+          - generic [ref=e346]: "03"
+          - heading "Quraşdırma və köçürmə" [level=3] [ref=e347]
+          - paragraph [ref=e348]: Sistem qurulur, məlumatlar köçürülür və test edilir.
+        - listitem [ref=e349]:
+          - generic [ref=e350]: "04"
+          - heading "Təlim" [level=3] [ref=e351]
+          - paragraph [ref=e352]: Komandanız sistemdə işləməyi öyrənir.
+        - listitem [ref=e353]:
+          - generic [ref=e354]: "05"
+          - heading "Dəstək" [level=3] [ref=e355]
+          - paragraph [ref=e356]: Canlı işə keçid və daimi texniki müşayiət.
+    - generic [ref=e358]:
+      - generic [ref=e359]:
+        - generic [ref=e361]: Etibar
+        - heading "Rəqəmlərlə Şərq Soft" [level=2] [ref=e363]:
+          - generic "Rəqəmlərlə Şərq Soft" [ref=e364]:
+            - generic [ref=e366]: Rəqəmlərlə
+            - generic [ref=e368]: Şərq
+            - generic [ref=e370]: Soft
+        - paragraph [ref=e372]: İllərin təcrübəsi və onlarla uğurlu tətbiq.
+      - generic [ref=e373]:
+        - generic [ref=e374]:
+          - generic [ref=e375]: 0+
+          - paragraph [ref=e376]: il bazarda
+        - generic [ref=e377]:
+          - generic [ref=e378]: 0+
+          - paragraph [ref=e379]: uğurlu tətbiq
+        - generic [ref=e380]:
+          - generic [ref=e381]: 0+
+          - paragraph [ref=e382]: aktiv müştəri
+        - generic [ref=e383]:
+          - generic [ref=e384]: 0%
+          - paragraph [ref=e385]: dəstək məmnuniyyəti
+      - generic [ref=e386]:
+        - generic [ref=e387]: Seçilmiş layihələr
+        - generic [ref=e388]:
+          - generic [ref=e390]:
+            - paragraph [ref=e391]: Retail · 12 filial
+            - heading "Pərakəndə şəbəkə" [level=3] [ref=e392]
+            - paragraph [ref=e393]: Anbar uçotu mərkəzləşdirildi, inventar səhvləri kəskin azaldı.
+          - generic [ref=e395]:
+            - paragraph [ref=e396]: HoReCa
+            - heading "Restoran qrupu" [level=3] [ref=e397]
+            - paragraph [ref=e398]: Kalkulyasiya və maya dəyəri tam avtomatlaşdırıldı.
+          - generic [ref=e400]:
+            - paragraph [ref=e401]: Topdan satış
+            - heading "Distribusiya şirkəti" [level=3] [ref=e402]
+            - paragraph [ref=e403]: Satış və debitor nəzarəti vahid sistemə keçdi.
+      - generic [ref=e404]:
+        - generic [ref=e405]: Müştərilər nə deyir
+        - generic [ref=e406]:
+          - generic [ref=e408]:
+            - generic [ref=e409]: “
+            - paragraph [ref=e410]: Tətbiqdən sonra hesabatları saatlarla yox, dəqiqələrlə alırıq.
+            - generic [ref=e411]:
+              - paragraph [ref=e412]: Müştəri rəyi
+              - paragraph [ref=e413]: Maliyyə direktoru
+          - generic [ref=e415]:
+            - generic [ref=e416]: “
+            - paragraph [ref=e417]: Komanda biznesimizi başa düşdü və sistemi tam bizə uyğunlaşdırdı.
+            - generic [ref=e418]:
+              - paragraph [ref=e419]: Müştəri rəyi
+              - paragraph [ref=e420]: Əməliyyat müdiri
+          - generic [ref=e422]:
+            - generic [ref=e423]: “
+            - paragraph [ref=e424]: Dəstək həmişə əlçatandır — bu, bizim üçün ən vacibdir.
+            - generic [ref=e425]:
+              - paragraph [ref=e426]: Müştəri rəyi
+              - paragraph [ref=e427]: Direktor
+      - generic [ref=e430]:
+        - text: Rəsmi tərəfdaş
+        - paragraph [ref=e431]: Şərq Soft Jey Soft-un rəsmi tərəfdaşı kimi Jey ERP-nin tətbiqi, fərdiləşdirilməsi və dəstəyini təmin edir.
+    - generic [ref=e434]:
+      - generic [ref=e436]: Hazırsınız?
+      - heading "Biznesinizin yeni günü bu gün başlasın" [level=2] [ref=e439]
+      - paragraph [ref=e441]: Jey ERP demosu üçün bizimlə əlaqə saxlayın — sizə uyğun həlli birlikdə quraq.
+      - generic [ref=e443]:
+        - link "Demo sifariş et" [ref=e445] [cursor=pointer]:
+          - /url: /az/contact/
+          - text: Demo sifariş et
+          - img [ref=e446]
+        - link "Bizimlə əlaqə" [ref=e449] [cursor=pointer]:
+          - /url: /az/contact/
+      - paragraph [ref=e451]: E-poçt · telefon · WhatsApp · Telegram
+  - contentinfo [ref=e452]:
+    - generic [ref=e453]:
+      - generic [ref=e454]:
+        - generic [ref=e455]:
+          - img [ref=e456]
+          - generic [ref=e461]: Şərq Soft
+        - paragraph [ref=e462]: Uçot və ERP sistemlərinin tətbiqi üzrə ekspertlər. Jey ERP ilə biznesinizi nizama salırıq.
+        - paragraph [ref=e463]:
+          - img [ref=e464]
+          - text: Jey Soft-un rəsmi tərəfdaşı
+      - generic [ref=e469]:
+        - heading "Naviqasiya" [level=3] [ref=e470]
+        - list [ref=e471]:
+          - listitem [ref=e472]:
+            - link "Ana səhifə" [ref=e473] [cursor=pointer]:
+              - /url: /az/
+          - listitem [ref=e474]:
+            - link "Jey ERP" [ref=e475] [cursor=pointer]:
+              - /url: /az/jey-erp/
+          - listitem [ref=e476]:
+            - link "Haqqımızda" [ref=e477] [cursor=pointer]:
+              - /url: /az/about/
+          - listitem [ref=e478]:
+            - link "Tərəfdaşlıq" [ref=e479] [cursor=pointer]:
+              - /url: /az/partnership/
+          - listitem [ref=e480]:
+            - link "Əlaqə" [ref=e481] [cursor=pointer]:
+              - /url: /az/contact/
+      - generic [ref=e482]:
+        - heading "Əlaqə" [level=3] [ref=e483]
+        - list [ref=e484]:
+          - listitem [ref=e485]:
+            - link "info@sarqsoft.az" [ref=e486] [cursor=pointer]:
+              - /url: mailto:info@sarqsoft.az
+          - listitem [ref=e487]:
+            - link "+994 50 870 03 23" [ref=e488] [cursor=pointer]:
+              - /url: tel:+994508700323
+          - listitem [ref=e489]:
+            - link "WhatsApp" [ref=e490] [cursor=pointer]:
+              - /url: https://wa.me/994508700323
+            - link "Telegram" [ref=e491] [cursor=pointer]:
+              - /url: https://t.me/sarqsoft
+    - generic [ref=e492]:
+      - paragraph [ref=e493]: © 2026 Şərq Soft. Bütün hüquqlar qorunur.
+      - paragraph [ref=e494]: Bakıda hazırlanıb.
+  - alert [ref=e495]
