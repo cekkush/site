@@ -7,7 +7,7 @@ name: Deploy Şərq Soft (sarqsoft) to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/gallant-lamport-kf4f7e]
+    branches: [main, claude/gallant-lamport-kf4f7e, claude/amazing-dirac-t92k1h]
     paths:
       - 'sarqsoft/**'
       - '.github/workflows/deploy.yml'
