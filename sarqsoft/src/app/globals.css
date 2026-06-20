@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Manrope Variable', system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+
+  --void: #04060d;
+  --night: #070b18;
+  --deep: #0c1124;
+  --dusk: #131b34;
+
+  --gold: #ecb24c;
+  --gold-soft: #f6cf85;
+  --amber: #f6a04a;
+  --coral: #ff7d55;
+  --ember: #ff5a52;
+  --cream: #fff3d8;
+
+  --ink: #f5f2ea;
+  --mist: #b3bad2;
+  --slate: #79829f;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background-color: var(--void);
+}
+
+body {
+  background-color: var(--void);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  font-feature-settings: 'ss01', 'cv01';
+}
+
+::selection {
+  background: var(--amber);
+  color: #1a1206;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2746;
+  border-radius: 999px;
+  border: 3px solid var(--void);
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(
+      100deg,
+      #fff3d8 0%,
+      #f6cf85 28%,
+      #ecb24c 52%,
+      #ff7d55 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* film grain overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hairline-t {
+    @apply border-t border-white/10;
+  }
+  .hairline-b {
+    @apply border-b border-white/10;
+  }
+}
+
+/* Respect reduced-motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

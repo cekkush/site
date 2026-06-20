@@ -1,8 +1,16 @@
-name: Deploy to GitHub Pages
+name: Deploy Şərq Soft (sarqsoft) to GitHub Pages
+
+# Builds the Next.js static export in sarqsoft/ and publishes it to GitHub
+# Pages — free hosting. Served at https://<owner>.github.io/site/ (basePath
+# "/site"); set NEXT_PUBLIC_BASE_PATH to "" when moving to the sarqsoft.az
+# custom domain.
 
 on:
   push:
-    branches: [main, claude/amazing-dirac-t92k1h]
+    branches: [main, claude/gallant-lamport-kf4f7e]
+    paths:
+      - 'sarqsoft/**'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,17 +25,23 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sarqsoft
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: sarqsoft/package-lock.json
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /site
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: sarqsoft/out
 
   deploy:
     needs: build
