@@ -4,6 +4,10 @@
 
 ## 1. Status — what's done ✅
 
+**Live (free GitHub Pages):** https://cekkush.github.io/site/ → redirects to
+`/site/az/`. Deployed from this branch via `.github/workflows/deploy.yml`.
+(One-time setup done: the `github-pages` environment must allow this branch.)
+
 A complete, building, deployable v1:
 
 - **i18n** — AZ (default) + EN, full content for every page, static export.
