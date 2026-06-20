@@ -14,3 +14,11 @@ dist-ssr
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Claude Code session preview/debug artifacts
+.playwright-mcp/
+/hero-*.jpg
+/hero-*.jpeg
+/webgl-*.jpg
+/canvas-*.txt
+/composite*.txt
