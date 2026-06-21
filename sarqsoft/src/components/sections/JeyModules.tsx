@@ -1,11 +1,14 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
+import {useState} from 'react';
+import {motion} from 'framer-motion';
+import {useLocale, useTranslations} from 'next-intl';
 import {Section} from '@/components/ui/Section';
 import {SectionHeading} from '@/components/ui/SectionHeading';
-import {Card} from '@/components/ui/Card';
 import {Button} from '@/components/ui/Button';
 import {Reveal} from '@/components/motion/Reveal';
+import {RayMark} from '@/components/brand/RayMark';
+import {cn} from '@/lib/utils';
 
 type Module = {name: string; desc: string};
 
@@ -83,43 +86,163 @@ const ICONS = [
   </Glyph>,
 ];
 
+const RADIUS = 41; // % of the stage, from center
+const node = (i: number, total: number) => {
+  const a = ((-90 + (360 / total) * i) * Math.PI) / 180;
+  return {x: 50 + RADIUS * Math.cos(a), y: 50 + RADIUS * Math.sin(a)};
+};
+
 export function JeyModules() {
   const t = useTranslations('jey');
+  const locale = useLocale();
   const modules = t.raw('modules') as Module[];
+  const [active, setActive] = useState<number | null>(null);
+  const current = active != null ? modules[active] : null;
+  const hint =
+    locale === 'en'
+      ? 'Hover a module to see what it covers'
+      : 'Modulun nəyi əhatə etdiyini görmək üçün üzərinə gəlin';
 
   return (
     <Section>
-      <SectionHeading
-        kicker={t('kicker')}
-        title={t('title')}
-        intro={t('intro')}
-      />
+      <SectionHeading kicker={t('kicker')} title={t('title')} intro={t('intro')} />
 
-      <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
+      {/* ───────── DESKTOP — radial constellation around the Jey ERP core ───────── */}
+      <div className="mt-12 hidden lg:block">
+        <div className="relative mx-auto aspect-square w-full max-w-[560px]">
+          {/* slow-rotating dashed orbit */}
+          <motion.div
+            className="absolute inset-[9%] rounded-full border border-dashed border-gold/15"
+            animate={{rotate: 360}}
+            transition={{duration: 70, repeat: Infinity, ease: 'linear'}}
+            aria-hidden
+          />
+          <div className="absolute inset-[24%] rounded-full border border-white/[0.06]" aria-hidden />
+
+          {/* connecting spokes */}
+          <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden>
+            {modules.map((_, i) => {
+              const p = node(i, modules.length);
+              const on = active === i;
+              return (
+                <line
+                  key={i}
+                  x1="50"
+                  y1="50"
+                  x2={p.x}
+                  y2={p.y}
+                  stroke="currentColor"
+                  className={cn(
+                    'transition-colors duration-300',
+                    on ? 'text-gold/60' : 'text-white/10',
+                  )}
+                  strokeWidth={on ? 0.5 : 0.3}
+                />
+              );
+            })}
+          </svg>
+
+          {/* center core */}
+          <div className="absolute left-1/2 top-1/2 flex aspect-square w-[36%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-gold/25 bg-void/85 text-center shadow-[0_0_70px_-14px_rgba(236,178,76,0.55)] backdrop-blur">
+            <motion.div
+              className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(236,178,76,0.16),transparent_70%)]"
+              animate={{opacity: [0.5, 0.9, 0.5], scale: [1, 1.05, 1]}}
+              transition={{duration: 5, repeat: Infinity, ease: 'easeInOut'}}
+              aria-hidden
+            />
+            {current ? (
+              <>
+                <span className="relative text-gold">{ICONS[active!]}</span>
+                <span className="relative mt-1.5 px-3 font-display text-[15px] leading-tight text-ink">
+                  {current.name}
+                </span>
+              </>
+            ) : (
+              <>
+                <RayMark className="relative h-10 w-10" />
+                <span className="relative mt-1.5 font-display text-lg tracking-tight text-ink">
+                  Jey <span className="text-gold">ERP</span>
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* module nodes */}
+          {modules.map((mod, i) => {
+            const p = node(i, modules.length);
+            const on = active === i;
+            return (
+              <button
+                key={mod.name}
+                type="button"
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
+                onFocus={() => setActive(i)}
+                onBlur={() => setActive(null)}
+                aria-label={mod.name}
+                className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 outline-none"
+                style={{left: `${p.x}%`, top: `${p.y}%`}}
+              >
+                <motion.span
+                  animate={{y: [0, -6, 0]}}
+                  transition={{
+                    duration: 4 + (i % 4) * 0.4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: i * 0.2,
+                  }}
+                  className={cn(
+                    'flex h-16 w-16 items-center justify-center rounded-2xl border bg-void/70 backdrop-blur transition-all duration-300',
+                    on
+                      ? 'scale-110 border-gold/60 text-gold shadow-[0_0_30px_-6px_rgba(236,178,76,0.6)]'
+                      : 'border-white/12 text-mist group-hover:border-gold/40 group-hover:text-ink',
+                  )}
+                >
+                  {ICONS[i] ?? ICONS[0]}
+                </motion.span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* live description for the focused module */}
+        <div className="mx-auto mt-10 flex min-h-[3.5rem] max-w-xl items-center justify-center text-center">
+          {current ? (
+            <motion.p
+              key={active}
+              initial={{opacity: 0, y: 6}}
+              animate={{opacity: 1, y: 0}}
+              transition={{duration: 0.35}}
+              className="text-[15px] leading-relaxed text-mist"
+            >
+              <span className="font-display text-ink">{current.name}. </span>
+              {current.desc}
+            </motion.p>
+          ) : (
+            <p className="text-sm uppercase tracking-[0.2em] text-slate">{hint}</p>
+          )}
+        </div>
+      </div>
+
+      {/* ───────── MOBILE / TABLET — clean list (no heavy cards) ───────── */}
+      <div className="mt-12 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:hidden">
         {modules.map((mod, i) => (
-          <Reveal key={mod.name} delay={i * 0.06} y={20}>
-            <Card className="h-full">
-              {/* faint gold glow on hover */}
-              <div
-                className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(236,178,76,0.14)_0%,transparent_70%)] opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
-                aria-hidden
-              />
-              <span className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-gold/20 bg-gold/[0.06] text-gold transition-colors duration-300 group-hover:border-gold/40">
+          <Reveal key={mod.name} delay={i * 0.05} y={16}>
+            <div className="flex gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/[0.06] text-gold">
                 {ICONS[i] ?? ICONS[0]}
               </span>
-              <h3 className="relative mt-6 font-display text-lg text-ink">
-                {mod.name}
-              </h3>
-              <p className="relative mt-2 text-[15px] leading-relaxed text-mist">
-                {mod.desc}
-              </p>
-            </Card>
+              <div>
+                <h3 className="font-display text-lg text-ink">{mod.name}</h3>
+                <p className="mt-1 text-[15px] leading-relaxed text-mist">{mod.desc}</p>
+              </div>
+            </div>
           </Reveal>
         ))}
       </div>
 
       <Reveal delay={0.1}>
-        <div className="mt-12 flex flex-col items-center justify-center gap-5 text-center md:mt-14 md:flex-row md:gap-7">
+        <div className="mt-14 flex flex-col items-center justify-center gap-5 text-center md:flex-row md:gap-7">
           <p className="text-mist">{t('ctaText')}</p>
           <Button href="/jey-erp" variant="outline" withArrow>
             {t('ctaButton')}

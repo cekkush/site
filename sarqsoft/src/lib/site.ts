@@ -20,7 +20,6 @@ export const navItems = [
   {key: 'home', href: '/'},
   {key: 'jeyErp', href: '/jey-erp'},
   {key: 'services', href: '/services'},
-  {key: 'about', href: '/about'},
   {key: 'whyUs', href: '/why-us'},
   {key: 'configurator', href: '/configurator'},
   {key: 'contact', href: '/contact'},

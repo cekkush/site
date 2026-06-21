@@ -3,7 +3,6 @@
 import {useTranslations} from 'next-intl';
 import {Section} from '@/components/ui/Section';
 import {SectionHeading} from '@/components/ui/SectionHeading';
-import {Card} from '@/components/ui/Card';
 import {Reveal} from '@/components/motion/Reveal';
 
 type Item = {title: string; desc: string};
@@ -40,20 +39,26 @@ export function Expertise() {
         kicker={t('kicker')}
         title={t('title')}
         intro={t('intro')}
-        className="mb-14"
+        className="mb-12"
       />
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Horizontal divided rows — icon left, big ghost numeral right. */}
+      <div className="mx-auto max-w-4xl divide-y divide-white/[0.08]">
         {items.map((item, i) => (
-          <Reveal key={item.title} delay={i * 0.08}>
-            <Card className="h-full">
-              <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/25 bg-gold/[0.06] text-gold">
+          <Reveal key={item.title} delay={i * 0.06} y={16}>
+            <div className="group flex items-start gap-5 py-7 transition-colors sm:gap-7">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-gold/25 bg-gold/[0.06] text-gold transition-colors duration-300 group-hover:border-gold/50">
                 {icons[i % icons.length]}
               </span>
-              <h3 className="font-display text-lg text-ink">{item.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-mist">
-                {item.desc}
-              </p>
-            </Card>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-display text-lg text-ink">{item.title}</h3>
+                <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-mist">
+                  {item.desc}
+                </p>
+              </div>
+              <span className="ml-auto hidden font-display text-4xl tabular-nums text-white/[0.06] transition-colors duration-300 group-hover:text-gold/20 sm:block">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
           </Reveal>
         ))}
       </div>
