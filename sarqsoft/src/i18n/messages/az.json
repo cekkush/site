@@ -4,8 +4,6 @@
     "homeDescription": "Şərq Soft — biznes üçün Jey ERP tətbiqi: uçot, anbar, satış, CRM, POS, maaş və istehsalat. Məlumat xaosundan strateji nizama.",
     "jeyTitle": "Jey ERP — biznesiniz üçün vahid idarəetmə sistemi",
     "jeyDescription": "Jey ERP modulları: maliyyə uçotu, anbar, satış və CRM, POS, maaş, istehsalat. Şərq Soft tərəfindən tətbiq və dəstək.",
-    "aboutTitle": "Haqqımızda",
-    "aboutDescription": "Şərq Soft — uçot və ERP sistemlərinin tətbiqi üzrə ixtisaslaşmış İT şirkəti. Missiyamız — biznesinizi rəqəmsal nizama salmaq.",
     "whyTitle": "Niyə Şərq Soft",
     "whyDescription": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə və daimi dəstək.",
     "contactTitle": "Əlaqə",
@@ -212,24 +210,6 @@
     "ctaTitle": "Jey ERP-ni canlı görün",
     "ctaText": "Demo zamanı sistemi öz biznesiniz üzərində göstərə bilərik.",
     "ctaButton": "Demo sifariş et"
-  },
-  "aboutPage": {
-    "hero": {
-      "kicker": "Haqqımızda",
-      "title": "Biznesi rəqəmsal nizama salırıq",
-      "subtitle": "Şərq Soft — uçot və ERP tətbiqi üzrə ixtisaslaşmış İT şirkəti."
-    },
-    "missionTitle": "Missiyamız",
-    "missionText": "Azərbaycan bizneslərinə müasir idarəetmə alətlərini əlçatan etmək və onları rəqəmsal nizama qovuşdurmaq.",
-    "storyTitle": "Hekayəmiz",
-    "storyText": "İllərdir uçot və ERP sistemlərinin tətbiqi ilə məşğuluq. Onlarla şirkətin əməliyyatlarını sadələşdirmiş, biznesləri rəqəmsal nizama qovuşdurmuşuq.",
-    "valuesTitle": "Dəyərlərimiz",
-    "values": [
-      {"title": "Etibar", "desc": "Sözümüzün arxasında dururuq."},
-      {"title": "Ekspertiza", "desc": "Sahəni dərindən bilirik."},
-      {"title": "Şəffaflıq", "desc": "Hər addım aydın və açıqdır."},
-      {"title": "Davamlılıq", "desc": "Tətbiqdən sonra da yanınızdayıq."}
-    ]
   },
   "whyPage": {
     "hero": {

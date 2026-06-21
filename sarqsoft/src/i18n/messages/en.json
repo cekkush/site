@@ -4,8 +4,6 @@
     "homeDescription": "Şərq Soft — Jey ERP implementation for business: accounting, inventory, sales, CRM, POS, payroll and manufacturing. From data chaos to strategic order.",
     "jeyTitle": "Jey ERP — one management system for your business",
     "jeyDescription": "Jey ERP modules: finance & accounting, inventory, sales & CRM, POS, payroll, manufacturing. Implemented and supported by Şərq Soft.",
-    "aboutTitle": "About us",
-    "aboutDescription": "Şərq Soft — an IT company specialised in accounting and ERP implementation. Our mission — to bring digital order to your business.",
     "whyTitle": "Why Şərq Soft",
     "whyDescription": "Local expertise, end-to-end implementation, guaranteed results and ongoing support.",
     "contactTitle": "Contact",
@@ -212,24 +210,6 @@
     "ctaTitle": "See Jey ERP live",
     "ctaText": "During the demo we can show the system on your own business.",
     "ctaButton": "Book a demo"
-  },
-  "aboutPage": {
-    "hero": {
-      "kicker": "About us",
-      "title": "We bring digital order to business",
-      "subtitle": "Şərq Soft — an IT company specialised in accounting and ERP implementation."
-    },
-    "missionTitle": "Our mission",
-    "missionText": "To make modern management tools accessible to Azerbaijani businesses and bring them to digital order.",
-    "storyTitle": "Our story",
-    "storyText": "We have been implementing accounting and ERP systems for years. We have simplified operations for dozens of companies and brought their businesses to digital order.",
-    "valuesTitle": "Our values",
-    "values": [
-      {"title": "Trust", "desc": "We stand behind our word."},
-      {"title": "Expertise", "desc": "We know the field in depth."},
-      {"title": "Transparency", "desc": "Every step is clear and open."},
-      {"title": "Continuity", "desc": "We stay with you after go-live."}
-    ]
   },
   "whyPage": {
     "hero": {
