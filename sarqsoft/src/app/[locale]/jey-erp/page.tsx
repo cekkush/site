@@ -61,7 +61,7 @@ export default async function JeyErpPage({
             <Reveal key={feat.title} delay={i * 0.06}>
               <Card className="h-full">
                 <h3 className="font-display text-lg text-ink">{feat.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {feat.desc}
                 </p>
               </Card>
@@ -83,7 +83,7 @@ export default async function JeyErpPage({
             <Reveal key={item.title} delay={i * 0.08}>
               <Card className="h-full">
                 <h3 className="font-display text-lg text-ink">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {item.desc}
                 </p>
               </Card>

@@ -39,7 +39,7 @@ export function Services() {
                 <h3 className="mt-5 font-display text-xl leading-snug text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-mist">
+                <p className="mt-3 text-[15px] leading-relaxed text-mist">
                   {item.desc}
                 </p>
               </div>

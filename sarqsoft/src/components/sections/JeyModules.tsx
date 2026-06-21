@@ -110,7 +110,7 @@ export function JeyModules() {
               <h3 className="relative mt-6 font-display text-lg text-ink">
                 {mod.name}
               </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-mist">
+              <p className="relative mt-2 text-[15px] leading-relaxed text-mist">
                 {mod.desc}
               </p>
             </Card>

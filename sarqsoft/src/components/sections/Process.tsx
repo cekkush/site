@@ -59,7 +59,7 @@ export function Process() {
                 <h3 className="mt-6 font-display text-xl text-ink">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {step.desc}
                 </p>
               </motion.li>
@@ -99,7 +99,7 @@ export function Process() {
               </span>
               <div className="pt-1.5">
                 <h3 className="font-display text-lg text-ink">{step.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-mist">
+                <p className="mt-1.5 text-[15px] leading-relaxed text-mist">
                   {step.desc}
                 </p>
               </div>

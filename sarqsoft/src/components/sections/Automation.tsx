@@ -57,8 +57,8 @@ export function Automation() {
               <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gold/25 bg-gold/[0.06] text-gold">
                 {icons[i % icons.length]}
               </span>
-              <h3 className="font-display text-base text-ink">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-mist">
+              <h3 className="font-display text-lg text-ink">{item.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-mist">
                 {item.desc}
               </p>
             </Card>

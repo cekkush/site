@@ -309,5 +309,8 @@
       {"title": "Warehouse", "desc": "Full automation of warehouse accounting."},
       {"title": "Reporting", "desc": "Management, financial and tax reporting."}
     ]
+  },
+  "marquee": {
+    "items": ["Accounting", "Inventory", "POS", "CRM", "Payroll & HR", "Tax reports", "Cloud", "Integration", "Data import", "Manufacturing", "Analytics", "Automation"]
   }
 }

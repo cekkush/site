@@ -75,7 +75,7 @@ export default async function ServicesPage({
                 <h3 className="mt-4 font-display text-lg text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {item.desc}
                 </p>
               </Card>

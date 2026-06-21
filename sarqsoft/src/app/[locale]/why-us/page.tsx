@@ -73,7 +73,7 @@ export default async function WhyUsPage({
             <Reveal key={b.title} delay={i * 0.07}>
               <Card className="h-full">
                 <h3 className="font-display text-lg text-ink">{b.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {b.desc}
                 </p>
               </Card>

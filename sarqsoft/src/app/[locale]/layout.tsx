@@ -13,6 +13,8 @@ import {withBase} from '@/lib/utils';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import {Header} from '@/components/layout/Header';
 import {Footer} from '@/components/layout/Footer';
+import {Aurora} from '@/components/motion/Aurora';
+import {ScrollFX} from '@/components/motion/ScrollFX';
 // Self-hosted variable fonts (bundled, latin-ext covers Azerbaijani glyphs).
 import '@fontsource-variable/manrope/wght.css';
 import '@fontsource-variable/sora/wght.css';
@@ -74,10 +76,14 @@ export default async function LocaleLayout({
           >
             Skip to content
           </a>
+          <Aurora />
           <SmoothScroll>
-            <Header />
-            <main id="main">{children}</main>
-            <Footer />
+            <ScrollFX />
+            <div className="relative z-10">
+              <Header />
+              <main id="main">{children}</main>
+              <Footer />
+            </div>
           </SmoothScroll>
         </NextIntlClientProvider>
       </body>

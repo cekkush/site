@@ -1,5 +1,6 @@
 import {setRequestLocale} from 'next-intl/server';
 import {Hero} from '@/components/hero/Hero';
+import {Marquee} from '@/components/sections/Marquee';
 import {ChaosToOrder} from '@/components/sections/ChaosToOrder';
 import {Services} from '@/components/sections/Services';
 import {Automation} from '@/components/sections/Automation';
@@ -16,6 +17,7 @@ export default function HomePage({params}: {params: {locale: string}}) {
   return (
     <>
       <Hero />
+      <Marquee />
       <ChaosToOrder />
       <Services />
       <Automation />

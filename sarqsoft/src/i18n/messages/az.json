@@ -309,5 +309,8 @@
       {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},
       {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları."}
     ]
+  },
+  "marquee": {
+    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Maaş & HR", "Vergi hesabatları", "Bulud", "İnteqrasiya", "Məlumat idxalı", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
   }
 }

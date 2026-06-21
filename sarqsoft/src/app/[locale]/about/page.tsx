@@ -70,7 +70,7 @@ export default async function AboutPage({
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-4 font-display text-lg text-ink">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-mist">
+                <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {v.desc}
                 </p>
               </Card>
