@@ -9,7 +9,11 @@
     "whyTitle": "Niyə Şərq Soft",
     "whyDescription": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə və daimi dəstək.",
     "contactTitle": "Əlaqə",
-    "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram."
+    "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram.",
+    "configuratorTitle": "Həll konfiquratoru — fərdi kommersiya təklifi",
+    "configuratorDescription": "Bir neçə addımda biznesiniz üçün Jey ERP həllini yığın və fərdi kommersiya təklifi (KP) alın.",
+    "proposalTitle": "Fərdi kommersiya təklifi",
+    "proposalDescription": "Şərq Soft — sizin üçün hazırlanmış Jey ERP həlli, mərhələlər və təxmini investisiya."
   },
   "nav": {
     "home": "Ana səhifə",
@@ -18,6 +22,7 @@
     "about": "Haqqımızda",
     "whyUs": "Niyə biz",
     "contact": "Əlaqə",
+    "configurator": "Konfiqurator",
     "cta": "Demo sifariş et"
   },
   "common": {
@@ -26,6 +31,11 @@
     "bookDemo": "Demo sifariş et",
     "getInTouch": "Əlaqə saxla",
     "backHome": "Ana səhifəyə qayıt"
+  },
+  "configurator": {
+    "kicker": "Həll konfiquratoru",
+    "title": "Biznesiniz üçün həlli yığın",
+    "subtitle": "Sahənizi, modulları və xidmətləri seçin — sistem dərhal fərdi kommersiya təklifi, mərhələlər və təxmini investisiya hazırlasın."
   },
   "hero": {
     "kicker": "Jey ERP tətbiqi üzrə ekspertlər",

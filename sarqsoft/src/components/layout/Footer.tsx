@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-night">
+    <footer className="no-print relative overflow-hidden border-t border-white/10 bg-night">
       {/* East glow */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-east-glow opacity-60" />
 

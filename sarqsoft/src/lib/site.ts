@@ -22,5 +22,6 @@ export const navItems = [
   {key: 'services', href: '/services'},
   {key: 'about', href: '/about'},
   {key: 'whyUs', href: '/why-us'},
+  {key: 'configurator', href: '/configurator'},
   {key: 'contact', href: '/contact'},
 ] as const;

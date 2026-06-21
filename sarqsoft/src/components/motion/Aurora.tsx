@@ -6,7 +6,7 @@ export function Aurora() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="no-print pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
       <div
         className="absolute -left-[15%] top-[6%] h-[38rem] w-[38rem] animate-aurora rounded-full bg-[radial-gradient(circle,rgba(246,160,74,0.09),transparent_62%)] blur-2xl [will-change:transform,opacity]"

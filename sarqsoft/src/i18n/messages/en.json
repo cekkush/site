@@ -9,7 +9,11 @@
     "whyTitle": "Why Şərq Soft",
     "whyDescription": "Local expertise, end-to-end implementation, guaranteed results and ongoing support.",
     "contactTitle": "Contact",
-    "contactDescription": "Get in touch for a Jey ERP demo. Email, phone, WhatsApp, Telegram."
+    "contactDescription": "Get in touch for a Jey ERP demo. Email, phone, WhatsApp, Telegram.",
+    "configuratorTitle": "Solution configurator — personal commercial proposal",
+    "configuratorDescription": "Assemble a Jey ERP solution for your business in a few steps and get a personalized commercial proposal.",
+    "proposalTitle": "Personal commercial proposal",
+    "proposalDescription": "Şərq Soft — a Jey ERP solution prepared for you, with phases and an indicative investment."
   },
   "nav": {
     "home": "Home",
@@ -18,6 +22,7 @@
     "about": "About",
     "whyUs": "Why us",
     "contact": "Contact",
+    "configurator": "Configurator",
     "cta": "Book a demo"
   },
   "common": {
@@ -26,6 +31,11 @@
     "bookDemo": "Book a demo",
     "getInTouch": "Get in touch",
     "backHome": "Back to home"
+  },
+  "configurator": {
+    "kicker": "Solution configurator",
+    "title": "Assemble the solution for your business",
+    "subtitle": "Pick your industry, modules and services — and get an instant personalized proposal with phases and an indicative investment."
   },
   "hero": {
     "kicker": "Jey ERP implementation experts",
