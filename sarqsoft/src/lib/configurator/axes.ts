@@ -278,6 +278,19 @@ export const niches: Niche[] = [
       m('fu-variant', {az: 'Məhsul modifikasiyaları', en: 'Product modifications'}, {az: 'Variantlar/opsiyalar (rəng/parça/ölçü).', en: 'Variants/options (colour/fabric/size).'}, 2, 1, 300, 700),
     ],
   },
+  {
+    id: 'general', icon: 'sales', group: 'goods',
+    name: {az: 'Qarışıq mallar / ümumi ticarət', en: 'Mixed goods / general trade'},
+    desc: {az: 'Geniş çeşid — topdan və pərakəndə qarışıq mal satışı.', en: 'Wide assortment — wholesale and retail of mixed goods.'},
+    spheres: ['warehouse', 'sales', 'purchase', 'accounting', 'tax', 'finance'],
+    integrations: ['int-banks', 'int-gov', 'int-excel'],
+    modules: [
+      m('gm-assort', {az: 'Geniş çeşid və kateqoriyalar', en: 'Wide assortment & categories'}, {az: 'Minlərlə mövqe, kateqoriyalar və ABC təhlili.', en: 'Thousands of items, categories and ABC analysis.'}, 3, 1, 350, 850),
+      m('gm-pricing', {az: 'Topdan və pərakəndə qiymət səviyyələri', en: 'Wholesale & retail price tiers'}, {az: 'Müştəri qrupuna görə çoxsəviyyəli qiymət və endirim.', en: 'Multi-tier pricing and discounts by customer group.'}, 2, 1, 300, 700),
+      m('gm-supplier', {az: 'Çoxsaylı təchizatçı və idxal', en: 'Multi-supplier & import'}, {az: 'Müxtəlif təchizatçılar, idxal və maya dəyəri.', en: 'Many suppliers, import and landed cost.'}, 3, 1, 350, 850),
+      m('gm-turnover', {az: 'Dövriyyə və likvidlik təhlili', en: 'Turnover & liquidity analysis'}, {az: 'Tez və yavaş satılan mallar, ölü qalıqlar.', en: 'Fast and slow movers, dead stock.'}, 2, 1, 300, 700),
+    ],
+  },
   /* ---- tech & heavy ---- */
   {
     id: 'construction-dev', icon: 'production', group: 'tech',
@@ -536,6 +549,7 @@ export const nicheActivities: Record<string, string[]> = {
   fashion: ['retail', 'wholesale', 'distribution', 'ecommerce', 'manufacturing', 'foreign'],
   electronics: ['retail', 'wholesale', 'ecommerce', 'repair', 'distribution', 'foreign'],
   furniture: ['retail', 'manufacturing', 'ecommerce', 'wholesale'],
+  general: ['retail', 'wholesale', 'distribution', 'ecommerce', 'foreign', 'logistics'],
   'construction-dev': ['construction', 'services', 'rental'],
   auto: ['retail', 'repair', 'wholesale', 'services'],
   oilgas: ['services', 'construction', 'logistics', 'manufacturing'],
