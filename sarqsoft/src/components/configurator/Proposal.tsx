@@ -88,12 +88,14 @@ export function Proposal({
   const selectedSpheres = sel.spheres
     .map((id) => sphereById.get(id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
-  const activity = sel.activity ? activityById.get(sel.activity) : undefined;
+  const activityNames = sel.activities
+    .map((id) => pick(activityById.get(id)?.name, locale))
+    .filter(Boolean);
   const niche = sel.niche ? nicheById.get(sel.niche) : undefined;
   const nicheModules = niche
     ? niche.modules.filter((mm) => sel.modules.includes(mm.id))
     : [];
-  const context = [activity && pick(activity.name, locale), niche && pick(niche.name, locale)]
+  const context = [...activityNames, niche && pick(niche.name, locale)]
     .filter(Boolean)
     .join(' · ');
 

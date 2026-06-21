@@ -24,7 +24,7 @@ function b64urlDecode(s: string): string {
 export function encodeSelections(sel: Selections): string {
   const compact = {
     i: sel.industry,
-    a: sel.activity,
+    a: sel.activities,
     ni: sel.niche,
     z: sel.size,
     u: sel.users,
@@ -51,7 +51,7 @@ export function decodeSelections(str: string): Selections | null {
     return {
       ...base,
       industry: c.i as string | undefined,
-      activity: c.a as string | undefined,
+      activities: Array.isArray(c.a) ? (c.a as string[]) : c.a ? [c.a as string] : [],
       niche: c.ni as string | undefined,
       size: c.z as Selections['size'],
       users: (c.u as number) ?? base.users,

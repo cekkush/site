@@ -72,6 +72,12 @@ export function Hero() {
     };
   }, []);
 
+  const scrollDown = () => {
+    const next = sectionRef.current?.nextElementSibling as HTMLElement | null;
+    if (next) next.scrollIntoView({behavior: 'smooth', block: 'start'});
+    else window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -156,7 +162,12 @@ export function Hero() {
         transition={{delay: 1.2, duration: 1}}
         className="absolute inset-x-0 bottom-7 z-10 flex justify-center"
       >
-        <span className="flex flex-col items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-slate">
+        <button
+          type="button"
+          onClick={scrollDown}
+          aria-label={t('scroll')}
+          className="flex cursor-pointer flex-col items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-slate transition-colors hover:text-gold"
+        >
           {t('scroll')}
           <span className="relative h-9 w-px overflow-hidden bg-white/15">
             <motion.span
@@ -165,7 +176,7 @@ export function Hero() {
               transition={{repeat: Infinity, duration: 1.8, ease: 'easeInOut'}}
             />
           </span>
-        </span>
+        </button>
       </motion.div>
     </section>
   );

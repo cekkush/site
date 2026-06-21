@@ -37,7 +37,7 @@ export function buildSummary(
     `Email: ${sel.contact.email || '—'}`,
     sel.contact.messenger ? `Messenger: ${sel.contact.messenger}` : '',
     '',
-    `${L ? 'Activity' : 'Fəaliyyət'}: ${pick(activityById.get(sel.activity ?? '')?.name, locale) || '—'}`,
+    `${L ? 'Activity' : 'Fəaliyyət'}: ${sel.activities.map((id) => pick(activityById.get(id)?.name, locale)).filter(Boolean).join(', ') || '—'}`,
     `${L ? 'Niche' : 'Sahə/niş'}: ${pick(nicheById.get(sel.niche ?? '')?.name, locale) || '—'}`,
     `${L ? 'Size' : 'Ölçü'}: ${sel.size ?? '—'} · ${L ? 'users' : 'istifadəçi'}: ${sel.users} · ${L ? 'branches' : 'filial'}: ${sel.branches}`,
     `${L ? 'Current system' : 'Mövcud sistem'}: ${sel.current ?? '—'}`,
