@@ -9,7 +9,7 @@
     "contactTitle": "Əlaqə",
     "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram.",
     "configuratorTitle": "Həll konfiquratoru — fərdi kommersiya təklifi",
-    "configuratorDescription": "Bir neçə addımda biznesiniz üçün Jey ERP həllini yığın və fərdi kommersiya təklifi (KP) alın.",
+    "configuratorDescription": "Bir neçə addımda biznesiniz üçün Jey ERP həllini yığın və fərdi kommersiya təklifi alın.",
     "proposalTitle": "Fərdi kommersiya təklifi",
     "proposalDescription": "Şərq Soft — sizin üçün hazırlanmış Jey ERP həlli, mərhələlər və təxmini investisiya."
   },
@@ -155,7 +155,7 @@
     ],
     "casesTitle": "Seçilmiş layihələr",
     "cases": [
-      {"company": "Pərakəndə şəbəkə", "sector": "Retail · 12 filial", "result": "Anbar uçotu mərkəzləşdirildi, inventar səhvləri kəskin azaldı."},
+      {"company": "Pərakəndə şəbəkə", "sector": "Pərakəndə · 12 filial", "result": "Anbar uçotu mərkəzləşdirildi, inventar səhvləri kəskin azaldı."},
       {"company": "Restoran qrupu", "sector": "HoReCa", "result": "Kalkulyasiya və maya dəyəri tam avtomatlaşdırıldı."},
       {"company": "Distribusiya şirkəti", "sector": "Topdan satış", "result": "Satış və debitor nəzarəti vahid sistemə keçdi."}
     ],
@@ -204,7 +204,7 @@
     "whyTitle": "Niyə Şərq Soft ilə?",
     "why": [
       {"title": "Tam dövr tətbiq", "desc": "Təhlildən canlı işə keçidə qədər bütün mərhələlər bir əldən."},
-      {"title": "Sahə təcrübəsi", "desc": "Retail, HoReCa, distribusiya və istehsalatda təcrübə."},
+      {"title": "Sahə təcrübəsi", "desc": "Pərakəndə, HoReCa, distribusiya və istehsalatda təcrübə."},
       {"title": "Sonadək dəstək", "desc": "Tətbiqdən sonra da yanınızdayıq."}
     ],
     "ctaTitle": "Jey ERP-ni canlı görün",
@@ -223,7 +223,7 @@
     "benefits": [
       {"title": "Lokal ekspertiza", "desc": "Yerli komanda, Azərbaycan dilində dəstək."},
       {"title": "Başdan-sona tətbiq", "desc": "Təhlil, quraşdırma, köçürmə, təlim və dəstək — bir əldən."},
-      {"title": "Sahə təcrübəsi", "desc": "Retail, HoReCa, distribusiya və istehsalat üzrə təcrübə."},
+      {"title": "Sahə təcrübəsi", "desc": "Pərakəndə, HoReCa, distribusiya və istehsalat üzrə təcrübə."},
       {"title": "Zəmanətli nəticə", "desc": "Şəffaf proses və ölçüləbilən nəticə."}
     ],
     "ctaTitle": "Layihənizi müzakirə edək",
@@ -263,7 +263,7 @@
       {"title": "Maliyyə və vergi hesabatları", "desc": "Maliyyə və vergi hesabatlarının tam avtomatlaşdırılması."},
       {"title": "Vergi formaları", "desc": "Vergi bəyannamə formalarının avtomatik doldurulması."},
       {"title": "Anbar", "desc": "Mədaxil-məxaric, qalıqlar və inventarlaşmanın avtomatlaşdırılması."},
-      {"title": "Kadr uçotu (HR)", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
+      {"title": "Kadr uçotu", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
       {"title": "Satış şöbəsi", "desc": "Satış, sifariş və CRM proseslərinin avtomatlaşdırılması."},
       {"title": "Satınalma və təchizat", "desc": "Satınalma sifarişləri, təchizatçılar və ödənişlərə nəzarət."},
       {"title": "İdarəetmə hesabatları", "desc": "Canlı idarəetmə paneli və avtomatik hesabatlar."}
@@ -274,7 +274,7 @@
     "title": "Yerli ekspertiza, başdan-sona tətbiq",
     "intro": "Azərbaycan mühasibatlığını dərindən bilirik və bütün infrastrukturu sizin üçün qururuq.",
     "items": [
-      {"title": "Azərbaycan mühasibatlığı", "desc": "AR qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
+      {"title": "Azərbaycan mühasibatlığı", "desc": "Azərbaycan Respublikasının qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
       {"title": "İstənilən mənbədən idxal", "desc": "Excel, saytlar, digər uçot proqramları və dövlət portallarından məlumat idxalı."},
       {"title": "Bulud infrastrukturu", "desc": "Şirkətiniz üçün buludda tam uçot avtomatlaşdırma infrastrukturunu işə salırıq."},
       {"title": "Təlim və adaptasiya", "desc": "Komandanızı proqramda işləməyə öyrədirik."}
@@ -292,7 +292,7 @@
     "scopeText": "Biznesin hər şöbəsini sistemə köçürür və işə salırıq.",
     "scope": [
       {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, hesabatlar."},
-      {"title": "Kadr (HR)", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
+      {"title": "Kadrlar", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
       {"title": "Satınalma / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
       {"title": "Satış", "desc": "Satış şöbəsi və CRM proseslərinin tətbiqi."},
       {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},

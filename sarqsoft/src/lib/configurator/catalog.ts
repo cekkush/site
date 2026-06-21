@@ -45,7 +45,7 @@ export const spheres: Sphere[] = [
       m('tax-vat', {az: 'ƏDV uçotu', en: 'VAT accounting'}, {az: 'ƏDV-nin tam uçotu və hesabatı.', en: 'Full VAT accounting and reporting.'}, 3, 1, 350, 800),
       m('tax-eqaime', {az: 'e-Qaimə inteqrasiyası', en: 'e-Invoice (e-Qaimə)'}, {az: 'Elektron qaimələr birbaşa sistemdən.', en: 'Electronic invoices straight from the system.'}, 4, 1, 500, 1100),
       m('tax-portal', {az: 'e-taxes.gov.az inteqrasiyası', en: 'e-taxes.gov.az integration'}, {az: 'İnternet Vergi İdarəsi ilə birbaşa mübadilə.', en: 'Direct exchange with the tax portal.'}, 4, 2, 600, 1300),
-      m('tax-decl', {az: 'Bəyannamələrin avtomatik doldurulması', en: 'Auto-filled tax declarations'}, {az: 'Mənfəət, sadələşdirilmiş, ödəmə mənbəyi və s.', en: 'Profit, simplified, withholding, etc.'}, 4, 2, 600, 1300),
+      m('tax-decl', {az: 'Bəyannamələrin avtomatik doldurulması', en: 'Auto-filled tax declarations'}, {az: 'Mənfəət, sadələşdirilmiş, ödəmə mənbəyi və sair.', en: 'Profit, simplified, withholding, etc.'}, 4, 2, 600, 1300),
       m('tax-calendar', {az: 'Vergi təqvimi və xəbərdarlıqlar', en: 'Tax calendar & reminders'}, {az: 'Müddətlər üzrə avtomatik xatırlatmalar.', en: 'Automatic deadline reminders.'}, 1, 1, 150, 400),
     ],
   },
@@ -299,7 +299,7 @@ export const deployments: OptionItem[] = [
 ];
 
 export const urgencies: OptionItem[] = [
-  {id: 'asap', name: {az: 'Tez (ASAP)', en: 'ASAP'}, hint: {az: 'Prioritet icra', en: 'Priority delivery'}, factor: 1.25},
+  {id: 'asap', name: {az: 'Ən qısa müddətdə', en: 'ASAP'}, hint: {az: 'Prioritetli icra', en: 'Priority delivery'}, factor: 1.25},
   {id: 'normal', name: {az: '1–3 ay', en: '1–3 months'}, factor: 1},
   {id: 'flexible', name: {az: 'Çevik', en: 'Flexible'}, hint: {az: 'Tələsmirik', en: 'No rush'}, factor: 0.95},
 ];
