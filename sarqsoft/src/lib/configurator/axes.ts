@@ -519,3 +519,35 @@ export const nicheGroupLabels: Record<string, {az: string; en: string}> = {
   tech: {az: 'Texniki və ağır', en: 'Technical & heavy'},
   service: {az: 'Xidmət və digər', en: 'Service & other'},
 };
+
+/* ================================================================== *
+ *  COMPATIBILITY — which activities make sense for each niche.
+ *  This is what makes the wizard "smart": impossible pairs (e.g.
+ *  agriculture × pharmacy) can't be chosen, while sensible cross-
+ *  operations (a manufacturer that also sells retail) can.
+ * ================================================================== */
+
+export const nicheActivities: Record<string, string[]> = {
+  pharmacy: ['retail', 'wholesale', 'distribution', 'ecommerce', 'foreign'],
+  clinic: ['services', 'subscriptions'],
+  dental: ['services', 'subscriptions'],
+  beauty: ['services', 'retail', 'subscriptions'],
+  food: ['retail', 'wholesale', 'distribution', 'ecommerce', 'processing', 'agro', 'horeca', 'foreign'],
+  fashion: ['retail', 'wholesale', 'distribution', 'ecommerce', 'manufacturing', 'foreign'],
+  electronics: ['retail', 'wholesale', 'ecommerce', 'repair', 'distribution', 'foreign'],
+  furniture: ['retail', 'manufacturing', 'ecommerce', 'wholesale'],
+  'construction-dev': ['construction', 'services', 'rental'],
+  auto: ['retail', 'repair', 'wholesale', 'services'],
+  oilgas: ['services', 'construction', 'logistics', 'manufacturing'],
+  it: ['services', 'subscriptions'],
+  realestate: ['rental', 'services'],
+  education: ['services', 'subscriptions'],
+  jewelry: ['retail', 'manufacturing', 'wholesale', 'ecommerce', 'foreign'],
+  nonprofit: ['government', 'services'],
+};
+
+/** Compatible activity ids for a niche (all activities when no niche set). */
+export function activitiesForNiche(nicheId?: string): string[] {
+  if (!nicheId) return activities.map((a) => a.id);
+  return nicheActivities[nicheId] ?? activities.map((a) => a.id);
+}

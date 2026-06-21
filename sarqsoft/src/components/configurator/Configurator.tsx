@@ -19,6 +19,7 @@ import {
 } from '@/lib/configurator/catalog';
 import {
   activities,
+  activitiesForNiche,
   activityById,
   activityGroupLabels,
   nicheById,
@@ -49,7 +50,7 @@ import {
 } from './parts';
 import {LiveSummary, Proposal} from './Proposal';
 
-const STORAGE = 'sarqsoft.configurator.v1';
+const STORAGE = 'sarqsoft.configurator.v2';
 
 export function Configurator() {
   const locale = useLocale();
@@ -132,40 +133,28 @@ export function Configurator() {
       return {...s, modules, spheres: spheresArr};
     });
 
-  // Axis A — activity preset (replaces base scope, then re-applies any niche)
-  const applyActivity = (id: string) =>
+  // Axis B (niche, single) — picking a niche prunes activities that don't fit
+  // it and rebuilds the preset; a sensible primary activity is auto-selected.
+  const selectNiche = (id: string) =>
     setSel((s) => {
-      const a = activityById.get(id);
-      if (!a) return {...s, activity: id};
-      const base: Selections = {
-        ...s,
-        activity: id,
-        spheres: [...a.spheres],
-        modules: [...a.modules],
-        integrations: [...a.integrations],
-        services: [...a.services],
-      };
-      return s.niche ? withNiche(base, s.niche) : base;
+      if (s.niche === id) {
+        return {...s, niche: undefined, ...derivePreset(s.activities, undefined)};
+      }
+      const compat = activitiesForNiche(id);
+      let nextActivities = s.activities.filter((a) => compat.includes(a));
+      if (nextActivities.length === 0 && compat.length) nextActivities = [compat[0]];
+      return {...s, niche: id, activities: nextActivities, ...derivePreset(nextActivities, id)};
     });
 
-  // Axis B — niche adds specialised modules + nudges relevant spheres on
-  const applyNiche = (id: string) =>
+  // Axis A (activities, multi) — each toggle rebuilds the merged preset so the
+  // scope is always the union of every chosen operating model + the niche.
+  const toggleActivity = (id: string) =>
     setSel((s) => {
-      const n = nicheById.get(id);
-      if (!n) return s;
-      if (s.niche === id) {
-        const nm = n.modules.map((mm) => mm.id);
-        return {...s, niche: undefined, modules: s.modules.filter((m) => !nm.includes(m))};
-      }
-      let base = s;
-      if (s.niche) {
-        const prev = nicheById.get(s.niche);
-        if (prev) {
-          const pm = prev.modules.map((mm) => mm.id);
-          base = {...s, modules: s.modules.filter((m) => !pm.includes(m))};
-        }
-      }
-      return withNiche({...base, niche: id}, id);
+      const has = s.activities.includes(id);
+      const nextActivities = has
+        ? s.activities.filter((x) => x !== id)
+        : [...s.activities, id];
+      return {...s, activities: nextActivities, ...derivePreset(nextActivities, s.niche)};
     });
 
   // smart sub-question — each option toggles concrete module ids
@@ -209,8 +198,8 @@ export function Configurator() {
 
   /* ---- steps ---- */
   const steps = [
-    {id: 'activity', title: T('Fəaliyyət növü', 'Activity type'), sub: T('Biznesiniz necə işləyir? Bu, hazır şablon qurur.', 'How does your business operate? This builds a preset.')},
-    {id: 'niche', title: T('Sahə / niş', 'Niche'), sub: T('Hansı sahədəsiniz? Sahəyə özəl modullar əlavə edirik.', 'Which vertical? We add niche-specific modules.')},
+    {id: 'niche', title: T('Sahə / niş', 'Industry / niche'), sub: T('Hansı sahədəsiniz? Bir seçim — yalnız uyğun fəaliyyət növləri təklif olunur.', 'Which industry are you in? One pick — only sensible operating models are then offered.')},
+    {id: 'activity', title: T('Necə işləyirsiniz?', 'How you operate'), sub: T('Biznes model(lər)iniz — bir neçəsini seçə bilərsiniz (məs. istehsal + pərakəndə).', 'Your operating model(s) — pick one or more (e.g. manufacturing + retail).')},
     {id: 'profile', title: T('Şirkət profili', 'Company profile'), sub: T('Bir neçə sual həllin miqyasını dəqiqləşdirir.', 'A few questions to size the solution.')},
     {id: 'spheres', title: T('Avtomatlaşdırma sahələri', 'Areas to automate'), sub: T('Hansı istiqamətləri əhatə edək?', 'Which directions should we cover?')},
     {id: 'modules', title: T('Modulları dəqiqləşdirin', 'Refine the modules'), sub: T('Seçilmiş sahələr üzrə dəqiq funksiyalar.', 'Exact functions within the chosen areas.')},
@@ -224,7 +213,7 @@ export function Configurator() {
   const canNext = useMemo(() => {
     switch (steps[step].id) {
       case 'activity':
-        return Boolean(sel.activity);
+        return sel.activities.length > 0;
       case 'profile':
         return Boolean(sel.size);
       case 'spheres':
@@ -485,11 +474,27 @@ export function Configurator() {
   /* ---------- step bodies ---------- */
   function renderStep() {
     switch (steps[step].id) {
-      case 'activity':
+      case 'activity': {
+        const allowed = sel.niche ? new Set(activitiesForNiche(sel.niche)) : null;
+        const nicheName = sel.niche ? pick(nicheById.get(sel.niche)?.name, locale) : '';
         return (
           <div className="space-y-7">
+            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-[13px] text-mist">
+              {allowed
+                ? T(
+                    `«${nicheName}» üçün məntiqli fəaliyyət növləri. Bir neçəsini seçə bilərsiniz.`,
+                    `Operating models that make sense for “${nicheName}”. You can pick several.`,
+                  )
+                : T(
+                    'Biznesiniz necə işləyir? Bir neçəsini seçə bilərsiniz.',
+                    'How does your business operate? You can pick several.',
+                  )}
+            </p>
             {(['trade', 'production', 'service', 'other'] as const).map((g) => {
-              const list = activities.filter((a) => a.group === g);
+              const list = activities.filter(
+                (a) => a.group === g && (!allowed || allowed.has(a.id)),
+              );
+              if (!list.length) return null;
               return (
                 <div key={g}>
                   <p className="mb-3 text-xs uppercase tracking-[0.2em] text-gold/80">
@@ -499,8 +504,8 @@ export function Configurator() {
                     {list.map((a) => (
                       <ChoiceCard
                         key={a.id}
-                        selected={sel.activity === a.id}
-                        onClick={() => applyActivity(a.id)}
+                        selected={sel.activities.includes(a.id)}
+                        onClick={() => toggleActivity(a.id)}
                         icon={a.icon}
                         title={pick(a.name, locale)}
                         desc={pick(a.desc, locale)}
@@ -512,14 +517,15 @@ export function Configurator() {
             })}
           </div>
         );
+      }
 
       case 'niche':
         return (
           <div className="space-y-7">
             <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-[13px] text-mist">
               {T(
-                'İstəyə görə: sahənizi seçsəniz, ona özəl modullar (məs. resept, VIN, smeta) avtomatik əlavə olunur. Keçə də bilərsiniz.',
-                'Optional: pick your vertical and niche-specific modules (e.g. prescriptions, VIN, estimates) are added automatically. You can also skip.',
+                'Sahənizi seçin — ona özəl modullar (resept, VIN, smeta…) əlavə olunur və növbəti addımda yalnız uyğun fəaliyyət növləri təklif olunur. Dəqiq uyğun gəlmirsə, bu addımı keçə bilərsiniz.',
+                'Pick your industry — niche modules (prescriptions, VIN, estimates…) get added and the next step offers only sensible operating models. If none fits exactly, you can skip this step.',
               )}
             </p>
             {(['health', 'goods', 'tech', 'service'] as const).map((g) => {
@@ -534,7 +540,7 @@ export function Configurator() {
                       <ChoiceCard
                         key={n.id}
                         selected={sel.niche === n.id}
-                        onClick={() => applyNiche(n.id)}
+                        onClick={() => selectNiche(n.id)}
                         icon={n.icon}
                         title={pick(n.name, locale)}
                         desc={pick(n.desc, locale)}
@@ -949,14 +955,34 @@ function groupLabel(g: string, l: 'az' | 'en') {
   return map[g]?.[l] ?? g;
 }
 
-/** Merge a niche's specialised modules + relevant spheres into a selection. */
-function withNiche(s: Selections, nicheId: string): Selections {
-  const n = nicheById.get(nicheId);
-  if (!n) return s;
+/** Build the merged preset (spheres/modules/integrations/services) from the
+ *  selected activities + niche. Recomputed whenever either axis changes, so the
+ *  scope always reflects a sensible, conflict-free combination. */
+function derivePreset(activityIds: string[], nicheId?: string) {
+  const spheres = new Set<string>();
+  const modules = new Set<string>();
+  const integrations = new Set<string>();
+  const servicesSet = new Set<string>();
+  for (const id of activityIds) {
+    const a = activityById.get(id);
+    if (!a) continue;
+    a.spheres.forEach((x) => spheres.add(x));
+    a.modules.forEach((x) => modules.add(x));
+    a.integrations.forEach((x) => integrations.add(x));
+    a.services.forEach((x) => servicesSet.add(x));
+  }
+  if (nicheId) {
+    const n = nicheById.get(nicheId);
+    if (n) {
+      n.spheres.forEach((x) => spheres.add(x));
+      n.modules.forEach((mm) => modules.add(mm.id));
+      n.integrations.forEach((x) => integrations.add(x));
+    }
+  }
   return {
-    ...s,
-    spheres: Array.from(new Set([...s.spheres, ...n.spheres])),
-    modules: Array.from(new Set([...s.modules, ...n.modules.map((mm) => mm.id)])),
-    integrations: Array.from(new Set([...s.integrations, ...n.integrations])),
+    spheres: [...spheres],
+    modules: [...modules],
+    integrations: [...integrations],
+    services: [...servicesSet],
   };
 }

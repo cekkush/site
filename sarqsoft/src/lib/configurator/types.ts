@@ -139,9 +139,9 @@ export interface Contact {
 export interface Selections {
   /** legacy single-axis preset (kept for old shared links) */
   industry?: string;
-  /** Axis A — activity */
-  activity?: string;
-  /** Axis B — niche */
+  /** Axis A — activities (how the business operates; multi-select) */
+  activities: string[];
+  /** Axis B — niche / vertical (single) */
   niche?: string;
   size?: Tier;
   users: number;
@@ -164,6 +164,7 @@ export function emptySelections(): Selections {
   return {
     users: 5,
     branches: 1,
+    activities: [],
     goals: [],
     spheres: [],
     modules: [],
