@@ -82,7 +82,7 @@ export const activities: Activity[] = [
   {
     id: 'services', icon: 'projects', group: 'service',
     name: {az: 'Xidmətlər (B2B / peşəkar)', en: 'Services (B2B / professional)'},
-    desc: {az: 'Layihələr, vaxt uçotu, billinq.', en: 'Projects, time tracking, billing.'},
+    desc: {az: 'Layihələr, vaxt uçotu, hesablaşma.', en: 'Projects, time tracking, billing.'},
     spheres: ['accounting', 'tax', 'sales', 'projects', 'finance', 'hr'],
     modules: ['acc-core', 'tax-vat', 'sl-crm', 'sl-contracts', 'pj-track', 'pj-time', 'pj-bill', 'hr-payroll'],
     integrations: ['int-banks', 'int-gov', 'int-messengers'],
@@ -183,7 +183,7 @@ export const niches: Niche[] = [
       m('ph-rx', {az: 'Reseptlə buraxılış', en: 'Prescription dispensing'}, {az: 'Resept uçotu və nəzarətli buraxılış.', en: 'Prescription tracking and controlled dispensing.'}, 3, 1, 400, 900),
       m('ph-batch', {az: 'Seriya, yararlılıq və geri çağırış', en: 'Batches, expiry & recalls'}, {az: 'Partiyalar, son istifadə tarixi, avtomatik geri çağırış.', en: 'Batches, shelf-life, automatic recalls.'}, 3, 1, 350, 800),
       m('ph-price', {az: 'Dövlət qiymət tənzimləməsi', en: 'State price regulation'}, {az: 'Marja limitləri və tənzimlənən qiymətlər.', en: 'Margin caps and regulated prices.'}, 2, 1, 300, 700),
-      m('ph-pos', {az: 'Aptek kassası və satınalma', en: 'Pharmacy POS & procurement'}, {az: 'Kassa, barkod, təchizatçı sifarişləri, defektura.', en: 'POS, barcode, supplier orders, shortage list.'}, 3, 1, 400, 950),
+      m('ph-pos', {az: 'Aptek kassası və satınalma', en: 'Pharmacy POS & procurement'}, {az: 'Kassa, barkod, təchizatçı sifarişləri, çatışmayan mallar siyahısı.', en: 'POS, barcode, supplier orders, shortage list.'}, 3, 1, 400, 950),
     ],
   },
   {
@@ -196,7 +196,7 @@ export const niches: Niche[] = [
       m('cl-emr', {az: 'Pasiyent kartı (EMR)', en: 'Patient record (EMR)'}, {az: 'Elektron tibbi tarixçə və təyinatlar.', en: 'Electronic medical history and prescriptions.'}, 4, 2, 600, 1300),
       m('cl-appt', {az: 'Qeydiyyat və cədvəl', en: 'Booking & scheduling'}, {az: 'Onlayn qəbul, həkim və kabinet cədvəli.', en: 'Online booking, doctor and room schedule.'}, 3, 1, 400, 900),
       m('cl-ins', {az: 'Sığortalı pasiyentlər', en: 'Insured patients'}, {az: 'Müqaviləli/sığorta pasiyentləri, sığortaya hesablar.', en: 'Contract/insurance patients, billing to insurers.'}, 3, 1, 400, 950),
-      m('cl-lab', {az: 'Xidmətlər və laboratoriya', en: 'Services & laboratory'}, {az: 'Xidmət prays-listi, aktlar, laborator analizlər.', en: 'Service price list, acts, lab tests.'}, 3, 1, 350, 800),
+      m('cl-lab', {az: 'Xidmətlər və laboratoriya', en: 'Services & laboratory'}, {az: 'Xidmətlərin qiymət siyahısı, aktlar, laborator analizlər.', en: 'Service price list, acts, lab tests.'}, 3, 1, 350, 800),
     ],
   },
   {
@@ -249,7 +249,7 @@ export const niches: Niche[] = [
       m('fa-matrix', {az: 'Ölçü-rəng matrisləri', en: 'Size-colour matrices'}, {az: 'Ölçü×rəng (SKU matrisi), sürətli seçim.', en: 'Size×colour (SKU matrix), quick pick.'}, 3, 1, 400, 900),
       m('fa-season', {az: 'Mövsümilik / kolleksiya', en: 'Seasonality / collections'}, {az: 'Kolleksiyalar, mövsümlər, endirimlər, qalıqlar.', en: 'Collections, seasons, sales, leftovers.'}, 2, 1, 300, 700),
       m('fa-sku', {az: 'SKU üzrə barkod', en: 'Barcode per SKU'}, {az: 'SKU barkodu/etiketi, qiymət etiketlərinin çapı.', en: 'SKU barcode/label, price-tag printing.'}, 2, 1, 300, 700),
-      m('fa-return', {az: 'Qaytarma / dəyişmə', en: 'Return / exchange'}, {az: 'Geyinmə, qaytarma/dəyişmə, loyallıq.', en: 'Try-on, return/exchange, loyalty.'}, 2, 1, 250, 600),
+      m('fa-return', {az: 'Qaytarma / dəyişmə', en: 'Return / exchange'}, {az: 'Geyib yoxlama, qaytarma və dəyişmə, loyallıq.', en: 'Try-on, return/exchange, loyalty.'}, 2, 1, 250, 600),
     ],
   },
   {
@@ -262,7 +262,7 @@ export const niches: Niche[] = [
       m('el-serial', {az: 'Seriya nömrələri / IMEI', en: 'Serial numbers / IMEI'}, {az: 'Nüsxə üzrə izləmə (seriya/IMEI).', en: 'Per-unit tracking (serial/IMEI).'}, 3, 1, 350, 800),
       m('el-warr', {az: 'Zəmanət və servis', en: 'Warranty & service'}, {az: 'Zəmanət müddəti, servis/təmir, sifariş-naryad.', en: 'Warranty periods, service/repair, work orders.'}, 3, 1, 400, 900),
       m('el-tradein', {az: 'Trade-in / komissiya', en: 'Trade-in / commission'}, {az: 'Trade-in, komissiya malı, işlənmiş.', en: 'Trade-in, commission goods, used items.'}, 2, 1, 300, 700),
-      m('el-kit', {az: 'Dəstlər / aksesuarlar', en: 'Kits / accessories'}, {az: 'Komplektlər, aksesuarlar, kassada apsell.', en: 'Bundles, accessories, upsell at checkout.'}, 2, 1, 250, 600),
+      m('el-kit', {az: 'Dəstlər / aksesuarlar', en: 'Kits / accessories'}, {az: 'Komplektlər, aksesuarlar, kassada əlavə satış.', en: 'Bundles, accessories, upsell at checkout.'}, 2, 1, 250, 600),
     ],
   },
   {
@@ -315,20 +315,20 @@ export const niches: Niche[] = [
       m('og-sla', {az: 'Servis müqavilələri (SLA)', en: 'Service contracts (SLA)'}, {az: 'SLA, reqlament xidməti, qrafiklər.', en: 'SLA, scheduled maintenance, calendars.'}, 3, 1, 450, 1000),
       m('og-tender', {az: 'Tenderlər / satınalmalar', en: 'Tenders / procurement'}, {az: 'Tenderlər, təchizatçı kvalifikasiyası.', en: 'Tenders, supplier qualification.'}, 3, 1, 400, 950),
       m('og-equip', {az: 'Avadanlıq / TOİR', en: 'Equipment / maintenance'}, {az: 'Avadanlıq uçotu, iş saatı, təmir.', en: 'Equipment register, run-hours, repairs.'}, 3, 1, 400, 900),
-      m('og-field', {az: 'Vахта / sahə işləri', en: 'Rotation / field work'}, {az: 'Vахта/sahə işləri, obyekt üzrə tabel.', en: 'Rotation/field work, per-site timesheets.'}, 2, 1, 350, 800),
+      m('og-field', {az: 'Növbəli iş / sahə işləri', en: 'Rotation / field work'}, {az: 'Növbəli iş və sahə işləri, obyekt üzrə tabel.', en: 'Rotation/field work, per-site timesheets.'}, 2, 1, 350, 800),
     ],
   },
   {
     id: 'it', icon: 'projects', group: 'tech',
     name: {az: 'IT / texnologiya', en: 'IT / technology'},
-    desc: {az: 'Lisenziyalar, layihələr, billinq, dəstək.', en: 'Licenses, projects, billing, support.'},
+    desc: {az: 'Lisenziyalar, layihələr, hesablaşma, dəstək.', en: 'Licenses, projects, billing, support.'},
     spheres: ['projects', 'sales', 'finance', 'accounting'],
     integrations: ['int-messengers'],
     modules: [
       m('it-lic', {az: 'Lisenziyalar / abunəliklər', en: 'Licenses / subscriptions'}, {az: 'Lisenziya/abunə, uzatma, MRR.', en: 'License/subscription, renewals, MRR.'}, 3, 1, 350, 850),
       m('it-proj', {az: 'Layihələr / tapşırıqlar', en: 'Projects / tasks'}, {az: 'Layihələr, sprintlər/tapşırıqlar, mərhələlər.', en: 'Projects, sprints/tasks, milestones.'}, 3, 1, 400, 900),
-      m('it-time', {az: 'Vaxt uçotu + billinq', en: 'Time tracking + billing'}, {az: 'Saat/mərhələ üzrə vaxt uçotu və billinq.', en: 'Hour/milestone time tracking and billing.'}, 2, 1, 300, 750),
-      m('it-help', {az: 'Helpdesk / ticketlər', en: 'Helpdesk / tickets'}, {az: 'Dəstək/ticketlər, SLA.', en: 'Support/tickets, SLA.'}, 2, 1, 300, 750),
+      m('it-time', {az: 'Vaxt uçotu + hesablaşma', en: 'Time tracking + billing'}, {az: 'Saat və ya mərhələ üzrə vaxt uçotu və hesablaşma.', en: 'Hour/milestone time tracking and billing.'}, 2, 1, 300, 750),
+      m('it-help', {az: 'Dəstək xidməti / müraciətlər', en: 'Helpdesk / tickets'}, {az: 'Dəstək müraciətləri və SLA.', en: 'Support/tickets, SLA.'}, 2, 1, 300, 750),
     ],
   },
   /* ---- service & other ---- */
@@ -366,8 +366,8 @@ export const niches: Niche[] = [
     integrations: ['int-gov'],
     modules: [
       m('jw-assay', {az: 'Əyar/çəki + daşlar', en: 'Assay/weight + stones'}, {az: 'Metal əyarı və çəkisi, daşlar, karat.', en: 'Metal assay and weight, stones, carats.'}, 3, 1, 400, 900),
-      m('jw-tag', {az: 'Birkalar / yarlıklar', en: 'Tags / labels'}, {az: 'Birka üzrə uçot, fərdi nüsxə.', en: 'Per-tag accounting, individual item.'}, 2, 1, 350, 800),
-      m('jw-toll', {az: 'Davalçeskoy / təmir', en: 'Tolling / repair'}, {az: 'Davalçeskoy xammal, sifarişlə təmir/hazırlama.', en: 'Tolling raw material, made-to-order repair.'}, 2, 1, 300, 750),
+      m('jw-tag', {az: 'Birkalar / etiketlər', en: 'Tags / labels'}, {az: 'Birka üzrə uçot, fərdi nüsxə.', en: 'Per-tag accounting, individual item.'}, 2, 1, 350, 800),
+      m('jw-toll', {az: 'Emanət xammalı / təmir', en: 'Tolling / repair'}, {az: 'Müştərinin emanət xammalı, sifarişlə təmir və hazırlama.', en: 'Tolling raw material, made-to-order repair.'}, 2, 1, 300, 750),
       m('jw-pm', {az: 'Qiymətli metal uçotu', en: 'Precious-metal accounting'}, {az: 'Qiymətli metalın xüsusi uçotu, çəki ilə inventar.', en: 'Special precious-metal accounting, weight stock-take.'}, 3, 1, 400, 900),
     ],
   },
@@ -427,7 +427,7 @@ export const subQuestions: SubQuestion[] = [
     id: 'sq-sales', sphere: 'sales', multi: true,
     prompt: {az: 'Satış / CRM', en: 'Sales / CRM'},
     options: [
-      {id: 'crm', name: {az: 'Satış hunisi (CRM)', en: 'Sales pipeline (CRM)'}, modules: ['sl-crm']},
+      {id: 'crm', name: {az: 'Satış kanalı (CRM)', en: 'Sales pipeline (CRM)'}, modules: ['sl-crm']},
       {id: 'price', name: {az: 'Qiymət siyahıları / endirim', en: 'Price lists / discounts'}, modules: ['sl-price']},
       {id: 'ar', name: {az: 'Debitor borclar', en: 'Receivables'}, modules: ['sl-ar']},
       {id: 'contracts', name: {az: 'Müqavilə / hesab-faktura', en: 'Contracts / invoices'}, modules: ['sl-contracts']},
@@ -481,7 +481,7 @@ export const subQuestions: SubQuestion[] = [
     id: 'sq-bi', sphere: 'bi', multi: true,
     prompt: {az: 'Analitika / BI', en: 'Analytics / BI'},
     options: [
-      {id: 'dash', name: {az: 'İdarəedici panellər', en: 'Dashboards'}, modules: ['bi-dash']},
+      {id: 'dash', name: {az: 'İdarəetmə panelləri', en: 'Dashboards'}, modules: ['bi-dash']},
       {id: 'kpi', name: {az: 'KPI / hesabatlar', en: 'KPI / reports'}, modules: ['bi-kpi']},
       {id: 'cost', name: {az: 'Məsrəf mərkəzləri', en: 'Cost centers'}, modules: ['bi-cost']},
     ],

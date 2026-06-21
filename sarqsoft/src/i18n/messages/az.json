@@ -86,11 +86,11 @@
     "modules": [
       {"name": "Maliyyə və uçot", "desc": "Mühasibatlıq, hesabatlar, vergi və balans — tam nəzarət."},
       {"name": "Anbar idarəetməsi", "desc": "Qalıqlar, hərəkət və inventarlaşdırma real vaxtda."},
-      {"name": "Satış və CRM", "desc": "Müştərilər, sifarişlər və satış boru xətti bir yerdə."},
+      {"name": "Satış və CRM", "desc": "Müştərilər, sifarişlər və satış mərhələləri bir yerdə."},
       {"name": "POS — kassa", "desc": "Pərakəndə satış nöqtələri mərkəzi baza ilə sinxron."},
-      {"name": "Maaş və HR", "desc": "Əməkhaqqı, kadrlar, tabel və hesablamalar."},
+      {"name": "Əməkhaqqı və kadrlar", "desc": "Əməkhaqqı, kadrlar, tabel və hesablamalar."},
       {"name": "İstehsalat", "desc": "Resept, kalkulyasiya və istehsal prosesinə nəzarət."},
-      {"name": "Alış və təchizat", "desc": "Təchizatçılar, alışlar və ödəniş qrafikləri."},
+      {"name": "Satınalma və təchizat", "desc": "Təchizatçılar, satınalmalar və ödəniş qrafikləri."},
       {"name": "Hesabat və analitika", "desc": "İdarəetmə paneli və canlı göstəricilər."}
     ],
     "ctaText": "Hər modul biznesinizə uyğunlaşdırılır.",
@@ -259,14 +259,14 @@
     "title": "Biznes proseslərinizi avtomatlaşdırırıq",
     "intro": "Rutin əməliyyatları sistemə həvalə edin — vaxt qazanın, səhvləri azaldın, nəzarəti artırın.",
     "items": [
-      {"title": "Mühasibat yazılışları", "desc": "Əməliyyatlar üzrə yazılışlar (provodkalar) avtomatik formalaşır — əl ilə daxiletmə minimuma enir."},
+      {"title": "Mühasibat yazılışları", "desc": "Əməliyyatlar üzrə mühasibat yazılışları avtomatik formalaşır — əl ilə daxiletmə minimuma enir."},
       {"title": "Maliyyə və vergi hesabatları", "desc": "Maliyyə və vergi hesabatlarının tam avtomatlaşdırılması."},
       {"title": "Vergi formaları", "desc": "Vergi bəyannamə formalarının avtomatik doldurulması."},
       {"title": "Anbar", "desc": "Mədaxil-məxaric, qalıqlar və inventarlaşmanın avtomatlaşdırılması."},
       {"title": "Kadr uçotu (HR)", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
       {"title": "Satış şöbəsi", "desc": "Satış, sifariş və CRM proseslərinin avtomatlaşdırılması."},
-      {"title": "Alış və təchizat", "desc": "Alış sifarişləri, təchizatçılar və ödənişlərə nəzarət."},
-      {"title": "İdarəetmə hesabatları", "desc": "Canlı dashboard və avtomatik idarəetmə hesabatları."}
+      {"title": "Satınalma və təchizat", "desc": "Satınalma sifarişləri, təchizatçılar və ödənişlərə nəzarət."},
+      {"title": "İdarəetmə hesabatları", "desc": "Canlı idarəetmə paneli və avtomatik hesabatlar."}
     ]
   },
   "expertise": {
@@ -293,13 +293,13 @@
     "scope": [
       {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, hesabatlar."},
       {"title": "Kadr (HR)", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
-      {"title": "Alış / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
+      {"title": "Satınalma / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
       {"title": "Satış", "desc": "Satış şöbəsi və CRM proseslərinin tətbiqi."},
       {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},
       {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları."}
     ]
   },
   "marquee": {
-    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Maaş & HR", "Vergi hesabatları", "Bulud", "İnteqrasiya", "Məlumat idxalı", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
+    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Əməkhaqqı və kadrlar", "Vergi hesabatları", "Bulud", "İnteqrasiya", "Məlumat idxalı", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
   }
 }
