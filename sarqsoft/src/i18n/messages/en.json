@@ -14,6 +14,7 @@
   "nav": {
     "home": "Home",
     "jeyErp": "Jey ERP",
+    "services": "Services",
     "about": "About",
     "whyUs": "Why us",
     "contact": "Contact",
@@ -263,5 +264,50 @@
     },
     "deferNote": "Note: the form is currently for demonstration — please use the channels below to reach us directly.",
     "address": "Baku, Azerbaijan"
+  },
+  "automation": {
+    "kicker": "Automation",
+    "title": "We automate your business processes",
+    "intro": "Hand routine operations to the system — save time, cut errors, gain control.",
+    "items": [
+      {"title": "Accounting entries", "desc": "Postings are generated automatically per transaction — manual entry drops to a minimum."},
+      {"title": "Financial & tax reports", "desc": "Full automation of financial and tax reporting."},
+      {"title": "Tax forms", "desc": "Automatic filling of tax declaration forms."},
+      {"title": "Warehouse", "desc": "Automated receipts, balances and stocktaking."},
+      {"title": "HR & payroll", "desc": "Automation of payroll, timesheets and HR processes."},
+      {"title": "Sales", "desc": "Automation of sales, orders and CRM processes."},
+      {"title": "Procurement", "desc": "Purchase orders, suppliers and payment control."},
+      {"title": "Management reports", "desc": "Live dashboards and automated management reports."}
+    ]
+  },
+  "expertise": {
+    "kicker": "Expertise",
+    "title": "Local expertise, end-to-end delivery",
+    "intro": "We know Azerbaijani accounting in depth and build the whole infrastructure for you.",
+    "items": [
+      {"title": "Azerbaijani accounting", "desc": "Full expertise in accounting and tax under Azerbaijani law."},
+      {"title": "Import from any source", "desc": "Data import from Excel, websites, other accounting programs and government portals."},
+      {"title": "Cloud infrastructure", "desc": "We launch a full accounting-automation infrastructure in the cloud for your company."},
+      {"title": "Training & onboarding", "desc": "We train your team to work in the software."}
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "kicker": "Services",
+      "title": "From implementation to full automation",
+      "subtitle": "ERP implementation, business-process automation and ongoing support — from one team."
+    },
+    "overviewTitle": "What we offer",
+    "overviewText": "We analyse your processes, implement Jey ERP and automate accounting end-to-end — finance, tax, inventory, HR, sales and procurement.",
+    "scopeTitle": "Department-by-department implementation",
+    "scopeText": "We bring every part of the business into the system and get it running.",
+    "scope": [
+      {"title": "Finance & accounting", "desc": "Full financial and tax accounting, reporting."},
+      {"title": "HR", "desc": "Personnel records, payroll and timesheets."},
+      {"title": "Procurement", "desc": "Setting up and automating the procurement department."},
+      {"title": "Sales", "desc": "Sales department and CRM process implementation."},
+      {"title": "Warehouse", "desc": "Full automation of warehouse accounting."},
+      {"title": "Reporting", "desc": "Management, financial and tax reporting."}
+    ]
   }
 }

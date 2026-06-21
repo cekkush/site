@@ -14,6 +14,7 @@
   "nav": {
     "home": "Ana səhifə",
     "jeyErp": "Jey ERP",
+    "services": "Xidmətlər",
     "about": "Haqqımızda",
     "whyUs": "Niyə biz",
     "contact": "Əlaqə",
@@ -263,5 +264,50 @@
     },
     "deferNote": "Qeyd: forma hazırda nümayiş məqsədlidir — birbaşa əlaqə üçün aşağıdakı kanallardan istifadə edin.",
     "address": "Bakı, Azərbaycan"
+  },
+  "automation": {
+    "kicker": "Avtomatlaşdırma",
+    "title": "Biznes proseslərinizi avtomatlaşdırırıq",
+    "intro": "Rutin əməliyyatları sistemə həvalə edin — vaxt qazanın, səhvləri azaldın, nəzarəti artırın.",
+    "items": [
+      {"title": "Mühasibat yazılışları", "desc": "Əməliyyatlar üzrə yazılışlar (provodkalar) avtomatik formalaşır — əl ilə daxiletmə minimuma enir."},
+      {"title": "Maliyyə və vergi hesabatları", "desc": "Maliyyə və vergi hesabatlarının tam avtomatlaşdırılması."},
+      {"title": "Vergi formaları", "desc": "Vergi bəyannamə formalarının avtomatik doldurulması."},
+      {"title": "Anbar", "desc": "Mədaxil-məxaric, qalıqlar və inventarlaşmanın avtomatlaşdırılması."},
+      {"title": "Kadr uçotu (HR)", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
+      {"title": "Satış şöbəsi", "desc": "Satış, sifariş və CRM proseslərinin avtomatlaşdırılması."},
+      {"title": "Alış və təchizat", "desc": "Alış sifarişləri, təchizatçılar və ödənişlərə nəzarət."},
+      {"title": "İdarəetmə hesabatları", "desc": "Canlı dashboard və avtomatik idarəetmə hesabatları."}
+    ]
+  },
+  "expertise": {
+    "kicker": "Ekspertiza",
+    "title": "Yerli ekspertiza, uçtan-uca tətbiq",
+    "intro": "Azərbaycan mühasibatlığını dərindən bilirik və bütün infrastrukturu sizin üçün qururuq.",
+    "items": [
+      {"title": "Azərbaycan mühasibatlığı", "desc": "AR qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
+      {"title": "İstənilən mənbədən idxal", "desc": "Excel, saytlar, digər uçot proqramları və dövlət portallarından məlumat idxalı."},
+      {"title": "Bulud infrastrukturu", "desc": "Şirkətiniz üçün buludda tam uçot avtomatlaşdırma infrastrukturunu işə salırıq."},
+      {"title": "Təlim və adaptasiya", "desc": "Komandanızı proqramda işləməyə öyrədirik."}
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "kicker": "Xidmətlər",
+      "title": "Tətbiqdən tam avtomatlaşdırmaya",
+      "subtitle": "Uçot və ERP sistemlərinin tətbiqi, biznes proseslərin avtomatlaşdırılması və daimi dəstək — bir komandadan."
+    },
+    "overviewTitle": "Nə təklif edirik?",
+    "overviewText": "Biznes proseslərinizi təhlil edirik, Jey ERP-ni tətbiq edirik və uçotu uçtan-uca avtomatlaşdırırıq — maliyyə, vergi, anbar, kadr, satış və alış.",
+    "scopeTitle": "Şöbə-şöbə tətbiq",
+    "scopeText": "Biznesin hər şöbəsini sistemə köçürür və işə salırıq.",
+    "scope": [
+      {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, hesabatlar."},
+      {"title": "Kadr (HR)", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
+      {"title": "Alış / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
+      {"title": "Satış", "desc": "Satış şöbəsi və CRM proseslərinin tətbiqi."},
+      {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},
+      {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları."}
+    ]
   }
 }
