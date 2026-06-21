@@ -22,8 +22,9 @@ export function SectionHeading({
 }: Props) {
   return (
     <div
+      data-parallax="0.05"
       className={cn(
-        'flex max-w-3xl flex-col gap-5',
+        'flex max-w-3xl flex-col gap-6',
         align === 'center' && 'mx-auto items-center text-center',
         className,
       )}
@@ -35,7 +36,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          'font-display text-4xl leading-[1.05] tracking-tighter2 sm:text-5xl lg:text-[3.4rem]',
+          'font-display text-[2.5rem] font-medium leading-[1.02] tracking-tightest sm:text-5xl lg:text-[3.9rem]',
           titleClassName,
         )}
       >
@@ -43,7 +44,7 @@ export function SectionHeading({
       </h2>
       {intro && (
         <Reveal delay={0.1}>
-          <p className="max-w-2xl text-lg leading-relaxed text-mist text-pretty">
+          <p className="max-w-2xl text-lg leading-relaxed text-mist text-pretty sm:text-xl">
             {intro}
           </p>
         </Reveal>

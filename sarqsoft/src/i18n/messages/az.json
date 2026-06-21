@@ -1,22 +1,28 @@
 {
   "meta": {
     "homeTitle": "Şərq Soft — Jey ERP tətbiqi və uçot sistemləri",
-    "homeDescription": "Şərq Soft — Jey Soft-un rəsmi tərəfdaşı. Biznes üçün Jey ERP tətbiqi: uçot, anbar, satış, CRM, POS, maaş və istehsalat. Məlumat xaosundan nizama.",
+    "homeDescription": "Şərq Soft — biznes üçün Jey ERP tətbiqi: uçot, anbar, satış, CRM, POS, maaş və istehsalat. Məlumat xaosundan nizama.",
     "jeyTitle": "Jey ERP — biznesiniz üçün vahid idarəetmə sistemi",
     "jeyDescription": "Jey ERP modulları: maliyyə uçotu, anbar, satış və CRM, POS, maaş, istehsalat. Şərq Soft tərəfindən tətbiq və dəstək.",
     "aboutTitle": "Haqqımızda",
-    "aboutDescription": "Şərq Soft komandası uçot və ERP sistemlərinin tətbiqi üzrə ixtisaslaşıb. Missiyamız — biznesinizi rəqəmsal nizama salmaq.",
-    "partnershipTitle": "Jey Soft ilə tərəfdaşlıq",
-    "partnershipDescription": "Şərq Soft — Jey Soft-un rəsmi tərəfdaşı. Etibarlı tətbiq, lokal dəstək, zəmanətli nəticə.",
+    "aboutDescription": "Şərq Soft — uçot və ERP sistemlərinin tətbiqi üzrə ixtisaslaşmış İT şirkəti. Missiyamız — biznesinizi rəqəmsal nizama salmaq.",
+    "whyTitle": "Niyə Şərq Soft",
+    "whyDescription": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə və daimi dəstək.",
     "contactTitle": "Əlaqə",
-    "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram."
+    "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram.",
+    "configuratorTitle": "Həll konfiquratoru — fərdi kommersiya təklifi",
+    "configuratorDescription": "Bir neçə addımda biznesiniz üçün Jey ERP həllini yığın və fərdi kommersiya təklifi (KP) alın.",
+    "proposalTitle": "Fərdi kommersiya təklifi",
+    "proposalDescription": "Şərq Soft — sizin üçün hazırlanmış Jey ERP həlli, mərhələlər və təxmini investisiya."
   },
   "nav": {
     "home": "Ana səhifə",
     "jeyErp": "Jey ERP",
+    "services": "Xidmətlər",
     "about": "Haqqımızda",
-    "partnership": "Tərəfdaşlıq",
+    "whyUs": "Niyə biz",
     "contact": "Əlaqə",
+    "configurator": "Konfiqurator",
     "cta": "Demo sifariş et"
   },
   "common": {
@@ -26,8 +32,13 @@
     "getInTouch": "Əlaqə saxla",
     "backHome": "Ana səhifəyə qayıt"
   },
+  "configurator": {
+    "kicker": "Həll konfiquratoru",
+    "title": "Biznesiniz üçün həlli yığın",
+    "subtitle": "Sahənizi, modulları və xidmətləri seçin — sistem dərhal fərdi kommersiya təklifi, mərhələlər və təxmini investisiya hazırlasın."
+  },
   "hero": {
-    "kicker": "Jey Soft-un rəsmi tərəfdaşı",
+    "kicker": "Jey ERP tətbiqi üzrə ekspertlər",
     "titleLine1": "Biznesinizə",
     "titleLine2": "Şərq işığı",
     "subtitle": "Uçot və ERP sistemlərinin tətbiqi. Məlumat xaosundan nizama — Jey ERP ilə biznesinizin yeni günü doğur.",
@@ -157,8 +168,8 @@
       {"quote": "Komanda biznesimizi başa düşdü və sistemi tam bizə uyğunlaşdırdı.", "name": "Müştəri rəyi", "role": "Əməliyyat müdiri"},
       {"quote": "Dəstək həmişə əlçatandır — bu, bizim üçün ən vacibdir.", "name": "Müştəri rəyi", "role": "Direktor"}
     ],
-    "partnerTitle": "Rəsmi tərəfdaş",
-    "partnerText": "Şərq Soft Jey Soft-un rəsmi tərəfdaşı kimi Jey ERP-nin tətbiqi, fərdiləşdirilməsi və dəstəyini təmin edir."
+    "partnerTitle": "Tam dövr xidmət",
+    "partnerText": "Şərq Soft Jey ERP-nin tətbiqini, fərdiləşdirilməsini və dəstəyini uçtan-uca təmin edir."
   },
   "cta": {
     "kicker": "Hazırsınız?",
@@ -170,7 +181,7 @@
   },
   "footer": {
     "tagline": "Uçot və ERP sistemlərinin tətbiqi üzrə ekspertlər. Jey ERP ilə biznesinizi nizama salırıq.",
-    "partnerNote": "Jey Soft-un rəsmi tərəfdaşı",
+    "partnerNote": "Jey ERP tətbiqi və dəstəyi",
     "navTitle": "Naviqasiya",
     "contactTitle": "Əlaqə",
     "rights": "Bütün hüquqlar qorunur.",
@@ -183,7 +194,7 @@
       "subtitle": "Maliyyədən istehsalata qədər bütün prosesləri bir platformada birləşdirin."
     },
     "overviewTitle": "Jey ERP nədir?",
-    "overviewText": "Jey ERP — Jey Soft tərəfindən hazırlanmış, biznesin bütün əməliyyatlarını vahid bazada birləşdirən müasir idarəetmə sistemidir. Şərq Soft onu sizin biznesə uyğunlaşdırır və tətbiq edir.",
+    "overviewText": "Jey ERP — biznesin bütün əməliyyatlarını vahid bazada birləşdirən müasir idarəetmə sistemidir. Şərq Soft onu sizin biznesə uyğunlaşdırır və tətbiq edir.",
     "featuresTitle": "Əsas üstünlüklər",
     "features": [
       {"title": "Vahid məlumat bazası", "desc": "Bütün şöbələr eyni real vaxt məlumatı ilə işləyir."},
@@ -193,10 +204,9 @@
       {"title": "Çevik fərdiləşdirmə", "desc": "Sistem sizin proseslərə uyğunlaşdırılır."},
       {"title": "Lokal dəstək", "desc": "Azərbaycan dilində, yerli komandadan dəstək."}
     ],
-    "modulesTitle": "Modullar",
     "whyTitle": "Niyə Şərq Soft ilə?",
     "why": [
-      {"title": "Rəsmi tərəfdaş", "desc": "Jey Soft-un rəsmi tərəfdaşıyıq — birbaşa mənbədən ekspertiza."},
+      {"title": "Tam dövr tətbiq", "desc": "Təhlildən canlı işə keçidə qədər bütün mərhələlər bir əldən."},
       {"title": "Sahə təcrübəsi", "desc": "Retail, HoReCa, distribusiya və istehsalatda təcrübə."},
       {"title": "Sonadək dəstək", "desc": "Tətbiqdən sonra da yanınızdayıq."}
     ],
@@ -208,39 +218,37 @@
     "hero": {
       "kicker": "Haqqımızda",
       "title": "Biznesi rəqəmsal nizama salırıq",
-      "subtitle": "Şərq Soft — uçot və ERP tətbiqi üzrə ixtisaslaşmış komanda."
+      "subtitle": "Şərq Soft — uçot və ERP tətbiqi üzrə ixtisaslaşmış İT şirkəti."
     },
     "missionTitle": "Missiyamız",
     "missionText": "Azərbaycan bizneslərinə müasir idarəetmə alətlərini əlçatan etmək və onları rəqəmsal nizama qovuşdurmaq.",
     "storyTitle": "Hekayəmiz",
-    "storyText": "İllərdir uçot və ERP sistemlərinin tətbiqi ilə məşğuluq. Jey Soft-un rəsmi tərəfdaşı kimi onlarla şirkətin əməliyyatlarını sadələşdirmişik.",
+    "storyText": "İllərdir uçot və ERP sistemlərinin tətbiqi ilə məşğuluq. Onlarla şirkətin əməliyyatlarını sadələşdirmiş, biznesləri rəqəmsal nizama qovuşdurmuşuq.",
     "valuesTitle": "Dəyərlərimiz",
     "values": [
       {"title": "Etibar", "desc": "Sözümüzün arxasında dururuq."},
       {"title": "Ekspertiza", "desc": "Sahəni dərindən bilirik."},
       {"title": "Şəffaflıq", "desc": "Hər addım aydın və açıqdır."},
       {"title": "Davamlılıq", "desc": "Tətbiqdən sonra da yanınızdayıq."}
-    ],
-    "statsTitle": "Rəqəmlərlə"
+    ]
   },
-  "partnershipPage": {
+  "whyPage": {
     "hero": {
-      "kicker": "Tərəfdaşlıq",
-      "title": "Jey Soft-un rəsmi tərəfdaşı",
-      "subtitle": "Etibarlı mənbə, lokal ekspertiza, zəmanətli nəticə."
+      "kicker": "Niyə biz",
+      "title": "Niyə Şərq Soft?",
+      "subtitle": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə."
     },
-    "introTitle": "Rəsmi tərəfdaşlıq nə deməkdir?",
-    "introText": "Şərq Soft Jey Soft ilə rəsmi tərəfdaşdır. Bu o deməkdir ki, Jey ERP-ni birbaşa mənbədən, tam ekspertiza və zəmanətlə tətbiq edirik.",
-    "benefitsTitle": "Tərəfdaşlığın üstünlükləri",
+    "introTitle": "Etibarlı tətbiq tərəfdaşınız",
+    "introText": "Şərq Soft Jey ERP-ni biznesinizə uyğunlaşdırır və uçtan-uca tətbiq edir — təhlildən canlı işə keçidə və daimi dəstəyə qədər.",
+    "benefitsTitle": "Üstünlüklərimiz",
     "benefits": [
-      {"title": "Birbaşa ekspertiza", "desc": "Məhsulu yaradanlarla sıx əməkdaşlıq."},
-      {"title": "Zəmanətli tətbiq", "desc": "Rəsmi metodologiya ilə etibarlı nəticə."},
-      {"title": "Daimi yeniləmələr", "desc": "Ən son versiya və funksiyalara çıxış."},
-      {"title": "Lokal dəstək", "desc": "Yerli komanda, Azərbaycan dilində dəstək."}
+      {"title": "Lokal ekspertiza", "desc": "Yerli komanda, Azərbaycan dilində dəstək."},
+      {"title": "Uçtan-uca tətbiq", "desc": "Təhlil, quraşdırma, köçürmə, təlim və dəstək — bir əldən."},
+      {"title": "Sahə təcrübəsi", "desc": "Retail, HoReCa, distribusiya və istehsalat üzrə təcrübə."},
+      {"title": "Zəmanətli nəticə", "desc": "Şəffaf proses və ölçüləbilən nəticə."}
     ],
-    "badge": "Rəsmi tərəfdaş",
-    "ctaTitle": "Etibarlı tərəfdaşla başlayın",
-    "ctaText": "Jey ERP-ni rəsmi tərəfdaşdan tətbiq edin."
+    "ctaTitle": "Layihənizi müzakirə edək",
+    "ctaText": "Biznesinizə uyğun Jey ERP həllini birlikdə quraq."
   },
   "contactPage": {
     "hero": {
@@ -266,5 +274,53 @@
     },
     "deferNote": "Qeyd: forma hazırda nümayiş məqsədlidir — birbaşa əlaqə üçün aşağıdakı kanallardan istifadə edin.",
     "address": "Bakı, Azərbaycan"
+  },
+  "automation": {
+    "kicker": "Avtomatlaşdırma",
+    "title": "Biznes proseslərinizi avtomatlaşdırırıq",
+    "intro": "Rutin əməliyyatları sistemə həvalə edin — vaxt qazanın, səhvləri azaldın, nəzarəti artırın.",
+    "items": [
+      {"title": "Mühasibat yazılışları", "desc": "Əməliyyatlar üzrə yazılışlar (provodkalar) avtomatik formalaşır — əl ilə daxiletmə minimuma enir."},
+      {"title": "Maliyyə və vergi hesabatları", "desc": "Maliyyə və vergi hesabatlarının tam avtomatlaşdırılması."},
+      {"title": "Vergi formaları", "desc": "Vergi bəyannamə formalarının avtomatik doldurulması."},
+      {"title": "Anbar", "desc": "Mədaxil-məxaric, qalıqlar və inventarlaşmanın avtomatlaşdırılması."},
+      {"title": "Kadr uçotu (HR)", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
+      {"title": "Satış şöbəsi", "desc": "Satış, sifariş və CRM proseslərinin avtomatlaşdırılması."},
+      {"title": "Alış və təchizat", "desc": "Alış sifarişləri, təchizatçılar və ödənişlərə nəzarət."},
+      {"title": "İdarəetmə hesabatları", "desc": "Canlı dashboard və avtomatik idarəetmə hesabatları."}
+    ]
+  },
+  "expertise": {
+    "kicker": "Ekspertiza",
+    "title": "Yerli ekspertiza, uçtan-uca tətbiq",
+    "intro": "Azərbaycan mühasibatlığını dərindən bilirik və bütün infrastrukturu sizin üçün qururuq.",
+    "items": [
+      {"title": "Azərbaycan mühasibatlığı", "desc": "AR qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
+      {"title": "İstənilən mənbədən idxal", "desc": "Excel, saytlar, digər uçot proqramları və dövlət portallarından məlumat idxalı."},
+      {"title": "Bulud infrastrukturu", "desc": "Şirkətiniz üçün buludda tam uçot avtomatlaşdırma infrastrukturunu işə salırıq."},
+      {"title": "Təlim və adaptasiya", "desc": "Komandanızı proqramda işləməyə öyrədirik."}
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "kicker": "Xidmətlər",
+      "title": "Tətbiqdən tam avtomatlaşdırmaya",
+      "subtitle": "Uçot və ERP sistemlərinin tətbiqi, biznes proseslərin avtomatlaşdırılması və daimi dəstək — bir komandadan."
+    },
+    "overviewTitle": "Nə təklif edirik?",
+    "overviewText": "Biznes proseslərinizi təhlil edirik, Jey ERP-ni tətbiq edirik və uçotu uçtan-uca avtomatlaşdırırıq — maliyyə, vergi, anbar, kadr, satış və alış.",
+    "scopeTitle": "Şöbə-şöbə tətbiq",
+    "scopeText": "Biznesin hər şöbəsini sistemə köçürür və işə salırıq.",
+    "scope": [
+      {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, hesabatlar."},
+      {"title": "Kadr (HR)", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
+      {"title": "Alış / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
+      {"title": "Satış", "desc": "Satış şöbəsi və CRM proseslərinin tətbiqi."},
+      {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},
+      {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları."}
+    ]
+  },
+  "marquee": {
+    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Maaş & HR", "Vergi hesabatları", "Bulud", "İnteqrasiya", "Məlumat idxalı", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
   }
 }

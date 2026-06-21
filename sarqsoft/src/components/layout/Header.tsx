@@ -36,9 +36,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-500',
+        'no-print fixed inset-x-0 top-0 z-50 transition-all duration-500',
         scrolled
-          ? 'border-b border-white/5 bg-void/70 backdrop-blur-xl'
+          ? 'border-b border-white/10 bg-void/90 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.9)]'
           : 'bg-transparent',
       )}
     >
@@ -47,7 +47,7 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:flex">
           {navItems.map((item) => {
             const isActive =
               item.href === '/'
@@ -58,7 +58,7 @@ export function Header() {
                 key={item.key}
                 href={item.href}
                 className={cn(
-                  'rounded-full px-4 py-2 text-sm tracking-tight transition-colors',
+                  'rounded-full px-3 py-2 text-sm tracking-tight transition-colors',
                   isActive
                     ? 'text-gold'
                     : 'text-mist hover:text-ink',
@@ -70,7 +70,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           <LangSwitcher />
           <Button href="/contact" className="px-5 py-2.5" withArrow>
             {t('cta')}
@@ -81,7 +81,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="relative z-10 flex h-10 w-10 items-center justify-center lg:hidden"
+          className="relative z-10 flex h-10 w-10 items-center justify-center xl:hidden"
           aria-label="Menu"
           aria-expanded={open}
         >
@@ -109,7 +109,7 @@ export function Header() {
             animate={{opacity: 1}}
             exit={{opacity: 0}}
             transition={{duration: 0.3}}
-            className="fixed inset-0 z-0 flex flex-col bg-void/95 px-6 pb-10 pt-28 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-0 flex flex-col bg-void/95 px-6 pb-10 pt-28 backdrop-blur-xl xl:hidden"
           >
             <nav className="flex flex-col gap-2">
               {navItems.map((item, i) => (

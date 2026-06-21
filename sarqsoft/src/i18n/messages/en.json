@@ -1,22 +1,28 @@
 {
   "meta": {
     "homeTitle": "Şərq Soft — Jey ERP implementation & accounting systems",
-    "homeDescription": "Şərq Soft — official partner of Jey Soft. Jey ERP implementation for business: accounting, inventory, sales, CRM, POS, payroll and manufacturing. From data chaos to order.",
+    "homeDescription": "Şərq Soft — Jey ERP implementation for business: accounting, inventory, sales, CRM, POS, payroll and manufacturing. From data chaos to order.",
     "jeyTitle": "Jey ERP — one management system for your business",
     "jeyDescription": "Jey ERP modules: finance & accounting, inventory, sales & CRM, POS, payroll, manufacturing. Implemented and supported by Şərq Soft.",
     "aboutTitle": "About us",
-    "aboutDescription": "The Şərq Soft team specialises in accounting and ERP implementation. Our mission — to bring digital order to your business.",
-    "partnershipTitle": "Partnership with Jey Soft",
-    "partnershipDescription": "Şərq Soft — official partner of Jey Soft. Reliable implementation, local support, guaranteed results.",
+    "aboutDescription": "Şərq Soft — an IT company specialised in accounting and ERP implementation. Our mission — to bring digital order to your business.",
+    "whyTitle": "Why Şərq Soft",
+    "whyDescription": "Local expertise, end-to-end implementation, guaranteed results and ongoing support.",
     "contactTitle": "Contact",
-    "contactDescription": "Get in touch for a Jey ERP demo. Email, phone, WhatsApp, Telegram."
+    "contactDescription": "Get in touch for a Jey ERP demo. Email, phone, WhatsApp, Telegram.",
+    "configuratorTitle": "Solution configurator — personal commercial proposal",
+    "configuratorDescription": "Assemble a Jey ERP solution for your business in a few steps and get a personalized commercial proposal.",
+    "proposalTitle": "Personal commercial proposal",
+    "proposalDescription": "Şərq Soft — a Jey ERP solution prepared for you, with phases and an indicative investment."
   },
   "nav": {
     "home": "Home",
     "jeyErp": "Jey ERP",
+    "services": "Services",
     "about": "About",
-    "partnership": "Partnership",
+    "whyUs": "Why us",
     "contact": "Contact",
+    "configurator": "Configurator",
     "cta": "Book a demo"
   },
   "common": {
@@ -26,8 +32,13 @@
     "getInTouch": "Get in touch",
     "backHome": "Back to home"
   },
+  "configurator": {
+    "kicker": "Solution configurator",
+    "title": "Assemble the solution for your business",
+    "subtitle": "Pick your industry, modules and services — and get an instant personalized proposal with phases and an indicative investment."
+  },
   "hero": {
-    "kicker": "Official partner of Jey Soft",
+    "kicker": "Jey ERP implementation experts",
     "titleLine1": "Your business,",
     "titleLine2": "lit from the East",
     "subtitle": "Implementation of accounting and ERP systems. From data chaos to order — Jey ERP brings a new day to your business.",
@@ -157,8 +168,8 @@
       {"quote": "The team understood our business and tailored the system entirely to us.", "name": "Client review", "role": "Operations manager"},
       {"quote": "Support is always reachable — that matters most to us.", "name": "Client review", "role": "Director"}
     ],
-    "partnerTitle": "Official partner",
-    "partnerText": "As the official partner of Jey Soft, Şərq Soft provides implementation, customisation and support for Jey ERP."
+    "partnerTitle": "End-to-end service",
+    "partnerText": "Şərq Soft delivers Jey ERP implementation, customisation and support end-to-end."
   },
   "cta": {
     "kicker": "Ready?",
@@ -170,7 +181,7 @@
   },
   "footer": {
     "tagline": "Experts in accounting & ERP implementation. With Jey ERP, we bring order to your business.",
-    "partnerNote": "Official partner of Jey Soft",
+    "partnerNote": "Jey ERP implementation & support",
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
@@ -183,7 +194,7 @@
       "subtitle": "Bring every process — from finance to manufacturing — onto a single platform."
     },
     "overviewTitle": "What is Jey ERP?",
-    "overviewText": "Jey ERP is a modern management system built by Jey Soft that unifies all business operations in a single database. Şərq Soft tailors and implements it for your business.",
+    "overviewText": "Jey ERP is a modern management system that unifies all business operations in a single database. Şərq Soft tailors and implements it for your business.",
     "featuresTitle": "Key advantages",
     "features": [
       {"title": "One database", "desc": "Every department works with the same real-time data."},
@@ -193,10 +204,9 @@
       {"title": "Flexible customisation", "desc": "The system is adapted to your processes."},
       {"title": "Local support", "desc": "Support from a local team, in Azerbaijani."}
     ],
-    "modulesTitle": "Modules",
     "whyTitle": "Why with Şərq Soft?",
     "why": [
-      {"title": "Official partner", "desc": "We're the official partner of Jey Soft — expertise straight from the source."},
+      {"title": "End-to-end delivery", "desc": "Every stage from analysis to go-live, from one team."},
       {"title": "Industry experience", "desc": "Experience in retail, HoReCa, distribution and manufacturing."},
       {"title": "Support all the way", "desc": "We stay with you long after go-live."}
     ],
@@ -208,39 +218,37 @@
     "hero": {
       "kicker": "About us",
       "title": "We bring digital order to business",
-      "subtitle": "Şərq Soft — a team specialised in accounting and ERP implementation."
+      "subtitle": "Şərq Soft — an IT company specialised in accounting and ERP implementation."
     },
     "missionTitle": "Our mission",
     "missionText": "To make modern management tools accessible to Azerbaijani businesses and bring them to digital order.",
     "storyTitle": "Our story",
-    "storyText": "We have been implementing accounting and ERP systems for years. As the official partner of Jey Soft, we have simplified operations for dozens of companies.",
+    "storyText": "We have been implementing accounting and ERP systems for years. We have simplified operations for dozens of companies and brought their businesses to digital order.",
     "valuesTitle": "Our values",
     "values": [
       {"title": "Trust", "desc": "We stand behind our word."},
       {"title": "Expertise", "desc": "We know the field in depth."},
       {"title": "Transparency", "desc": "Every step is clear and open."},
       {"title": "Continuity", "desc": "We stay with you after go-live."}
-    ],
-    "statsTitle": "In numbers"
+    ]
   },
-  "partnershipPage": {
+  "whyPage": {
     "hero": {
-      "kicker": "Partnership",
-      "title": "Official partner of Jey Soft",
-      "subtitle": "A reliable source, local expertise, guaranteed results."
+      "kicker": "Why us",
+      "title": "Why Şərq Soft?",
+      "subtitle": "Local expertise, end-to-end implementation, guaranteed results."
     },
-    "introTitle": "What does an official partnership mean?",
-    "introText": "Şərq Soft is an official partner of Jey Soft. That means we implement Jey ERP straight from the source, with full expertise and a guarantee.",
-    "benefitsTitle": "Benefits of the partnership",
+    "introTitle": "Your reliable implementation partner",
+    "introText": "Şərq Soft tailors Jey ERP to your business and implements it end-to-end — from analysis to go-live and ongoing support.",
+    "benefitsTitle": "Our advantages",
     "benefits": [
-      {"title": "Direct expertise", "desc": "Close collaboration with the people who build the product."},
-      {"title": "Guaranteed implementation", "desc": "Reliable results with the official methodology."},
-      {"title": "Continuous updates", "desc": "Access to the latest version and features."},
-      {"title": "Local support", "desc": "A local team, support in Azerbaijani."}
+      {"title": "Local expertise", "desc": "A local team, support in Azerbaijani."},
+      {"title": "End-to-end delivery", "desc": "Analysis, setup, migration, training and support — from one team."},
+      {"title": "Industry experience", "desc": "Experience across retail, HoReCa, distribution and manufacturing."},
+      {"title": "Guaranteed results", "desc": "A transparent process and measurable results."}
     ],
-    "badge": "Official partner",
-    "ctaTitle": "Start with a trusted partner",
-    "ctaText": "Implement Jey ERP with an official partner."
+    "ctaTitle": "Let's discuss your project",
+    "ctaText": "Let's build the right Jey ERP solution for your business together."
   },
   "contactPage": {
     "hero": {
@@ -266,5 +274,53 @@
     },
     "deferNote": "Note: the form is currently for demonstration — please use the channels below to reach us directly.",
     "address": "Baku, Azerbaijan"
+  },
+  "automation": {
+    "kicker": "Automation",
+    "title": "We automate your business processes",
+    "intro": "Hand routine operations to the system — save time, cut errors, gain control.",
+    "items": [
+      {"title": "Accounting entries", "desc": "Postings are generated automatically per transaction — manual entry drops to a minimum."},
+      {"title": "Financial & tax reports", "desc": "Full automation of financial and tax reporting."},
+      {"title": "Tax forms", "desc": "Automatic filling of tax declaration forms."},
+      {"title": "Warehouse", "desc": "Automated receipts, balances and stocktaking."},
+      {"title": "HR & payroll", "desc": "Automation of payroll, timesheets and HR processes."},
+      {"title": "Sales", "desc": "Automation of sales, orders and CRM processes."},
+      {"title": "Procurement", "desc": "Purchase orders, suppliers and payment control."},
+      {"title": "Management reports", "desc": "Live dashboards and automated management reports."}
+    ]
+  },
+  "expertise": {
+    "kicker": "Expertise",
+    "title": "Local expertise, end-to-end delivery",
+    "intro": "We know Azerbaijani accounting in depth and build the whole infrastructure for you.",
+    "items": [
+      {"title": "Azerbaijani accounting", "desc": "Full expertise in accounting and tax under Azerbaijani law."},
+      {"title": "Import from any source", "desc": "Data import from Excel, websites, other accounting programs and government portals."},
+      {"title": "Cloud infrastructure", "desc": "We launch a full accounting-automation infrastructure in the cloud for your company."},
+      {"title": "Training & onboarding", "desc": "We train your team to work in the software."}
+    ]
+  },
+  "servicesPage": {
+    "hero": {
+      "kicker": "Services",
+      "title": "From implementation to full automation",
+      "subtitle": "ERP implementation, business-process automation and ongoing support — from one team."
+    },
+    "overviewTitle": "What we offer",
+    "overviewText": "We analyse your processes, implement Jey ERP and automate accounting end-to-end — finance, tax, inventory, HR, sales and procurement.",
+    "scopeTitle": "Department-by-department implementation",
+    "scopeText": "We bring every part of the business into the system and get it running.",
+    "scope": [
+      {"title": "Finance & accounting", "desc": "Full financial and tax accounting, reporting."},
+      {"title": "HR", "desc": "Personnel records, payroll and timesheets."},
+      {"title": "Procurement", "desc": "Setting up and automating the procurement department."},
+      {"title": "Sales", "desc": "Sales department and CRM process implementation."},
+      {"title": "Warehouse", "desc": "Full automation of warehouse accounting."},
+      {"title": "Reporting", "desc": "Management, financial and tax reporting."}
+    ]
+  },
+  "marquee": {
+    "items": ["Accounting", "Inventory", "POS", "CRM", "Payroll & HR", "Tax reports", "Cloud", "Integration", "Data import", "Manufacturing", "Analytics", "Automation"]
   }
 }

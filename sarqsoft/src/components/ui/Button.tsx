@@ -6,17 +6,15 @@ import {Magnetic} from '@/components/motion/Magnetic';
 
 const variants = {
   primary:
-    'bg-gradient-to-r from-gold-soft via-gold to-amber text-night shadow-glow hover:shadow-[0_0_70px_-12px_rgba(246,160,74,0.75)]',
+    'text-night bg-gradient-to-b from-gold-soft via-gold to-amber shadow-[0_8px_24px_-8px_rgba(246,160,74,0.6),inset_0_1px_0_rgba(255,255,255,0.55),inset_0_-3px_8px_rgba(150,82,18,0.4)] hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-10px_rgba(246,160,74,0.85),inset_0_1px_0_rgba(255,255,255,0.6)] active:translate-y-0 active:shadow-[0_4px_14px_-8px_rgba(246,160,74,0.7),inset_0_2px_5px_rgba(150,82,18,0.45)]',
   outline:
-    'border border-white/15 bg-white/[0.02] text-ink hover:border-gold/50 hover:text-gold',
+    'beam text-ink border border-white/15 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] hover:-translate-y-0.5 hover:border-gold/50 hover:text-gold',
   ghost: 'text-ink/80 hover:text-gold',
 } as const;
 
 type ButtonProps = {
   children: React.ReactNode;
-  /** Locale-aware internal path, e.g. "/jey-erp". */
   href?: string;
-  /** Raw external/absolute href (tel:, mailto:, https://). */
   external?: string;
   variant?: keyof typeof variants;
   className?: string;
@@ -32,7 +30,7 @@ function Arrow() {
       height="16"
       viewBox="0 0 16 16"
       fill="none"
-      className="transition-transform duration-300 group-hover:translate-x-1"
+      className="relative z-[1] transition-transform duration-300 group-hover:translate-x-1"
       aria-hidden
     >
       <path
@@ -57,14 +55,22 @@ export function Button({
   ariaLabel,
 }: ButtonProps) {
   const cls = cn(
-    'group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-tight transition-all duration-300 will-change-transform',
+    'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold tracking-tight transition-all duration-300 will-change-transform',
     variants[variant],
     className,
   );
 
   const inner = (
     <>
-      {children}
+      {variant === 'primary' && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-full"
+        >
+          <span className="absolute -inset-y-3 left-0 w-1/3 -translate-x-[160%] -skew-x-[20deg] bg-gradient-to-r from-transparent via-white/45 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[340%]" />
+        </span>
+      )}
+      <span className="relative z-[1]">{children}</span>
       {withArrow && <Arrow />}
     </>
   );

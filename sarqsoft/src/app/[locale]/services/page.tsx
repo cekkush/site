@@ -5,7 +5,10 @@ import {Section} from '@/components/ui/Section';
 import {SectionHeading} from '@/components/ui/SectionHeading';
 import {Card} from '@/components/ui/Card';
 import {Reveal} from '@/components/motion/Reveal';
-import {JeyModules} from '@/components/sections/JeyModules';
+import {Services} from '@/components/sections/Services';
+import {Automation} from '@/components/sections/Automation';
+import {Expertise} from '@/components/sections/Expertise';
+import {Process} from '@/components/sections/Process';
 import {FinalCTA} from '@/components/sections/FinalCTA';
 
 export async function generateMetadata({
@@ -13,19 +16,21 @@ export async function generateMetadata({
 }: {
   params: {locale: string};
 }): Promise<Metadata> {
-  const t = await getTranslations({locale: params.locale, namespace: 'meta'});
-  return {title: t('jeyTitle'), description: t('jeyDescription')};
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: 'servicesPage',
+  });
+  return {title: t('hero.kicker'), description: t('hero.subtitle')};
 }
 
-export default async function JeyErpPage({
+export default async function ServicesPage({
   params,
 }: {
   params: {locale: string};
 }) {
   setRequestLocale(params.locale);
-  const t = await getTranslations('jeyPage');
-  const features = t.raw('features') as Array<{title: string; desc: string}>;
-  const why = t.raw('why') as Array<{title: string; desc: string}>;
+  const t = await getTranslations('servicesPage');
+  const scope = t.raw('scope') as Array<{title: string; desc: string}>;
 
   return (
     <>
@@ -35,7 +40,7 @@ export default async function JeyErpPage({
         subtitle={t('hero.subtitle')}
       />
 
-      <Section>
+      <Section className="pt-0">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-5">
             <SectionHeading title={t('overviewTitle')} />
@@ -50,39 +55,26 @@ export default async function JeyErpPage({
         </div>
       </Section>
 
-      <Section className="bg-night">
-        <SectionHeading
-          title={t('featuresTitle')}
-          align="center"
-          className="mx-auto mb-14"
-        />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feat, i) => (
-            <Reveal key={feat.title} delay={i * 0.06}>
-              <Card className="h-full">
-                <h3 className="font-display text-lg text-ink">{feat.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-mist">
-                  {feat.desc}
-                </p>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      <Services />
 
-      <JeyModules />
+      <Automation />
 
       <Section>
         <SectionHeading
-          title={t('whyTitle')}
-          align="center"
-          className="mx-auto mb-14"
+          kicker={t('scopeTitle')}
+          title={t('scopeText')}
+          className="mb-14 max-w-2xl"
         />
-        <div className="grid gap-5 md:grid-cols-3">
-          {why.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.08}>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {scope.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.06}>
               <Card className="h-full">
-                <h3 className="font-display text-lg text-ink">{item.title}</h3>
+                <span className="font-display text-3xl text-gradient-gold">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-4 font-display text-lg text-ink">
+                  {item.title}
+                </h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-mist">
                   {item.desc}
                 </p>
@@ -91,6 +83,10 @@ export default async function JeyErpPage({
           ))}
         </div>
       </Section>
+
+      <Expertise />
+
+      <Process />
 
       <FinalCTA />
     </>

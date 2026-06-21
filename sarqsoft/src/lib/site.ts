@@ -12,17 +12,16 @@ export const site = {
   phoneHref: 'tel:+994508700323',
   whatsapp: 'https://wa.me/994508700323',
   telegram: 'https://t.me/sarqsoft',
-  partner: {
-    name: 'Jey Soft',
-    product: 'Jey ERP',
-  },
+  product: 'Jey ERP',
 } as const;
 
 /** Top navigation — keys resolve in messages under `nav`. */
 export const navItems = [
   {key: 'home', href: '/'},
   {key: 'jeyErp', href: '/jey-erp'},
+  {key: 'services', href: '/services'},
   {key: 'about', href: '/about'},
-  {key: 'partnership', href: '/partnership'},
+  {key: 'whyUs', href: '/why-us'},
+  {key: 'configurator', href: '/configurator'},
   {key: 'contact', href: '/contact'},
 ] as const;

@@ -62,7 +62,7 @@ export function Trust() {
                 <h3 className="mt-3 font-display text-lg text-ink">
                   {c.company}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-mist">
+                <p className="mt-3 text-[15px] leading-relaxed text-mist">
                   {c.result}
                 </p>
               </Card>
