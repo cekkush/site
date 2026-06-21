@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import dynamic from 'next/dynamic';
 import {motion} from 'framer-motion';
 import {useTranslations} from 'next-intl';
@@ -20,6 +20,8 @@ export function Hero() {
   const t = useTranslations('hero');
   const stats = t.raw('stats') as Stat[];
   const [motionOk, setMotionOk] = useState(false);
+  const [inView, setInView] = useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMotionOk(
@@ -27,14 +29,29 @@ export function Hero() {
     );
   }, []);
 
+  // Pause the WebGL render loop once the hero scrolls out of view.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      {rootMargin: '120px'},
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[100svh] items-center overflow-hidden"
+    >
       {/* sunrise base */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(130%_120%_at_50%_125%,#3a2410_0%,#150c1f_30%,#04060d_62%)]" />
       {/* WebGL light field */}
       {motionOk && (
         <div className="absolute inset-0">
-          <LightField />
+          <LightField active={inView} />
         </div>
       )}
       {/* readability veil + bottom fade */}

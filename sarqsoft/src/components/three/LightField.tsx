@@ -174,12 +174,13 @@ function Sunrise() {
   );
 }
 
-export default function LightField() {
+export default function LightField({active = true}: {active?: boolean}) {
   return (
     <Canvas
+      frameloop={active ? 'always' : 'never'}
       gl={{antialias: true, alpha: true, powerPreference: 'high-performance'}}
       camera={{position: [0, 0, 13], fov: 60}}
-      dpr={[1, 2]}
+      dpr={[1, 1.5]}
       style={{position: 'absolute', inset: 0}}
     >
       <Sunrise />
