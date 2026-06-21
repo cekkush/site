@@ -80,6 +80,32 @@ The client chose "placeholder, replace later". Replace these with real data:
   the brief.
 - **Partner wording** — confirm the exact "official partner of Jey Soft"
   phrasing/branding is approved by Jey Soft.
+- **Configurator requisites** (`src/lib/configurator/config.ts → REQUISITES`):
+  VÖEN, bank, IBAN, SWIFT are placeholders shown on every generated KP — replace
+  with the real Şərq Soft bank details before sending real proposals. Offer
+  validity (`PROPOSAL.validityDays`, 14) and payment terms are editable there.
+- **Lead delivery** still falls back to WhatsApp/PDF/copy-link: set
+  `WEB3FORMS_KEY` (and optionally `TELEGRAM_RELAY_URL`) in `config.ts` to enable
+  email/Telegram delivery of configurator leads.
+
+## 5a. Configurator — two-axis model (rebuilt)
+
+The configurator (`src/lib/configurator/`, `src/components/configurator/`) is a
+10-step wizard built on two axes:
+
+- **Axis A — activity** (`axes.ts → activities`, 16): how the business operates
+  (retail, wholesale, manufacturing, services, HoReCa, …). Picking one applies a
+  preset (spheres + modules + integrations + services).
+- **Axis B — niche** (`axes.ts → niches`, 16 × 4 = 64 niche-specific modules):
+  the vertical (pharmacy, clinic, construction, auto, jewelry, …). Picking one
+  adds its specialised modules and nudges relevant spheres on.
+- **Smart sub-questions** (`axes.ts → subQuestions`): shown on the "details" step
+  when their parent sphere is active; each option toggles existing module ids.
+
+Niche modules are registered into the global `moduleById` (in `catalog.ts`) so
+the estimator and proposal resolve them automatically. Prices are bands by
+design (`config.ts → PRICING`). Selections (incl. axes + sub-answers) are encoded
+into the shareable `/proposal?c=…` link — old links still decode.
 
 ## 6. Deferred work (agreed with client)
 

@@ -62,6 +62,63 @@ export interface Industry {
   services: string[];
 }
 
+/* ------------------------------------------------------------------ *
+ *  TWO-AXIS MODEL
+ *  Axis A = Activity (how the business operates)
+ *  Axis B = Niche (which vertical it serves)
+ *  Together they drive a tailored preset + niche-specific modules.
+ * ------------------------------------------------------------------ */
+
+export type ActivityGroup = 'trade' | 'production' | 'service' | 'other';
+
+export interface Activity {
+  id: string;
+  name: Loc;
+  desc: Loc;
+  icon: string;
+  group: ActivityGroup;
+  /** preset selections applied on pick */
+  spheres: string[];
+  modules: string[];
+  integrations: string[];
+  services: string[];
+}
+
+export type NicheGroup = 'health' | 'goods' | 'tech' | 'service';
+
+export interface Niche {
+  id: string;
+  name: Loc;
+  desc: Loc;
+  icon: string;
+  group: NicheGroup;
+  /** niche-specific modules (registered in the global module map) */
+  modules: Module[];
+  /** universal/operational spheres this niche typically needs */
+  spheres: string[];
+  /** integrations this niche commonly relies on */
+  integrations: string[];
+}
+
+/** A smart sub-question shown when its parent sphere is selected.
+ *  Each chosen option toggles concrete module ids on/off. */
+export interface SubOption {
+  id: string;
+  name: Loc;
+  /** modules switched on when this option is chosen */
+  modules: string[];
+}
+
+export interface SubQuestion {
+  id: string;
+  /** parent sphere id — question only shows when that sphere is active */
+  sphere: string;
+  prompt: Loc;
+  hint?: Loc;
+  multi: boolean;
+  options: SubOption[];
+}
+
 export interface OptionItem {
   id: string;
   name: Loc;
@@ -80,7 +137,12 @@ export interface Contact {
 }
 
 export interface Selections {
+  /** legacy single-axis preset (kept for old shared links) */
   industry?: string;
+  /** Axis A — activity */
+  activity?: string;
+  /** Axis B — niche */
+  niche?: string;
   size?: Tier;
   users: number;
   branches: number;
@@ -88,6 +150,8 @@ export interface Selections {
   goals: string[];
   spheres: string[];
   modules: string[];
+  /** smart sub-question answers: questionId -> chosen optionIds */
+  subAnswers: Record<string, string[]>;
   integrations: string[];
   services: string[];
   deployment?: string;
@@ -103,6 +167,7 @@ export function emptySelections(): Selections {
     goals: [],
     spheres: [],
     modules: [],
+    subAnswers: {},
     integrations: [],
     services: [],
     contact: {company: '', name: '', email: '', phone: '', messenger: '', note: ''},

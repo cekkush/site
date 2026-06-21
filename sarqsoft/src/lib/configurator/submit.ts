@@ -5,6 +5,7 @@ import {
   serviceById,
   sphereById,
 } from './catalog';
+import {activityById, nicheById} from './axes';
 import {pick, type Estimate, type Selections} from './types';
 
 const names = (ids: string[], map: Map<string, {name: import('./types').Loc}>, locale: string) =>
@@ -36,7 +37,8 @@ export function buildSummary(
     `Email: ${sel.contact.email || '—'}`,
     sel.contact.messenger ? `Messenger: ${sel.contact.messenger}` : '',
     '',
-    `${L ? 'Industry' : 'Sahə'}: ${pick(sel.industry ? {az: sel.industry, en: sel.industry} : undefined, locale) || '—'}`,
+    `${L ? 'Activity' : 'Fəaliyyət'}: ${pick(activityById.get(sel.activity ?? '')?.name, locale) || '—'}`,
+    `${L ? 'Niche' : 'Sahə/niş'}: ${pick(nicheById.get(sel.niche ?? '')?.name, locale) || '—'}`,
     `${L ? 'Size' : 'Ölçü'}: ${sel.size ?? '—'} · ${L ? 'users' : 'istifadəçi'}: ${sel.users} · ${L ? 'branches' : 'filial'}: ${sel.branches}`,
     `${L ? 'Current system' : 'Mövcud sistem'}: ${sel.current ?? '—'}`,
     `${L ? 'Deployment' : 'Yerləşdirmə'}: ${sel.deployment ?? '—'} · ${L ? 'urgency' : 'tələskənlik'}: ${sel.urgency ?? '—'} · ${L ? 'budget' : 'büdcə'}: ${sel.budget ?? '—'}`,

@@ -1,12 +1,14 @@
 import {site} from '@/lib/site';
-import {CURRENCY} from '@/lib/configurator/config';
+import {CURRENCY, PROPOSAL, REQUISITES} from '@/lib/configurator/config';
 import {
   integrationById,
   moduleById,
   serviceById,
   sphereById,
 } from '@/lib/configurator/catalog';
+import {activityById, nicheById} from '@/lib/configurator/axes';
 import {pick, type Estimate, type Selections} from '@/lib/configurator/types';
+import {Logo} from '@/components/brand/Logo';
 import {Icon} from './parts';
 
 const money = (n: number) => `${n.toLocaleString('en-US')} ${CURRENCY}`;
@@ -79,10 +81,21 @@ export function Proposal({
   est: Estimate;
   locale: string;
 }) {
-  const date = new Date().toLocaleDateString(locale === 'en' ? 'en-GB' : 'az-AZ');
+  const now = new Date();
+  const date = now.toLocaleDateString(locale === 'en' ? 'en-GB' : 'az-AZ');
+  const validUntil = new Date(now.getTime() + PROPOSAL.validityDays * 86400000)
+    .toLocaleDateString(locale === 'en' ? 'en-GB' : 'az-AZ');
   const selectedSpheres = sel.spheres
     .map((id) => sphereById.get(id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
+  const activity = sel.activity ? activityById.get(sel.activity) : undefined;
+  const niche = sel.niche ? nicheById.get(sel.niche) : undefined;
+  const nicheModules = niche
+    ? niche.modules.filter((mm) => sel.modules.includes(mm.id))
+    : [];
+  const context = [activity && pick(activity.name, locale), niche && pick(niche.name, locale)]
+    .filter(Boolean)
+    .join(' · ');
 
   return (
     <article
@@ -92,16 +105,33 @@ export function Proposal({
       {/* Header */}
       <header className="border-b border-white/10 pb-7">
         <div className="flex items-center justify-between gap-4">
-          <span className="text-xs uppercase tracking-[0.28em] text-gold/90">
-            {L(locale, 'Şəxsi kommersiya təklifi', 'Personal commercial proposal')}
+          {PROPOSAL.showLogo ? (
+            <Logo />
+          ) : (
+            <span className="text-xs uppercase tracking-[0.28em] text-gold/90">
+              {L(locale, 'Şəxsi kommersiya təklifi', 'Personal commercial proposal')}
+            </span>
+          )}
+          <span className="text-right text-xs text-slate">
+            <span className="block">{date}</span>
+            <span className="block text-[11px]">
+              {L(locale, 'etibarlıdır', 'valid until')}: {validUntil}
+            </span>
           </span>
-          <span className="text-xs text-slate">{date}</span>
         </div>
-        <h1 className="mt-4 font-display text-3xl leading-tight tracking-tight text-ink sm:text-4xl">
+        {PROPOSAL.showLogo && (
+          <p className="mt-5 text-xs uppercase tracking-[0.28em] text-gold/90">
+            {L(locale, 'Şəxsi kommersiya təklifi', 'Personal commercial proposal')}
+          </p>
+        )}
+        <h1 className="mt-3 font-display text-3xl leading-tight tracking-tight text-ink sm:text-4xl">
           {sel.contact.company
             ? sel.contact.company
             : L(locale, 'Biznesinizin avtomatlaşdırılması', 'Automating your business')}
         </h1>
+        {context && (
+          <p className="mt-2 text-[13px] uppercase tracking-[0.18em] text-slate">{context}</p>
+        )}
         <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-mist">
           {L(
             locale,
@@ -177,6 +207,22 @@ export function Proposal({
             );
           })}
         </div>
+
+        {nicheModules.length > 0 && niche && (
+          <div className="mt-6">
+            <p className="mb-2 text-sm font-medium text-gold">
+              {L(locale, 'Sahə üzrə modullar', 'Industry-specific modules')} —{' '}
+              {pick(niche.name, locale)}
+            </p>
+            <ul className="grid gap-1.5 sm:grid-cols-2">
+              {nicheModules.map((mm) => (
+                <li key={mm.id} className="flex items-start gap-2 text-[14px] text-mist">
+                  <Dot /> {pick(mm.name, locale)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {sel.integrations.length > 0 && (
           <div className="mt-6">
@@ -265,6 +311,29 @@ export function Proposal({
         </ul>
       </Block>
 
+      {/* Requisites & payment terms */}
+      <Block title={L(locale, 'Rekvizitlər və ödəniş', 'Requisites & payment')}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <dl className="space-y-1.5 text-[13px] text-mist">
+            <Req k={L(locale, 'Hüquqi şəxs', 'Legal entity')} v={REQUISITES.legalName} />
+            <Req k="VÖEN" v={REQUISITES.voen} />
+            <Req k={L(locale, 'Bank', 'Bank')} v={REQUISITES.bank} />
+            <Req k="IBAN" v={REQUISITES.iban} />
+            <Req k="SWIFT" v={REQUISITES.swift} />
+          </dl>
+          <p className="text-[13px] leading-relaxed text-mist">
+            {pick(REQUISITES.terms, locale)}
+          </p>
+        </div>
+        <p className="mt-4 text-[12px] leading-relaxed text-slate">
+          {L(
+            locale,
+            `Bu təklif ${PROPOSAL.validityDays} gün — ${validUntil} tarixinədək etibarlıdır.`,
+            `This proposal is valid for ${PROPOSAL.validityDays} days — until ${validUntil}.`,
+          )}
+        </p>
+      </Block>
+
       {/* Footer / CTA */}
       <footer className="mt-8 rounded-2xl border border-gold/20 bg-gold/[0.04] p-6">
         <p className="font-display text-lg text-ink">
@@ -324,4 +393,13 @@ function Block({title, children}: {title: string; children: React.ReactNode}) {
 
 function Dot() {
   return <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-gold/70" />;
+}
+
+function Req({k, v}: {k: string; v: string}) {
+  return (
+    <div className="flex justify-between gap-3 border-b border-white/5 pb-1.5">
+      <dt className="text-slate">{k}</dt>
+      <dd className="text-right text-ink">{v}</dd>
+    </div>
+  );
 }

@@ -24,6 +24,8 @@ function b64urlDecode(s: string): string {
 export function encodeSelections(sel: Selections): string {
   const compact = {
     i: sel.industry,
+    a: sel.activity,
+    ni: sel.niche,
     z: sel.size,
     u: sel.users,
     b: sel.branches,
@@ -31,6 +33,7 @@ export function encodeSelections(sel: Selections): string {
     g: sel.goals,
     s: sel.spheres,
     m: sel.modules,
+    q: sel.subAnswers,
     n: sel.integrations,
     v: sel.services,
     d: sel.deployment,
@@ -48,6 +51,8 @@ export function decodeSelections(str: string): Selections | null {
     return {
       ...base,
       industry: c.i as string | undefined,
+      activity: c.a as string | undefined,
+      niche: c.ni as string | undefined,
       size: c.z as Selections['size'],
       users: (c.u as number) ?? base.users,
       branches: (c.b as number) ?? base.branches,
@@ -55,6 +60,7 @@ export function decodeSelections(str: string): Selections | null {
       goals: (c.g as string[]) ?? [],
       spheres: (c.s as string[]) ?? [],
       modules: (c.m as string[]) ?? [],
+      subAnswers: (c.q as Record<string, string[]>) ?? {},
       integrations: (c.n as string[]) ?? [],
       services: (c.v as string[]) ?? [],
       deployment: c.d as string | undefined,

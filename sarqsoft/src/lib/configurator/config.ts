@@ -17,6 +17,29 @@ export const TELEGRAM_RELAY_URL = '';
 
 export const CURRENCY = '₼'; // AZN
 
+/** Commercial-proposal presentation knobs. */
+export const PROPOSAL = {
+  /** how long the offer is valid, in days (creates urgency) */
+  validityDays: 14,
+  /** show the Şərq Soft logo in the proposal/PDF header */
+  showLogo: true,
+};
+
+/** Şərq Soft requisites + payment terms shown on the proposal.
+ *  PLACEHOLDER — replace with real bank details before sending real KPs. */
+export const REQUISITES = {
+  legalName: 'Şərq Soft MMC',
+  voen: '0000000000', // VÖEN — TODO: real
+  bank: 'Bank adı', // TODO: real bank name
+  iban: 'AZ00 XXXX 0000 0000 0000 0000 0000', // TODO: real IBAN
+  swift: 'XXXXAZ22', // TODO: real SWIFT
+  /** payment schedule, bilingual */
+  terms: {
+    az: 'Ödəniş şərtləri: 50% avans, qalan 50% işə salındıqdan sonra. Mərhələli ödəniş mümkündür.',
+    en: 'Payment terms: 50% upfront, remaining 50% on go-live. Milestone-based payment available.',
+  },
+};
+
 /** Rough, fully-editable pricing knobs. Prices are bands by design. */
 export const PRICING = {
   baseMin: 600,

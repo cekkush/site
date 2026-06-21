@@ -6,6 +6,7 @@ import type {
   Service,
   Sphere,
 } from './types';
+import {allNicheModules} from './axes';
 
 /* ------------------------------------------------------------------ *
  *  SPHERES & MODULES — the heart of the configurator.
@@ -427,7 +428,12 @@ export const industries: Industry[] = [
  *  LOOKUP MAPS
  * ------------------------------------------------------------------ */
 
-export const allModules: Module[] = spheres.flatMap((s) => s.modules);
+// niche-specific modules (Axis B) live alongside sphere modules in the
+// global module map so the estimator and proposal can resolve every id.
+export const allModules: Module[] = [
+  ...spheres.flatMap((s) => s.modules),
+  ...allNicheModules,
+];
 export const moduleById = new Map(allModules.map((x) => [x.id, x]));
 export const sphereById = new Map(spheres.map((s) => [s.id, s]));
 export const sphereOfModule = new Map(
