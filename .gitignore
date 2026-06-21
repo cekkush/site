@@ -22,3 +22,6 @@ yarn-error.log*
 /webgl-*.jpg
 /canvas-*.txt
 /composite*.txt
+/*.jpeg
+/*.jpg
+/*.png
