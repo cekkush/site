@@ -8,7 +8,6 @@ import {Button} from '@/components/ui/Button';
 import {
   budgets,
   currentSystems,
-  deployments,
   goals as goalOptions,
   integrations,
   services,
@@ -198,7 +197,7 @@ export function Configurator() {
 
   /* ---- steps ---- */
   const steps = [
-    {id: 'niche', title: T('Sahə / niş', 'Industry / niche'), sub: T('Hansı sahədəsiniz? Bir seçim — yalnız uyğun fəaliyyət növləri təklif olunur.', 'Which industry are you in? One pick — only sensible operating models are then offered.')},
+    {id: 'niche', title: T('Fəaliyyət istiqaməti', 'Industry / niche'), sub: T('Hansı sahədəsiniz? Bir seçim — yalnız uyğun fəaliyyət növləri təklif olunur.', 'Which industry are you in? One pick — only sensible operating models are then offered.')},
     {id: 'activity', title: T('Necə işləyirsiniz?', 'How you operate'), sub: T('Biznes model(lər)iniz — bir neçəsini seçə bilərsiniz (məs. istehsal + pərakəndə).', 'Your operating model(s) — pick one or more (e.g. manufacturing + retail).')},
     {id: 'profile', title: T('Şirkət profili', 'Company profile'), sub: T('Bir neçə sual həllin miqyasını dəqiqləşdirir.', 'A few questions to size the solution.')},
     {id: 'spheres', title: T('Avtomatlaşdırma sahələri', 'Areas to automate'), sub: T('Hansı istiqamətləri əhatə edək?', 'Which directions should we cover?')},
@@ -206,8 +205,8 @@ export function Configurator() {
     {id: 'details', title: T('Dəqiqləşdirici suallar', 'Refining questions'), sub: T('Bir neçə “ağıllı” sual həlli dəqiq sizə uyğunlaşdırır.', 'A few smart questions tailor the solution precisely.')},
     {id: 'integrations', title: T('İnteqrasiyalar', 'Integrations'), sub: T('Hansı xarici sistemlərlə bağlanaq?', 'Which external systems to connect?')},
     {id: 'services', title: T('Tətbiq xidmətləri', 'Implementation services'), sub: T('Bizdən hansı işləri istəyirsiniz?', 'Which work do you want from us?')},
-    {id: 'project', title: T('Layihə parametrləri', 'Project parameters'), sub: T('Yerləşdirmə, müddət və büdcə.', 'Deployment, timeline and budget.')},
-    {id: 'contact', title: T('Əlaqə və KP', 'Contact & proposal'), sub: T('KP-ni formalaşdıraq və sizə göndərək.', 'Let’s generate and send your proposal.')},
+    {id: 'project', title: T('Layihə parametrləri', 'Project parameters'), sub: T('Müddət və büdcə.', 'Timeline and budget.')},
+    {id: 'contact', title: T('Əlaqə və kommersiya təklifi', 'Contact & proposal'), sub: T('Kommersiya təklifini formalaşdıraq və sizə göndərək.', 'Let’s generate and send your proposal.')},
   ];
 
   const canNext = useMemo(() => {
@@ -288,7 +287,7 @@ export function Configurator() {
   /* ---------- DONE: proposal + actions ---------- */
   if (done) {
     const waText = encodeURIComponent(
-      `${T('Salam! Şərq Soft saytında özümə KP hazırladım:', 'Hi! I built a proposal on the Şərq Soft site:')}\n${proposalUrl}`,
+      `${T('Salam! Şərq Soft saytında özüm üçün kommersiya təklifi hazırladım:', 'Hi! I built a proposal on the Şərq Soft site:')}\n${proposalUrl}`,
     );
     return (
       <div className="container-x py-12">
@@ -308,8 +307,8 @@ export function Configurator() {
             </p>
             <p className="mt-1 text-[14px] text-mist">
               {result?.ok
-                ? T('Tezliklə sizinlə əlaqə saxlayacağıq. KP-ni yükləyə və ya saxlaya bilərsiniz.', 'We’ll contact you shortly. You can download or save the proposal.')
-                : T('KP-ni yükləyin, linki saxlayın və ya birbaşa bizə göndərin.', 'Download it, keep the link, or send it straight to us.')}
+                ? T('Tezliklə sizinlə əlaqə saxlayacağıq. Kommersiya təklifini yükləyə və ya saxlaya bilərsiniz.', 'We’ll contact you shortly. You can download or save the proposal.')
+                : T('Kommersiya təklifini yükləyin, linki saxlayın və ya birbaşa bizə göndərin.', 'Download it, keep the link, or send it straight to us.')}
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <button
@@ -428,7 +427,7 @@ export function Configurator() {
                 {step === steps.length - 1
                   ? submitting
                     ? T('Hazırlanır…', 'Generating…')
-                    : T('KP-ni yarat', 'Generate proposal')
+                    : T('Kommersiya təklifini yarat', 'Generate proposal')
                   : T('Davam et', 'Continue')}
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </button>
@@ -844,20 +843,6 @@ export function Configurator() {
         return (
           <div className="space-y-8">
             <div>
-              <p className="mb-3 text-sm text-mist">{T('Yerləşdirmə', 'Deployment')}</p>
-              <div className="grid gap-2.5 sm:grid-cols-3">
-                {deployments.map((o) => (
-                  <OptionRow
-                    key={o.id}
-                    selected={sel.deployment === o.id}
-                    onClick={() => update({deployment: o.id})}
-                    title={pick(o.name, locale)}
-                    hint={pick(o.hint, locale)}
-                  />
-                ))}
-              </div>
-            </div>
-            <div>
               <p className="mb-3 text-sm text-mist">{T('Tələskənlik', 'Urgency')}</p>
               <div className="grid gap-2.5 sm:grid-cols-3">
                 {urgencies.map((o) => (
@@ -932,7 +917,7 @@ export function Configurator() {
             />
             <p className="text-[12px] leading-relaxed text-slate">
               {T(
-                '«KP-ni yarat» düyməsini sıxmaqla məlumatlarınızın bizimlə əlaqə üçün istifadəsinə razılıq verirsiniz.',
+                '«Kommersiya təklifini yarat» düyməsini sıxmaqla məlumatlarınızın bizimlə əlaqə üçün istifadəsinə razılıq verirsiniz.',
                 'By clicking “Generate proposal” you agree we may use your details to contact you.',
               )}
             </p>

@@ -29,7 +29,7 @@ export function buildSummary(
       : '—';
 
   const lines = [
-    `🟡 ${L ? 'NEW PROPOSAL REQUEST' : 'YENİ KP SORĞUSU'} — Şərq Soft`,
+    `🟡 ${L ? 'NEW PROPOSAL REQUEST' : 'YENİ KOMMERSİYA TƏKLİFİ SORĞUSU'} — Şərq Soft`,
     '',
     `${L ? 'Company' : 'Şirkət'}: ${sel.contact.company || '—'}`,
     `${L ? 'Contact' : 'Əlaqə'}: ${sel.contact.name || '—'}`,
@@ -38,10 +38,10 @@ export function buildSummary(
     sel.contact.messenger ? `Messenger: ${sel.contact.messenger}` : '',
     '',
     `${L ? 'Activity' : 'Fəaliyyət'}: ${sel.activities.map((id) => pick(activityById.get(id)?.name, locale)).filter(Boolean).join(', ') || '—'}`,
-    `${L ? 'Niche' : 'Sahə/niş'}: ${pick(nicheById.get(sel.niche ?? '')?.name, locale) || '—'}`,
+    `${L ? 'Niche' : 'Fəaliyyət istiqaməti'}: ${pick(nicheById.get(sel.niche ?? '')?.name, locale) || '—'}`,
     `${L ? 'Size' : 'Ölçü'}: ${sel.size ?? '—'} · ${L ? 'users' : 'istifadəçi'}: ${sel.users} · ${L ? 'branches' : 'filial'}: ${sel.branches}`,
     `${L ? 'Current system' : 'Mövcud sistem'}: ${sel.current ?? '—'}`,
-    `${L ? 'Deployment' : 'Yerləşdirmə'}: ${sel.deployment ?? '—'} · ${L ? 'urgency' : 'tələskənlik'}: ${sel.urgency ?? '—'} · ${L ? 'budget' : 'büdcə'}: ${sel.budget ?? '—'}`,
+    `${L ? 'Urgency' : 'Tələskənlik'}: ${sel.urgency ?? '—'} · ${L ? 'budget' : 'büdcə'}: ${sel.budget ?? '—'}`,
     '',
     `${L ? 'Spheres' : 'Sahələr'}: ${names(sel.spheres, sphereById as never, locale) || '—'}`,
     `${L ? 'Modules' : 'Modullar'} (${sel.modules.length}): ${names(sel.modules, moduleById as never, locale) || '—'}`,
@@ -51,7 +51,7 @@ export function buildSummary(
     `${L ? 'Estimate' : 'Təxmini'}: ${money} · ${L ? 'monthly' : 'aylıq'}: ${monthly} · ~${est.weeks} ${L ? 'weeks' : 'həftə'} · ${est.complexity}`,
     sel.contact.note ? `\n${L ? 'Note' : 'Qeyd'}: ${sel.contact.note}` : '',
     '',
-    `🔗 ${L ? 'Full proposal' : 'Tam KP'}: ${proposalUrl}`,
+    `🔗 ${L ? 'Full proposal' : 'Tam kommersiya təklifi'}: ${proposalUrl}`,
   ];
   return lines.filter((l) => l !== '').join('\n');
 }
@@ -78,7 +78,7 @@ export async function submitLead(
         headers: {'Content-Type': 'application/json', Accept: 'application/json'},
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `KP / Lead — ${sel.contact.company || sel.contact.name || 'Şərq Soft'}`,
+          subject: `Kommersiya təklifi / müraciət — ${sel.contact.company || sel.contact.name || 'Şərq Soft'}`,
           from_name: sel.contact.name || 'Şərq Soft configurator',
           email: sel.contact.email || 'no-reply@sarqsoft.az',
           message: summary,

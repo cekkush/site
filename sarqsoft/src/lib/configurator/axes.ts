@@ -516,7 +516,7 @@ export const activityGroupLabels: Record<string, {az: string; en: string}> = {
 export const nicheGroupLabels: Record<string, {az: string; en: string}> = {
   health: {az: 'Sağlamlıq və gözəllik', en: 'Health & beauty'},
   goods: {az: 'Pərakəndə mallar', en: 'Retail goods'},
-  tech: {az: 'Texniki və ağır', en: 'Technical & heavy'},
+  tech: {az: 'Sənaye və texnologiya', en: 'Technical & heavy'},
   service: {az: 'Xidmət və digər', en: 'Service & other'},
 };
 
