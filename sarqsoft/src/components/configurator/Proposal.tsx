@@ -34,7 +34,7 @@ export function LiveSummary({
       </p>
       <div className="mt-4 grid grid-cols-3 gap-2 text-center">
         <Stat n={est.moduleCount} l={L(locale, 'modul', 'modules')} />
-        <Stat n={sel.integrations.length} l={L(locale, 'inteqr.', 'integr.')} />
+        <Stat n={sel.integrations.length} l={L(locale, 'inteqrasiya', 'integr.')} />
         <Stat n={sel.services.length} l={L(locale, 'xidmət', 'services')} />
       </div>
       <div className="mt-5 border-t border-white/10 pt-4">

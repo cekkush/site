@@ -912,13 +912,13 @@ export function Configurator() {
                 placeholder="+994 ..."
               />
               <Field
-                label="Email"
+                label={T('E-poçt', 'Email')}
                 type="email"
                 value={sel.contact.email}
                 onChange={(v) => update({contact: {...sel.contact, email: v}})}
               />
               <Field
-                label={T('Messencer (istəyə görə)', 'Messenger (optional)')}
+                label={T('Mesajlaşma (istəyə görə)', 'Messenger (optional)')}
                 value={sel.contact.messenger}
                 onChange={(v) => update({contact: {...sel.contact, messenger: v}})}
                 placeholder="WhatsApp / Telegram"

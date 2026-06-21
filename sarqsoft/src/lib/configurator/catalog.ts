@@ -27,7 +27,7 @@ export const spheres: Sphere[] = [
       m('acc-core', {az: 'Hesablar planı və avtomatik müxabirləşmə', en: 'Chart of accounts & auto-postings'}, {az: 'Əməliyyatlar avtomatik müvafiq hesablara düşür.', en: 'Transactions post to the right accounts automatically.'}, 5, 2, 700, 1400),
       m('acc-primary', {az: 'İlkin sənədlər (qaimə, qəbz, akt)', en: 'Primary documents (invoices, receipts, acts)'}, {az: 'Vahid bazadan bütün ilkin sənədlər.', en: 'All source documents from one base.'}, 3, 1, 350, 800),
       m('acc-bank', {az: 'Bank çıxarışlarının idxalı', en: 'Bank statement import'}, {az: 'Çıxarışlar avtomatik tanınır və bağlanır.', en: 'Statements auto-recognised and reconciled.'}, 3, 1, 400, 900),
-      m('acc-assets', {az: 'Əsas vəsaitlər və amortizasiya', en: 'Fixed assets & depreciation'}, {az: 'ƏV uçotu və avtomatik amortizasiya.', en: 'Asset register and automatic depreciation.'}, 3, 1, 350, 800),
+      m('acc-assets', {az: 'Əsas vəsaitlər və amortizasiya', en: 'Fixed assets & depreciation'}, {az: 'Əsas vəsaitlərin uçotu və avtomatik amortizasiya.', en: 'Asset register and automatic depreciation.'}, 3, 1, 350, 800),
       m('acc-fx', {az: 'Valyuta uçotu və məzənnə fərqləri', en: 'Multi-currency & FX differences'}, {az: 'Çoxvalyutalı əməliyyatlar və yenidən qiymətləndirmə.', en: 'Multi-currency ops and revaluation.'}, 2, 1, 300, 650),
       m('acc-close', {az: 'Dövrün bağlanması', en: 'Period close'}, {az: 'Ay/rüb/il bağlanışının avtomatlaşdırılması.', en: 'Automated month/quarter/year close.'}, 2, 1, 250, 600),
     ],
@@ -74,7 +74,7 @@ export const spheres: Sphere[] = [
       en: 'Customers, deals and receivables in one place.',
     },
     modules: [
-      m('sl-crm', {az: 'Müştəri bazası və satış hunisi', en: 'Customer base & sales pipeline'}, {az: 'Lead-dən sövdəyə qədər izləmə.', en: 'Track from lead to deal.'}, 4, 2, 500, 1200),
+      m('sl-crm', {az: 'Müştəri bazası və satış kanalı', en: 'Customer base & sales pipeline'}, {az: 'Potensial müştəridən sövdəyə qədər izləmə.', en: 'Track from lead to deal.'}, 4, 2, 500, 1200),
       m('sl-price', {az: 'Qiymət siyahıları və endirimlər', en: 'Price lists & discounts'}, {az: 'Çoxsəviyyəli qiymət və endirim siyasəti.', en: 'Multi-tier pricing and discount rules.'}, 2, 1, 250, 600),
       m('sl-contracts', {az: 'Müqavilələr və hesab-fakturalar', en: 'Contracts & invoices'}, {az: 'Sənədlərin avtomatik formalaşması.', en: 'Documents generated automatically.'}, 2, 1, 250, 600),
       m('sl-ar', {az: 'Debitor borcların idarəsi', en: 'Receivables management'}, {az: 'Borc qalıqları və xatırlatmalar.', en: 'Outstanding balances and reminders.'}, 2, 1, 250, 600),
@@ -178,13 +178,13 @@ export const spheres: Sphere[] = [
     group: 'people',
     name: {az: 'Layihələr və xidmətlər', en: 'Projects & services'},
     tagline: {
-      az: 'Layihə uçotu, vaxt və billinq.',
+      az: 'Layihə uçotu, vaxt və hesablaşma.',
       en: 'Project accounting, time and billing.',
     },
     modules: [
       m('pj-track', {az: 'Layihə uçotu', en: 'Project tracking'}, {az: 'Layihə üzrə gəlir/xərc.', en: 'Revenue/cost per project.'}, 3, 1, 350, 800),
-      m('pj-time', {az: 'Vaxt uçotu (time-tracking)', en: 'Time tracking'}, {az: 'İşçilərin layihəyə vaxtı.', en: 'Staff time on projects.'}, 2, 1, 250, 600),
-      m('pj-bill', {az: 'Layihə billinqi', en: 'Project billing'}, {az: 'Vaxt/mərhələ üzrə hesablama.', en: 'Time/milestone billing.'}, 2, 1, 250, 600),
+      m('pj-time', {az: 'Vaxt uçotu', en: 'Time tracking'}, {az: 'İşçilərin layihəyə sərf etdiyi vaxt.', en: 'Staff time on projects.'}, 2, 1, 250, 600),
+      m('pj-bill', {az: 'Layihə üzrə hesablaşma', en: 'Project billing'}, {az: 'Vaxt və ya mərhələ üzrə hesablaşma.', en: 'Time/milestone billing.'}, 2, 1, 250, 600),
     ],
   },
   {
@@ -197,7 +197,7 @@ export const spheres: Sphere[] = [
       en: 'Dashboards and real metrics for managers.',
     },
     modules: [
-      m('bi-dash', {az: 'İdarəedici panellər (dashboard)', en: 'Executive dashboards'}, {az: 'Biznesin canlı mənzərəsi.', en: 'A live picture of the business.'}, 3, 1, 400, 950),
+      m('bi-dash', {az: 'İdarəetmə panelləri', en: 'Executive dashboards'}, {az: 'Biznesin canlı mənzərəsi.', en: 'A live picture of the business.'}, 3, 1, 400, 950),
       m('bi-kpi', {az: 'KPI və hesabatlar', en: 'KPI & reports'}, {az: 'Fərdi hesabatlar və göstəricilər.', en: 'Custom reports and metrics.'}, 2, 1, 300, 700),
       m('bi-cost', {az: 'Məsrəf mərkəzləri', en: 'Cost centers'}, {az: 'Şöbə/istiqamət üzrə təhlil.', en: 'Analysis by unit/direction.'}, 2, 1, 250, 600),
     ],
