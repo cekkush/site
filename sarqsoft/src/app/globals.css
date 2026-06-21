@@ -109,7 +109,14 @@ html.lenis body {
     z-index: 60;
     pointer-events: none;
     opacity: 0.05;
+    transition: opacity 0.25s ease;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Grain is a full-screen layer that would re-blend on every scroll frame;
+     hide it while scrolling (set by SmoothScroll) so it costs nothing, then
+     fade it back in once the scroll goes idle. */
+  html.is-scrolling .grain::after {
+    opacity: 0;
   }
   .hairline-t {
     @apply border-t border-white/10;
