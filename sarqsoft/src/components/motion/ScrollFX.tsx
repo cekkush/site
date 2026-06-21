@@ -25,12 +25,17 @@ export function ScrollFX() {
     const ctx = gsap.context(() => {
       gsap.utils.toArray<HTMLElement>('[data-parallax]').forEach((el) => {
         const speed = parseFloat(el.dataset.parallax || '0.12');
+        // Promote to its own layer + force a 3D transform so the element (often
+        // heading text) is rasterised once and only composited as it drifts,
+        // instead of repainting every scroll frame.
+        gsap.set(el, {willChange: 'transform', force3D: true});
         gsap.fromTo(
           el,
           {yPercent: speed * 50},
           {
             yPercent: -speed * 50,
             ease: 'none',
+            force3D: true,
             scrollTrigger: {
               trigger: el,
               start: 'top bottom',
