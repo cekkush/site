@@ -5,7 +5,7 @@
     "jeyTitle": "Jey ERP — biznesiniz üçün vahid idarəetmə sistemi",
     "jeyDescription": "Jey ERP modulları: maliyyə uçotu, anbar, satış və CRM, POS, maaş, istehsalat. Şərq Soft tərəfindən tətbiq və dəstək.",
     "whyTitle": "Niyə Şərq Soft",
-    "whyDescription": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə və daimi dəstək.",
+    "whyDescription": "Lokal ekspertiza, başdan-sona tətbiq, zəmanətli nəticə və daimi dəstək.",
     "contactTitle": "Əlaqə",
     "contactDescription": "Jey ERP demosu üçün bizimlə əlaqə saxlayın. E-poçt, telefon, WhatsApp, Telegram.",
     "configuratorTitle": "Həll konfiquratoru — fərdi kommersiya təklifi",
@@ -166,7 +166,7 @@
       {"quote": "Dəstək həmişə əlçatandır — bu, bizim üçün ən vacibdir.", "name": "Müştəri rəyi", "role": "Direktor"}
     ],
     "partnerTitle": "Tam dövr xidmət",
-    "partnerText": "Şərq Soft Jey ERP-nin tətbiqini, fərdiləşdirilməsini və dəstəyini uçtan-uca təmin edir."
+    "partnerText": "Şərq Soft Jey ERP-nin tətbiqini, fərdiləşdirilməsini və dəstəyini başdan-sona təmin edir."
   },
   "cta": {
     "kicker": "Hazırsınız?",
@@ -215,14 +215,14 @@
     "hero": {
       "kicker": "Niyə biz",
       "title": "Niyə Şərq Soft?",
-      "subtitle": "Lokal ekspertiza, uçtan-uca tətbiq, zəmanətli nəticə."
+      "subtitle": "Lokal ekspertiza, başdan-sona tətbiq, zəmanətli nəticə."
     },
     "introTitle": "Etibarlı tətbiq tərəfdaşınız",
-    "introText": "Şərq Soft Jey ERP-ni biznesinizə uyğunlaşdırır və uçtan-uca tətbiq edir — təhlildən canlı işə keçidə və daimi dəstəyə qədər.",
+    "introText": "Şərq Soft Jey ERP-ni biznesinizə uyğunlaşdırır və başdan-sona tətbiq edir — təhlildən canlı işə keçidə və daimi dəstəyə qədər.",
     "benefitsTitle": "Üstünlüklərimiz",
     "benefits": [
       {"title": "Lokal ekspertiza", "desc": "Yerli komanda, Azərbaycan dilində dəstək."},
-      {"title": "Uçtan-uca tətbiq", "desc": "Təhlil, quraşdırma, köçürmə, təlim və dəstək — bir əldən."},
+      {"title": "Başdan-sona tətbiq", "desc": "Təhlil, quraşdırma, köçürmə, təlim və dəstək — bir əldən."},
       {"title": "Sahə təcrübəsi", "desc": "Retail, HoReCa, distribusiya və istehsalat üzrə təcrübə."},
       {"title": "Zəmanətli nəticə", "desc": "Şəffaf proses və ölçüləbilən nəticə."}
     ],
@@ -271,7 +271,7 @@
   },
   "expertise": {
     "kicker": "Ekspertiza",
-    "title": "Yerli ekspertiza, uçtan-uca tətbiq",
+    "title": "Yerli ekspertiza, başdan-sona tətbiq",
     "intro": "Azərbaycan mühasibatlığını dərindən bilirik və bütün infrastrukturu sizin üçün qururuq.",
     "items": [
       {"title": "Azərbaycan mühasibatlığı", "desc": "AR qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
@@ -287,7 +287,7 @@
       "subtitle": "Uçot və ERP sistemlərinin tətbiqi, biznes proseslərin avtomatlaşdırılması və daimi dəstək — bir komandadan."
     },
     "overviewTitle": "Nə təklif edirik?",
-    "overviewText": "Biznes proseslərinizi təhlil edirik, Jey ERP-ni tətbiq edirik və uçotu uçtan-uca avtomatlaşdırırıq — maliyyə, vergi, anbar, kadr, satış və alış.",
+    "overviewText": "Biznes proseslərinizi təhlil edirik, Jey ERP-ni tətbiq edirik və uçotu başdan-sona avtomatlaşdırırıq — maliyyə, vergi, anbar, kadr, satış və alış.",
     "scopeTitle": "Şöbə-şöbə tətbiq",
     "scopeText": "Biznesin hər şöbəsini sistemə köçürür və işə salırıq.",
     "scope": [
