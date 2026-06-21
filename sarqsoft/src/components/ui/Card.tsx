@@ -27,11 +27,19 @@ export function Card({
 }: CardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useRef(false);
+  const settle = useRef<number>();
 
   function handleEnter() {
-    reduce.current =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const el = ref.current;
+    if (!el) return;
+    reduce.current = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    if (!tilt || reduce.current) return;
+    // Promote to its own layer only while the pointer is over the card, so the
+    // dozens of idle cards stay cheap to composite during scroll.
+    window.clearTimeout(settle.current);
+    el.style.willChange = 'transform';
   }
 
   function handleMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -40,19 +48,25 @@ export function Card({
     const r = el.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width;
     const py = (e.clientY - r.top) / r.height;
-    el.style.setProperty('--mx', `${(px * 100).toFixed(2)}%`);
-    el.style.setProperty('--my', `${(py * 100).toFixed(2)}%`);
+    el.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
+    el.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
     if (tilt && !reduce.current) {
-      el.style.setProperty('--rx', `${((0.5 - py) * 6).toFixed(2)}deg`);
-      el.style.setProperty('--ry', `${((px - 0.5) * 6).toFixed(2)}deg`);
+      el.style.transform = `perspective(1000px) rotateX(${(
+        (0.5 - py) *
+        6
+      ).toFixed(2)}deg) rotateY(${((px - 0.5) * 6).toFixed(2)}deg)`;
     }
   }
 
   function handleLeave() {
     const el = ref.current;
     if (!el) return;
-    el.style.setProperty('--rx', '0deg');
-    el.style.setProperty('--ry', '0deg');
+    el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    // Once it has settled flat, drop the transform + layer entirely.
+    settle.current = window.setTimeout(() => {
+      el.style.transform = '';
+      el.style.willChange = 'auto';
+    }, 600);
   }
 
   return (
@@ -68,8 +82,6 @@ export function Card({
         className,
       )}
       style={{
-        transform:
-          'perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))',
         transition:
           'transform 0.5s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease',
       }}
