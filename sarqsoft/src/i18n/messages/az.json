@@ -1,7 +1,7 @@
 {
   "meta": {
     "homeTitle": "Şərq Soft — Jey ERP tətbiqi və uçot sistemləri",
-    "homeDescription": "Şərq Soft — biznes üçün Jey ERP tətbiqi: uçot, anbar, satış, CRM, POS, maaş və istehsalat. Məlumat xaosundan nizama.",
+    "homeDescription": "Şərq Soft — biznes üçün Jey ERP tətbiqi: uçot, anbar, satış, CRM, POS, maaş və istehsalat. Məlumat xaosundan strateji nizama.",
     "jeyTitle": "Jey ERP — biznesiniz üçün vahid idarəetmə sistemi",
     "jeyDescription": "Jey ERP modulları: maliyyə uçotu, anbar, satış və CRM, POS, maaş, istehsalat. Şərq Soft tərəfindən tətbiq və dəstək.",
     "aboutTitle": "Haqqımızda",
@@ -19,7 +19,6 @@
     "home": "Ana səhifə",
     "jeyErp": "Jey ERP",
     "services": "Xidmətlər",
-    "about": "Haqqımızda",
     "whyUs": "Niyə biz",
     "contact": "Əlaqə",
     "configurator": "Konfiqurator",
@@ -41,7 +40,7 @@
     "kicker": "Jey ERP tətbiqi üzrə ekspertlər",
     "titleLine1": "Biznesinizə",
     "titleLine2": "Şərq işığı",
-    "subtitle": "Uçot və ERP sistemlərinin tətbiqi. Məlumat xaosundan nizama — Jey ERP ilə biznesinizin yeni günü doğur.",
+    "subtitle": "Uçot və ERP sistemlərinin tətbiqi: Məlumat xaosundan strateji nizama.",
     "ctaPrimary": "Jey ERP demosu",
     "ctaSecondary": "Həlləri kəşf et",
     "scroll": "Aşağı",

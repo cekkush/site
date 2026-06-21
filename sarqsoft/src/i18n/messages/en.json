@@ -1,7 +1,7 @@
 {
   "meta": {
     "homeTitle": "Şərq Soft — Jey ERP implementation & accounting systems",
-    "homeDescription": "Şərq Soft — Jey ERP implementation for business: accounting, inventory, sales, CRM, POS, payroll and manufacturing. From data chaos to order.",
+    "homeDescription": "Şərq Soft — Jey ERP implementation for business: accounting, inventory, sales, CRM, POS, payroll and manufacturing. From data chaos to strategic order.",
     "jeyTitle": "Jey ERP — one management system for your business",
     "jeyDescription": "Jey ERP modules: finance & accounting, inventory, sales & CRM, POS, payroll, manufacturing. Implemented and supported by Şərq Soft.",
     "aboutTitle": "About us",
@@ -19,7 +19,6 @@
     "home": "Home",
     "jeyErp": "Jey ERP",
     "services": "Services",
-    "about": "About",
     "whyUs": "Why us",
     "contact": "Contact",
     "configurator": "Configurator",
@@ -41,7 +40,7 @@
     "kicker": "Jey ERP implementation experts",
     "titleLine1": "Your business,",
     "titleLine2": "lit from the East",
-    "subtitle": "Implementation of accounting and ERP systems. From data chaos to order — Jey ERP brings a new day to your business.",
+    "subtitle": "Implementation of accounting and ERP systems: from data chaos to strategic order.",
     "ctaPrimary": "Jey ERP demo",
     "ctaSecondary": "Explore solutions",
     "scroll": "Scroll",
