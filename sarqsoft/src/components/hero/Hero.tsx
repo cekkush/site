@@ -20,7 +20,9 @@ export function Hero() {
   const t = useTranslations('hero');
   const stats = t.raw('stats') as Stat[];
   const [motionOk, setMotionOk] = useState(false);
+  const [ready, setReady] = useState(false);
   const [inView, setInView] = useState(true);
+  const [scrolling, setScrolling] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -29,7 +31,23 @@ export function Hero() {
     );
   }, []);
 
-  // Pause the WebGL render loop once the hero scrolls out of view.
+  // Defer mounting the WebGL canvas until the browser is idle, so the shader
+  // compile doesn't collide with the hero's entrance animation on load.
+  useEffect(() => {
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, o?: {timeout: number}) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    if (w.requestIdleCallback) {
+      const id = w.requestIdleCallback(() => setReady(true), {timeout: 1500});
+      return () => w.cancelIdleCallback?.(id);
+    }
+    const id = window.setTimeout(() => setReady(true), 900);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  // Pause the WebGL render loop when the hero is off-screen or while scrolling
+  // (no point burning frames on it while the user is moving past it).
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -38,7 +56,20 @@ export function Hero() {
       {rootMargin: '120px'},
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    let idle: number | undefined;
+    const onScroll = () => {
+      setScrolling(true);
+      window.clearTimeout(idle);
+      idle = window.setTimeout(() => setScrolling(false), 180);
+    };
+    window.addEventListener('scroll', onScroll, {passive: true});
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(idle);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   return (
@@ -49,9 +80,9 @@ export function Hero() {
       {/* sunrise base */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(130%_120%_at_50%_125%,#3a2410_0%,#150c1f_30%,#04060d_62%)]" />
       {/* WebGL light field */}
-      {motionOk && (
+      {motionOk && ready && (
         <div className="absolute inset-0">
-          <LightField active={inView} />
+          <LightField active={inView && !scrolling} />
         </div>
       )}
       {/* readability veil + bottom fade */}
