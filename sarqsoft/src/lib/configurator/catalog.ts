@@ -45,7 +45,7 @@ export const spheres: Sphere[] = [
       m('tax-vat', {az: 'ƏDV uçotu', en: 'VAT accounting'}, {az: 'ƏDV-nin tam uçotu və hesabatı.', en: 'Full VAT accounting and reporting.'}, 3, 1, 350, 800),
       m('tax-eqaime', {az: 'e-Qaimə inteqrasiyası', en: 'e-Invoice (e-Qaimə)'}, {az: 'Elektron qaimələr birbaşa sistemdən.', en: 'Electronic invoices straight from the system.'}, 4, 1, 500, 1100),
       m('tax-portal', {az: 'e-taxes.gov.az inteqrasiyası', en: 'e-taxes.gov.az integration'}, {az: 'İnternet Vergi İdarəsi ilə birbaşa mübadilə.', en: 'Direct exchange with the tax portal.'}, 4, 2, 600, 1300),
-      m('tax-decl', {az: 'Bəyannamələrin avtomatik doldurulması', en: 'Auto-filled tax declarations'}, {az: 'Mənfəət, sadələşdirilmiş, ödəmə mənbəyi və sair.', en: 'Profit, simplified, withholding, etc.'}, 4, 2, 600, 1300),
+      m('tax-decl', {az: 'Bəyannamələrin avtomatik doldurulması', en: 'Auto-filled tax declarations'}, {az: 'ƏDV, mənfəət, sadələşdirilmiş, ödəmə mənbəyi (ÖMV), torpaq və əmlak vergisi, kadr/DSMF.', en: 'VAT, profit, simplified, withholding (ÖMV), land and property tax, HR/DSMF.'}, 4, 2, 600, 1300),
       m('tax-calendar', {az: 'Vergi təqvimi və xəbərdarlıqlar', en: 'Tax calendar & reminders'}, {az: 'Müddətlər üzrə avtomatik xatırlatmalar.', en: 'Automatic deadline reminders.'}, 1, 1, 150, 400),
     ],
   },
@@ -251,6 +251,7 @@ function ig(
 export const services: Service[] = [
   sv('sv-impl', {az: 'Açar-təslim tətbiq', en: 'Turnkey implementation'}, {az: 'Tələblərdən işə salınmağa qədər tam tsikl.', en: 'Full cycle from requirements to go-live.'}, 'oneTime', 5, 800, 2000, true),
   sv('sv-migrate', {az: 'Məlumatların köçürülməsi', en: 'Data migration'}, {az: 'Excel, 1C, digər proqram və portallardan.', en: 'From Excel, 1C, other apps and portals.'}, 'oneTime', 3, 400, 1200, true),
+  sv('sv-restore', {az: 'Keçmiş dövrlərin bərpası', en: 'Prior-period restoration'}, {az: 'Əvvəlki dövrlərin sənədlərinin idxalı, uçotun bərpası və nizama salınması.', en: 'Import past-period documents, restore and reconcile the books.'}, 'oneTime', 3, 400, 1200),
   sv('sv-train', {az: 'Əməkdaşların təlimi', en: 'Staff training'}, {az: 'Onlayn/yerində təlim və video-kurs.', en: 'Online/on-site training and video.'}, 'oneTime', 2, 300, 900, true),
   sv('sv-cloud', {az: 'Bulud üzərində quraşdırma', en: 'Cloud setup'}, {az: 'Buludda tam infrastruktur.', en: 'Full infrastructure in the cloud.'}, 'oneTime', 2, 300, 800, true),
   sv('sv-integr', {az: 'İnteqrasiyaların qurulması', en: 'Integrations setup'}, {az: 'Seçilmiş inteqrasiyaların icrası.', en: 'Delivery of the chosen integrations.'}, 'oneTime', 3, 400, 1200),

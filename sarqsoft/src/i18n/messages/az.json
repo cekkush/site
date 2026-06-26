@@ -261,7 +261,7 @@
     "items": [
       {"title": "Mühasibat yazılışları", "desc": "Əməliyyatlar üzrə mühasibat yazılışları avtomatik formalaşır — əl ilə daxiletmə minimuma enir."},
       {"title": "Maliyyə və vergi hesabatları", "desc": "Maliyyə və vergi hesabatlarının tam avtomatlaşdırılması."},
-      {"title": "Vergi formaları", "desc": "Vergi bəyannamə formalarının avtomatik doldurulması."},
+      {"title": "Vergi bəyannamələri", "desc": "ƏDV, mənfəət, sadələşdirilmiş, ödəmə mənbəyində vergi (ÖMV), torpaq və əmlak vergisi bəyannamələri, eləcə də kadr və DSMF hesabatları avtomatik formalaşır."},
       {"title": "Anbar", "desc": "Mədaxil-məxaric, qalıqlar və inventarlaşmanın avtomatlaşdırılması."},
       {"title": "Kadr uçotu", "desc": "Əməkhaqqı, tabel və kadr proseslərinin avtomatlaşdırılması."},
       {"title": "Satış şöbəsi", "desc": "Satış, sifariş və CRM proseslərinin avtomatlaşdırılması."},
@@ -277,7 +277,9 @@
       {"title": "Azərbaycan mühasibatlığı", "desc": "Azərbaycan Respublikasının qanunvericiliyinə uyğun uçot və vergi üzrə tam ekspertiza."},
       {"title": "İstənilən mənbədən idxal", "desc": "Excel, saytlar, digər uçot proqramları və dövlət portallarından məlumat idxalı."},
       {"title": "Bulud infrastrukturu", "desc": "Şirkətiniz üçün buludda tam uçot avtomatlaşdırma infrastrukturunu işə salırıq."},
-      {"title": "Təlim və adaptasiya", "desc": "Komandanızı proqramda işləməyə öyrədirik."}
+      {"title": "Təlim və dərslər", "desc": "Komandanızı proqramda işləməyə öyrədirik — onlayn və yerində dərslər, video-kurslar və adaptasiya."},
+      {"title": "Keçmiş dövrlərin uçotu və bərpası", "desc": "Əvvəlki dövrlərin sənədlərini avtomatik idxal edir, uçotu bərpa edib nizama salırıq — geriyə dönük tam qaydaya salınmış baza."},
+      {"title": "Vergi rejimləri və öhdəliklər", "desc": "Müxtəlif vergi rejimlərində (ƏDV ödəyicisi, sadələşdirilmiş, mənfəət) işləyən şirkətlər üçün vergi öhdəliklərini düzgün dövrlərdə formalaşdırırıq."}
     ]
   },
   "servicesPage": {
@@ -291,15 +293,15 @@
     "scopeTitle": "Şöbə-şöbə tətbiq",
     "scopeText": "Biznesin hər şöbəsini sistemə köçürür və işə salırıq.",
     "scope": [
-      {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, hesabatlar."},
+      {"title": "Maliyyə və mühasibatlıq", "desc": "Tam maliyyə və vergi uçotu, bəyannamələrin avtomatik hazırlanması."},
       {"title": "Kadrlar", "desc": "Kadr uçotu, əməkhaqqı və tabel."},
       {"title": "Satınalma / təchizat", "desc": "Təchizat şöbəsinin qurulması və avtomatlaşdırılması."},
       {"title": "Satış", "desc": "Satış şöbəsi və CRM proseslərinin tətbiqi."},
       {"title": "Anbar", "desc": "Anbar uçotunun tam avtomatlaşdırılması."},
-      {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları."}
+      {"title": "Hesabatlıq", "desc": "İdarəetmə, maliyyə və vergi hesabatları, bəyannamələr."}
     ]
   },
   "marquee": {
-    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Əməkhaqqı və kadrlar", "Vergi hesabatları", "Bulud", "İnteqrasiya", "Məlumat idxalı", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
+    "items": ["Mühasibatlıq", "Anbar", "POS", "CRM", "Əməkhaqqı və kadrlar", "Vergi hesabatları", "Bəyannamələr", "Bulud", "İnteqrasiya", "Məlumat idxalı", "Keçmiş dövrlər", "İstehsalat", "Analitika", "Avtomatlaşdırma"]
   }
 }

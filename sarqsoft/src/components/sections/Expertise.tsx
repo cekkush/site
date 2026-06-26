@@ -27,6 +27,10 @@ const icons = [
   <svg key="2" {...s}><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.58-1.5A3.5 3.5 0 0 1 18 18z" /></svg>,
   // training — graduation cap
   <svg key="3" {...s}><path d="M2 8l10-4 10 4-10 4z" /><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" /></svg>,
+  // prior-period restoration — clock with rewind
+  <svg key="4" {...s}><path d="M3.5 12a8.5 8.5 0 1 1 2.6 6.1" /><path d="M3.5 19v-4h4" /><path d="M12 8v4l2.6 1.6" /></svg>,
+  // tax regimes & obligations — clipboard checklist
+  <svg key="5" {...s}><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 3h6v3H9z" /><path d="M8.5 11l1.2 1.2L12 10M8.5 16l1.2 1.2L12 15M14 11h2M14 16h2" /></svg>,
 ];
 
 export function Expertise() {

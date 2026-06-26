@@ -261,7 +261,7 @@
     "items": [
       {"title": "Accounting entries", "desc": "Postings are generated automatically per transaction — manual entry drops to a minimum."},
       {"title": "Financial & tax reports", "desc": "Full automation of financial and tax reporting."},
-      {"title": "Tax forms", "desc": "Automatic filling of tax declaration forms."},
+      {"title": "Tax declarations", "desc": "VAT, profit, simplified, withholding-at-source (ÖMV), land and property tax returns, plus HR and DSMF filings — generated automatically."},
       {"title": "Warehouse", "desc": "Automated receipts, balances and stocktaking."},
       {"title": "HR & payroll", "desc": "Automation of payroll, timesheets and HR processes."},
       {"title": "Sales", "desc": "Automation of sales, orders and CRM processes."},
@@ -277,7 +277,9 @@
       {"title": "Azerbaijani accounting", "desc": "Full expertise in accounting and tax under Azerbaijani law."},
       {"title": "Import from any source", "desc": "Data import from Excel, websites, other accounting programs and government portals."},
       {"title": "Cloud infrastructure", "desc": "We launch a full accounting-automation infrastructure in the cloud for your company."},
-      {"title": "Training & onboarding", "desc": "We train your team to work in the software."}
+      {"title": "Training & lessons", "desc": "We train your team to work in the software — online and on-site lessons, video courses and onboarding."},
+      {"title": "Prior-period accounting & restoration", "desc": "We auto-import documents from earlier periods, restore and tidy the books — a fully reconciled history across past periods."},
+      {"title": "Tax regimes & obligations", "desc": "For companies across different tax regimes (VAT payer, simplified, profit) we form tax obligations in the correct periods."}
     ]
   },
   "servicesPage": {
@@ -291,15 +293,15 @@
     "scopeTitle": "Department-by-department implementation",
     "scopeText": "We bring every part of the business into the system and get it running.",
     "scope": [
-      {"title": "Finance & accounting", "desc": "Full financial and tax accounting, reporting."},
+      {"title": "Finance & accounting", "desc": "Full financial and tax accounting, automated preparation of tax returns."},
       {"title": "HR", "desc": "Personnel records, payroll and timesheets."},
       {"title": "Procurement", "desc": "Setting up and automating the procurement department."},
       {"title": "Sales", "desc": "Sales department and CRM process implementation."},
       {"title": "Warehouse", "desc": "Full automation of warehouse accounting."},
-      {"title": "Reporting", "desc": "Management, financial and tax reporting."}
+      {"title": "Reporting", "desc": "Management, financial and tax reporting, declarations."}
     ]
   },
   "marquee": {
-    "items": ["Accounting", "Inventory", "POS", "CRM", "Payroll & HR", "Tax reports", "Cloud", "Integration", "Data import", "Manufacturing", "Analytics", "Automation"]
+    "items": ["Accounting", "Inventory", "POS", "CRM", "Payroll & HR", "Tax reports", "Declarations", "Cloud", "Integration", "Data import", "Prior periods", "Manufacturing", "Analytics", "Automation"]
   }
 }
