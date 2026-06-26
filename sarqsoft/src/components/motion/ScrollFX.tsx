@@ -40,7 +40,14 @@ export function ScrollFX() {
               trigger: el,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: true,
+              // Smooth (time-based) scrubbing instead of `true`. With Lenis
+              // driving the scroll, an instant scrub re-reads a slightly
+              // different scroll value than ScrollTrigger every frame, so the
+              // heading visibly jitters against the rest of the page. Easing
+              // the transform over ~0.5s damps that per-frame desync — the
+              // drift stays subtle (±2.5%) but no longer trembles.
+              scrub: 0.5,
+              invalidateOnRefresh: true,
             },
           },
         );
